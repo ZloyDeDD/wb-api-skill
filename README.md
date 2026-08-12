@@ -1,7 +1,7 @@
 # wb-api-skill
 
 [![tests](https://github.com/ZloyDeDD/wb-api-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ZloyDeDD/wb-api-skill/actions/workflows/ci.yml)
-[![release](https://img.shields.io/github/v/release/ZloyDeDD/wb-api-skill)](https://github.com/ZloyDeDD/wb-api-skill/releases/latest)
+[![release](https://img.shields.io/github/v/release/ZloyDeDD/wb-api-skill?display_name=tag)](https://github.com/ZloyDeDD/wb-api-skill/releases/latest)
 ![snapshot](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwb-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.snapshot_date&label=snapshot)
 ![endpoints](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwb-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.endpoint_count&label=endpoints)
 
