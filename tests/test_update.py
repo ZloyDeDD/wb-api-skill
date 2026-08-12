@@ -250,7 +250,7 @@ def test_render_survives_old_meta() -> None:
     text = release_notes.render("v2026.08.12", meta, ("", []))
     check("заметки собираются без changes", "эндпоинтов: 288" in text, f"-> {text[:80]}")
     check("пустой диф описан словами", "Изменений эндпоинтов нет" in text)
-    check("инструкция по обновлению на месте", "git -C ~/.claude/skills/wildberries-api pull" in text)
+    check("инструкция по обновлению на месте", "git -C ~/.claude/skills/wb-api pull" in text)
 
 
 def test_pick_tag() -> None:

@@ -19,7 +19,7 @@ from typing import Any
 from wb import META_PATH, ROOT, configure_stdout
 
 CHANGELOG_PATH = ROOT / "CHANGELOG.md"
-REPO_URL = "https://github.com/ZloyDeDD/wildberries-api-skill"
+REPO_URL = "https://github.com/ZloyDeDD/wb-api-skill"
 
 
 def extract_section(text: str, date: str | None = None) -> tuple[str, list[str]]:
@@ -87,7 +87,7 @@ def render(version: str, meta: dict[str, Any], section: tuple[str, list[str]]) -
         "Скилл установлен через `git clone`:",
         "",
         "```bash",
-        "git -C ~/.claude/skills/wildberries-api pull",
+        "git -C ~/.claude/skills/wb-api pull",
         "```",
         "",
         f"Без git — скачайте `{asset}` из ассетов этого релиза и распакуйте поверх `swagger/`.",

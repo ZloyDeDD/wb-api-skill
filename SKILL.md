@@ -1,5 +1,5 @@
 ---
-name: wildberries-api
+name: wb-api
 description: Swagger-backed Wildberries seller API reference for WB marketplace integrations. Use when building or debugging code that calls Wildberries/WB seller API endpoints, choosing endpoints, checking request/response schemas, authentication headers, hosts, rate limits, or API capabilities.
 ---
 
