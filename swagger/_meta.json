@@ -1,8 +1,17 @@
 {
  "updated_at": "2026-08-12T12:05:36+00:00",
+ "snapshot_date": "2026-08-12",
  "source": "dev.wildberries.ru",
  "endpoint_count": 288,
+ "previous_endpoint_count": 0,
  "file_count": 13,
+ "changes": {
+  "added": 288,
+  "removed": 0,
+  "changed": 0,
+  "new_sections": 13,
+  "gone_sections": 0
+ },
  "renamed_sections": [],
  "files": {
   "01-general.yaml": {

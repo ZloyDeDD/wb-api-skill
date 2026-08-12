@@ -1,8 +1,13 @@
 # wb-api-skill
 
-Скилл для Claude Code (и других агентов, читающих `SKILL.md`) — справочник по **Wildberries Seller API** поверх локального снимка OpenAPI-спецификаций, который **можно обновлять одной командой**.
+[![tests](https://github.com/ZloyDeDD/wb-api-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ZloyDeDD/wb-api-skill/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/ZloyDeDD/wb-api-skill)](https://github.com/ZloyDeDD/wb-api-skill/releases/latest)
+![snapshot](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwb-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.snapshot_date&label=snapshot)
+![endpoints](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwb-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.endpoint_count&label=endpoints)
 
-Главное отличие от аналогов: документация здесь не приколочена гвоздями. `scripts/update.py` забирает свежие спеки прямо с портала WB, сам справляется с переименованием разделов и пишет в `CHANGELOG.md`, какие эндпоинты появились, исчезли или изменились.
+Скилл для Claude Code (и других агентов, читающих `SKILL.md`) — справочник по **Wildberries Seller API** поверх снимка OpenAPI-спецификаций, который **регулярно обновляется**.
+
+Главное отличие от аналогов: документация здесь не приколочена гвоздями. Снимок сверяется с порталом WB примерно раз в месяц; что появилось, исчезло или изменилось — в [Releases](https://github.com/ZloyDeDD/wb-api-skill/releases) и `CHANGELOG.md`. Дата снимка и число эндпоинтов — в бейджах выше. Если ждать не хочется, `scripts/update.py` соберёт свежий снимок локально той же командой, которой пользуется мейнтейнер.
 
 ## Установка
 
@@ -53,7 +58,22 @@ python scripts/wb.py stale                                 # возраст сн
 
 ## Обновление
 
+Снимок ведёт мейнтейнер: сверяет его с порталом WB примерно раз в месяц и выкладывает результат сюда. Свежесть видно по бейджам `snapshot` и `release`, содержание изменений — в [Releases](https://github.com/ZloyDeDD/wb-api-skill/releases) и `CHANGELOG.md`.
+
+Обновиться:
+
 ```bash
+git -C ~/.claude/skills/wildberries-api pull
+```
+
+Без git — скачайте `wb-swagger-*.zip` из последнего релиза и распакуйте поверх `swagger/`.
+
+### Собрать снимок самому
+
+Нужно, если ждать очередной сверки не хочется или проект перестали вести:
+
+```bash
+python -m pip install -r requirements-update.txt
 python scripts/update.py             # обновить снимок
 python scripts/update.py --dry-run   # показать изменения, ничего не писать
 ```
@@ -66,11 +86,21 @@ python scripts/update.py --dry-run   # показать изменения, ни
 4. **Атомарная подмена** `swagger/`, пересборка `_index.json` и `_meta.json`.
 5. **Отчёт.** Что добавилось, что удалено, что изменилось — в консоль и в `CHANGELOG.md`.
 
-Дальше стоит закоммитить результат — история коммитов превращается в летопись изменений WB API:
+Локальный снимок при этом расходится с репозиторием — следующий `git pull` попросит разрешить конфликт в `swagger/`. Проще всего откатиться на версию из репозитория: `git checkout -- swagger CHANGELOG.md`.
+
+### Как выпускается релиз
+
+Для мейнтейнера. Скачивание спек остаётся локальным — антибот WB требует видимого браузера, из CI челлендж не пройти. Автоматизирована только сборка релиза:
 
 ```bash
-git add -A && git commit -m "sync specs $(date +%F)" && git push
+python scripts/update.py             # забрать свежие спеки
+python scripts/release.py --dry-run  # показать коммит, тег и заметки
+python scripts/release.py            # коммит, тег, пуш
 ```
+
+`release.py` коммитит снимок и, **если у WB что-то поменялось**, ставит тег по дате снимка — `v2026.08.12` (при повторе в тот же день `v2026.08.12.1`). Пустая сверка — обычный коммит без тега, чтобы лента релизов не забивалась записями «изменений нет».
+
+Пуш тега запускает `.github/workflows/release.yml`: он берёт заметки из свежей секции `CHANGELOG.md` (`scripts/release_notes.py`), прикладывает архив `swagger/` и публикует релиз.
 
 ## Как это работает
 
@@ -110,8 +140,11 @@ python tests/test_update.py
 | `scripts/wb.py` | справочник по снимку |
 | `scripts/update.py` | обновление снимка |
 | `scripts/fetch_wb.py` | загрузка с WB через браузер |
+| `scripts/release.py` | коммит, тег и пуш свежего снимка |
+| `scripts/release_notes.py` | заметки к релизу из `CHANGELOG.md` |
 | `sources.yaml` | список разделов и пороги валидации |
 | `tests/test_update.py` | тесты защитной логики |
+| `.github/workflows/` | тесты, сборка релиза по тегу, напоминание о возрасте снимка |
 | `CHANGELOG.md` | история изменений API |
 
 ## Лицензия

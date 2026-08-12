@@ -1,0 +1,42 @@
+name: release
+
+# Тег ставит scripts/release.py на машине мейнтейнера — сюда приходит уже
+# готовый снимок. Качать спеки в CI нельзя: антибот WB требует видимого
+# браузера, из дата-центра челлендж не проходится.
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python -m pip install -r requirements.txt
+
+      - name: Снимок должен быть целым
+        run: python scripts/wb.py validate
+
+      - name: Заметки из CHANGELOG.md
+        run: python scripts/release_notes.py --version "$GITHUB_REF_NAME" > notes.md
+
+      - name: Архив снимка
+        run: zip -r "wb-swagger-$GITHUB_REF_NAME.zip" swagger
+
+      - name: Публикация
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          count=$(python -c "import json;print(json.load(open('swagger/_meta.json'))['endpoint_count'])")
+          gh release create "$GITHUB_REF_NAME" \
+            --title "$GITHUB_REF_NAME — снимок WB API, $count эндпоинтов" \
+            --notes-file notes.md \
+            "wb-swagger-$GITHUB_REF_NAME.zip"

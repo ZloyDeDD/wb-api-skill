@@ -20,6 +20,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import yaml  # noqa: E402
 
 import fetch_wb  # noqa: E402
+import release  # noqa: E402
+import release_notes  # noqa: E402
 import update  # noqa: E402
 import wb  # noqa: E402
 
@@ -204,6 +206,86 @@ def test_path_arg_survives_git_bash() -> None:
           wb.resolve_path_arg(mangled) == "/content/v2/get/cards/list")
 
 
+# --------------------------------------------------------------------------
+# Релиз: заметки и выбор тега
+# --------------------------------------------------------------------------
+
+CHANGELOG = """# Изменения Wildberries API
+
+Вводный абзац, который в заметки попадать не должен.
+
+## 2026-09-01
+
+### Добавлены эндпоинты (1)
+- `GET /api/v3/new` — Новый (05-dbs.yaml)
+
+## 2026-08-12
+
+Первый снимок.
+"""
+
+
+def test_extract_section_takes_top() -> None:
+    date, body = release_notes.extract_section(CHANGELOG)
+    check("взята верхняя секция", date == "2026-09-01", f"-> {date}")
+    check("тело секции на месте", body[0] == "### Добавлены эндпоинты (1)", f"-> {body[:1]}")
+    check("предыдущая запись не захвачена", "Первый снимок." not in body, f"-> {body}")
+    check("вводный абзац не захвачен", not any("Вводный" in line for line in body), f"-> {body}")
+
+
+def test_extract_section_by_date() -> None:
+    date, body = release_notes.extract_section(CHANGELOG, "2026-08-12")
+    check("секция найдена по дате", date == "2026-08-12", f"-> {date}")
+    check("тело нужной секции", body == ["Первый снимок."], f"-> {body}")
+
+
+def test_extract_section_missing() -> None:
+    date, body = release_notes.extract_section(CHANGELOG, "2020-01-01")
+    check("отсутствующая дата даёт пустой результат", (date, body) == ("", []), f"-> {date} {body}")
+
+
+def test_render_survives_old_meta() -> None:
+    # Снимки, собранные до появления полей changes/snapshot_date.
+    meta = {"updated_at": "2026-08-12T12:05:36+00:00", "endpoint_count": 288, "file_count": 13}
+    text = release_notes.render("v2026.08.12", meta, ("", []))
+    check("заметки собираются без changes", "эндпоинтов: 288" in text, f"-> {text[:80]}")
+    check("пустой диф описан словами", "Изменений эндпоинтов нет" in text)
+    check("инструкция по обновлению на месте", "git -C ~/.claude/skills/wildberries-api pull" in text)
+
+
+def test_pick_tag() -> None:
+    check("свободная дата", release.pick_tag("2026-08-12", []) == "v2026.08.12")
+    check("дата занята", release.pick_tag("2026-08-12", ["v2026.08.12"]) == "v2026.08.12.1")
+    check("занято и с суффиксом",
+          release.pick_tag("2026-08-12", ["v2026.08.12", "v2026.08.12.1"]) == "v2026.08.12.2")
+    check("чужие теги не мешают", release.pick_tag("2026-08-12", ["v2026.07.01"]) == "v2026.08.12")
+
+
+def test_foreign_paths() -> None:
+    # Ведущий пробел в порcelain значащий: без него срезается первый символ пути.
+    status = " M swagger/05-dbs.yaml\n M CHANGELOG.md\n M sources.yaml"
+    check("синк спецификаций проходит", release.foreign_paths(status) == [], f"-> {release.foreign_paths(status)}")
+
+    mixed = " M swagger/05-dbs.yaml\n M README.md\n?? scripts/new.py"
+    check("посторонние файлы замечены",
+          release.foreign_paths(mixed) == ["README.md", "scripts/new.py"],
+          f"-> {release.foreign_paths(mixed)}")
+
+
+def test_count_changes() -> None:
+    diff = {"Добавлены эндпоинты": ["a", "b"], "Удалены эндпоинты": [], "Изменены": ["c"]}
+    counts = update.count_changes(diff)
+    check("счётчики под ASCII-ключами",
+          counts == {"added": 2, "removed": 0, "changed": 1, "new_sections": 0, "gone_sections": 0},
+          f"-> {counts}")
+
+
+def test_meta_has_release_fields() -> None:
+    meta = release_notes.load_meta()
+    check("в снимке есть snapshot_date", bool(meta.get("snapshot_date")), f"-> {meta.get('snapshot_date')}")
+    check("в снимке есть changes", isinstance(meta.get("changes"), dict), f"-> {meta.get('changes')}")
+
+
 def main() -> int:
     wb.configure_stdout()
     print("Переименование разделов:")
@@ -222,6 +304,16 @@ def main() -> int:
     print("Отчёт об изменениях и разбор аргументов:")
     test_diff_detects_changes()
     test_path_arg_survives_git_bash()
+
+    print("Релиз:")
+    test_extract_section_takes_top()
+    test_extract_section_by_date()
+    test_extract_section_missing()
+    test_render_survives_old_meta()
+    test_pick_tag()
+    test_foreign_paths()
+    test_count_changes()
+    test_meta_has_release_fields()
 
     print()
     if failures:

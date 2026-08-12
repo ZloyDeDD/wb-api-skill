@@ -141,7 +141,7 @@ def load_index() -> dict[str, Any]:
     if not spec_files():
         raise SystemExit(
             "Снимок пуст: в swagger/ нет YAML-файлов.\n"
-            "Запустите: python scripts/update.py"
+            "Обновите: git pull, либо соберите снимок сами — python scripts/update.py"
         )
     print("! Индекс swagger/_index.json отсутствует, собираю на лету", file=sys.stderr)
     return build_index()
@@ -174,7 +174,7 @@ def freshness_line() -> str:
     if age is None:
         return "Снимок: дата неизвестна (нет swagger/_meta.json)"
     date = str(meta.get("updated_at", ""))[:10]
-    mark = "  << УСТАРЕЛ, запустите python scripts/update.py" if age > STALE_AFTER_DAYS else ""
+    mark = "  << УСТАРЕЛ, обновите: git pull" if age > STALE_AFTER_DAYS else ""
     return f"Снимок: {date}, возраст {age:.0f} дн., источник {meta.get('source', '?')}{mark}"
 
 
@@ -541,7 +541,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
 
     files = spec_files()
     if not files:
-        print("В swagger/ нет YAML-файлов. Запустите python scripts/update.py")
+        print("В swagger/ нет YAML-файлов. Обновите: git pull, либо python scripts/update.py")
         return 1
 
     for spec_path in files:
@@ -631,9 +631,12 @@ def cmd_stale(args: argparse.Namespace) -> int:
     if meta.get("renamed_sections"):
         print(f"Переименования при последнем обновлении: {', '.join(meta['renamed_sections'])}")
     print(f"Эндпоинтов: {meta.get('endpoint_count', '?')}, файлов: {meta.get('file_count', '?')}")
-    if age is not None and age > STALE_AFTER_DAYS:
-        print("\nСнимок старше 30 дней. Обновите: python scripts/update.py")
-    return 0
+
+    stale = age is not None and age > STALE_AFTER_DAYS
+    if stale:
+        print(f"\nСнимок старше {STALE_AFTER_DAYS} дней. Обновите: git pull")
+        print("Если снимок в репозитории тоже несвежий — соберите свой: python scripts/update.py")
+    return 1 if (stale and args.fail_if_stale) else 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -660,7 +663,13 @@ def main(argv: list[str] | None = None) -> int:
 
     sub.add_parser("protocol", help="авторизация, хосты, токены, коды").set_defaults(func=cmd_protocol)
     sub.add_parser("validate", help="проверка целостности снимка").set_defaults(func=cmd_validate)
-    sub.add_parser("stale", help="возраст снимка").set_defaults(func=cmd_stale)
+    stale = sub.add_parser("stale", help="возраст снимка")
+    stale.add_argument(
+        "--fail-if-stale",
+        action="store_true",
+        help=f"код возврата 1, если снимку больше {STALE_AFTER_DAYS} дней",
+    )
+    stale.set_defaults(func=cmd_stale)
 
     args = parser.parse_args(argv)
     return args.func(args)

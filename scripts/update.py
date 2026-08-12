@@ -195,6 +195,18 @@ def diff_indexes(old: dict[str, Any], new: dict[str, Any]) -> dict[str, list[str
     }
 
 
+def count_changes(diff: dict[str, list[str]]) -> dict[str, int]:
+    """Счётчики диффа под ASCII-ключами — их читает scripts/release.py."""
+    keys = {
+        "Добавлены эндпоинты": "added",
+        "Удалены эндпоинты": "removed",
+        "Изменены": "changed",
+        "Новые разделы": "new_sections",
+        "Пропавшие разделы": "gone_sections",
+    }
+    return {ascii_key: len(diff.get(title, [])) for title, ascii_key in keys.items()}
+
+
 def render_diff(diff: dict[str, list[str]], limit: int = 60) -> list[str]:
     lines: list[str] = []
     for title, items in diff.items():
@@ -318,11 +330,16 @@ def main(argv: list[str] | None = None) -> int:
         newline="\n",
     )
 
+    now = datetime.now(timezone.utc)
     meta = {
-        "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "updated_at": now.isoformat(timespec="seconds"),
+        # Отдельным полем, потому что бейдж shields умеет только целиком взять значение.
+        "snapshot_date": now.strftime("%Y-%m-%d"),
         "source": "dev.wildberries.ru",
         "endpoint_count": len(new_index["endpoints"]),
+        "previous_endpoint_count": previous_count,
         "file_count": len(new_index["files"]),
+        "changes": count_changes(diff),
         "renamed_sections": renames,
         "files": {
             name: {"sha256": sha256(text), "bytes": len(text.encode("utf-8"))}

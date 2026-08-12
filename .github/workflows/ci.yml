@@ -1,0 +1,31 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Нижняя и верхняя границы поддерживаемых версий.
+        python: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      # Сети не требуется: patchright грузится лениво, браузер в тестах — заглушка.
+      - run: python -m pip install -r requirements.txt
+
+      - name: Тесты защитной логики обновления
+        run: python tests/test_update.py
+
+      - name: Целостность снимка
+        run: python scripts/wb.py validate
