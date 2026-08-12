@@ -1,0 +1,6 @@
+# Снимок спецификаций хранится с LF, иначе autocrlf показывает весь swagger/ как изменённый
+* text=auto eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.md text eol=lf

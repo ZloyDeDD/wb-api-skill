@@ -1,0 +1,5 @@
+# Нужно только для scripts/update.py и scripts/fetch_wb.py:
+# загрузка спецификаций с dev.wildberries.ru через браузер.
+# patchright — форк playwright, скрывающий navigator.webdriver;
+# без него антибот WBAAS челлендж не пропускает.
+patchright>=1.55

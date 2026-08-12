@@ -1,0 +1,37 @@
+# Откуда берутся OpenAPI-спецификации Wildberries.
+#
+# Источник один — портал WB. Он закрыт антиботом WBAAS, поэтому загрузка идёт
+# через настоящий браузер (scripts/fetch_wb.py). Зеркал и посредников нет.
+version: 2
+
+wildberries:
+  spec_url: "https://dev.wildberries.ru/api/swagger/yaml/ru/{file}?region=ru"
+  docs_url: "https://dev.wildberries.ru/docs/openapi/{slug}"
+
+  # Разделы документации.
+  #
+  # WB время от времени переименовывает файлы: 02-products -> 02-items,
+  # 10-tariffs -> 10-rates, 05-orders-dbs -> 05-dbs. Слаг страницы при этом
+  # остаётся прежним, а актуальное имя файла написано в её HTML (x-file-name).
+  # Поэтому при 404 update.py сам находит новое имя по слагу, скачивает раздел
+  # и правит поле file здесь. Руками вмешиваться нужно, только если WB сменит
+  # сам слаг или заведёт новый раздел.
+  sections:
+    - {prefix: "01", slug: api-information,                  file: 01-general.yaml}
+    - {prefix: "02", slug: work-with-products,               file: 02-items.yaml}
+    - {prefix: "03", slug: orders-fbs,                       file: 03-orders-fbs.yaml}
+    - {prefix: "04", slug: orders-dbw,                       file: 04-orders-dbw.yaml}
+    - {prefix: "05", slug: orders-dbs,                       file: 05-dbs.yaml}
+    - {prefix: "06", slug: in-store-pickup,                  file: 06-in-store-pickup.yaml}
+    - {prefix: "07", slug: orders-fbw,                       file: 07-orders-fbw.yaml}
+    - {prefix: "08", slug: promotion,                        file: 08-promotion.yaml}
+    - {prefix: "09", slug: user-communication,               file: 09-communications.yaml}
+    - {prefix: "10", slug: wb-tariffs,                       file: 10-rates.yaml}
+    - {prefix: "11", slug: analytics,                        file: 11-analytics.yaml}
+    - {prefix: "12", slug: reports,                          file: 12-reports.yaml}
+    - {prefix: "13", slug: financial-reports-and-accounting, file: 13-finances.yaml}
+
+validation:
+  # Насколько может просесть общее число эндпоинтов, прежде чем обновление
+  # будет признано порчей данных и отклонено.
+  max_endpoint_drop_pct: 10
