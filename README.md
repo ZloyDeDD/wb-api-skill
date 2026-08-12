@@ -1,24 +1,26 @@
-# wb-api-skill
+# wildberries-api-skill
 
-[![tests](https://github.com/ZloyDeDD/wb-api-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ZloyDeDD/wb-api-skill/actions/workflows/ci.yml)
-[![release](https://img.shields.io/github/v/release/ZloyDeDD/wb-api-skill?display_name=tag)](https://github.com/ZloyDeDD/wb-api-skill/releases/latest)
-![snapshot](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwb-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.snapshot_date&label=snapshot)
-![endpoints](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwb-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.endpoint_count&label=endpoints)
+[![tests](https://github.com/ZloyDeDD/wildberries-api-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ZloyDeDD/wildberries-api-skill/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/ZloyDeDD/wildberries-api-skill?display_name=tag)](https://github.com/ZloyDeDD/wildberries-api-skill/releases/latest)
+![snapshot](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwildberries-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.snapshot_date&label=snapshot)
+![endpoints](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FZloyDeDD%2Fwildberries-api-skill%2Fmain%2Fswagger%2F_meta.json&query=%24.endpoint_count&label=endpoints)
 
 Скилл для Claude Code (и других агентов, читающих `SKILL.md`) — справочник по **Wildberries Seller API** поверх снимка OpenAPI-спецификаций, который **регулярно обновляется**.
 
-Главное отличие от аналогов: документация здесь не приколочена гвоздями. Снимок сверяется с порталом WB примерно раз в месяц; что появилось, исчезло или изменилось — в [Releases](https://github.com/ZloyDeDD/wb-api-skill/releases) и `CHANGELOG.md`. Дата снимка и число эндпоинтов — в бейджах выше. Если ждать не хочется, `scripts/update.py` соберёт свежий снимок локально той же командой, которой пользуется мейнтейнер.
+Главное отличие от аналогов: документация здесь не приколочена гвоздями. Снимок сверяется с порталом WB примерно раз в месяц; что появилось, исчезло или изменилось — в [Releases](https://github.com/ZloyDeDD/wildberries-api-skill/releases) и `CHANGELOG.md`. Дата снимка и число эндпоинтов — в бейджах выше. Если ждать не хочется, `scripts/update.py` соберёт свежий снимок локально той же командой, которой пользуется мейнтейнер.
 
 ## Установка
 
 Claude Code, личный скилл:
 
 ```bash
-git clone https://github.com/ZloyDeDD/wb-api-skill.git ~/.claude/skills/wildberries-api
+git clone https://github.com/ZloyDeDD/wildberries-api-skill.git ~/.claude/skills/wildberries-api
 python -m pip install -r ~/.claude/skills/wildberries-api/requirements.txt
 ```
 
 Скилл в проекте — то же самое в `.claude/skills/wildberries-api`.
+
+Каталог называется `wildberries-api`, а не как репозиторий: Claude Code ищет скилл по имени каталога, и оно должно совпадать с `name` в `SKILL.md`.
 
 Для обновления снимка нужен браузерный драйвер (см. «Как это работает»):
 
@@ -58,7 +60,7 @@ python scripts/wb.py stale                                 # возраст сн
 
 ## Обновление
 
-Снимок ведёт мейнтейнер: сверяет его с порталом WB примерно раз в месяц и выкладывает результат сюда. Свежесть видно по бейджам `snapshot` и `release`, содержание изменений — в [Releases](https://github.com/ZloyDeDD/wb-api-skill/releases) и `CHANGELOG.md`.
+Снимок ведёт мейнтейнер: сверяет его с порталом WB примерно раз в месяц и выкладывает результат сюда. Свежесть видно по бейджам `snapshot` и `release`, содержание изменений — в [Releases](https://github.com/ZloyDeDD/wildberries-api-skill/releases) и `CHANGELOG.md`.
 
 Обновиться:
 
