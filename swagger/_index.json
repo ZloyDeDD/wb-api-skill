@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-12T12:05:36+00:00",
+ "generated_at": "2026-08-16T10:00:46+00:00",
  "files": [
   {
    "file": "01-general.yaml",
@@ -65,13 +65,13 @@
    "file": "11-analytics.yaml",
    "title": "Аналитика и данные",
    "version": "analytics",
-   "endpoints": 20
+   "endpoints": 19
   },
   {
    "file": "12-reports.yaml",
    "title": "Отчёты",
    "version": "reports",
-   "endpoints": 24
+   "endpoints": 23
   },
   {
    "file": "13-finances.yaml",
@@ -305,7 +305,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "883726f057ca5d31",
+   "fingerprint": "01ae1cecc6083e31",
    "method": "POST",
    "path": "/api/content/v1/recommendations/list",
    "hosts": [
@@ -327,7 +327,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "467f7a999a4b7b96",
+   "fingerprint": "1bb400680d1fbf49",
    "method": "POST",
    "path": "/api/content/v1/recommendations/set",
    "hosts": [
@@ -1348,7 +1348,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "36284ad489a1bb6b",
+   "fingerprint": "6af1ace83e109ba7",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns",
    "hosts": [
@@ -1362,12 +1362,14 @@
    "summary": "Получить настройки автовозврата продавца",
    "operationId": "getMarketplaceV3FbsSettingsAutoreturns",
    "category": "marketplace",
-   "tokens": [],
+   "tokens": [
+    "personal"
+   ],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "515b35c9f5479e31",
+   "fingerprint": "e700524bb9086c2c",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns",
    "hosts": [
@@ -1381,12 +1383,14 @@
    "summary": "Обновить настройки автовозврата продавца",
    "operationId": "patchMarketplaceV3FbsSettingsAutoreturns",
    "category": "marketplace",
-   "tokens": [],
+   "tokens": [
+    "personal"
+   ],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "ac61634490f82f07",
+   "fingerprint": "ca2b7d7c5709d9f2",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/items",
    "hosts": [
@@ -1400,12 +1404,14 @@
    "summary": "Обновить настройки автовозврата товаров",
    "operationId": "patchMarketplaceV3FbsSettingsAutoreturnsItems",
    "category": "marketplace",
-   "tokens": [],
+   "tokens": [
+    "personal"
+   ],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "ef67b8e8b7d9004c",
+   "fingerprint": "90243fb0216e3fd1",
    "method": "POST",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/items",
    "hosts": [
@@ -1419,12 +1425,14 @@
    "summary": "Получить настройки автовозврата товаров",
    "operationId": "postMarketplaceV3FbsSettingsAutoreturnsItems",
    "category": "marketplace",
-   "tokens": [],
+   "tokens": [
+    "personal"
+   ],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "2d6aea64c7bd3629",
+   "fingerprint": "5d07630db45d395b",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/subcategories/restricted",
    "hosts": [
@@ -1438,7 +1446,9 @@
    "summary": "Получить предметы, которые не хранятся на складах WB",
    "operationId": "getMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestricted",
    "category": "marketplace",
-   "tokens": [],
+   "tokens": [
+    "personal"
+   ],
    "readonly": true,
    "deprecated": false
   },
@@ -3338,7 +3348,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f51b3bc3d717ba6b",
+   "fingerprint": "8e55d48eca2b5660",
    "method": "PATCH",
    "path": "/adv/v0/auction/nms",
    "hosts": [
@@ -3350,14 +3360,14 @@
     "Управление кампаниями"
    ],
    "summary": "Изменение списка карточек товаров в кампаниях",
-   "operationId": "",
+   "operationId": "patchV0AuctionNms",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "e930713e02bd1e65",
+   "fingerprint": "b9f1a137447ece10",
    "method": "PUT",
    "path": "/adv/v0/auction/placements",
    "hosts": [
@@ -3369,14 +3379,14 @@
     "Управление кампаниями"
    ],
    "summary": "Изменение мест размещения в кампаниях с ручной ставкой",
-   "operationId": "",
+   "operationId": "putV0AuctionPlacements",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "de91377d1932bb3a",
+   "fingerprint": "cf7e1380e27df066",
    "method": "GET",
    "path": "/adv/v0/delete",
    "hosts": [
@@ -3389,14 +3399,14 @@
     "Управление кампаниями"
    ],
    "summary": "Удаление кампании",
-   "operationId": "",
+   "operationId": "getV0Delete",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "9c46a18e060361f4",
+   "fingerprint": "94d2a98088a8b085",
    "method": "DELETE",
    "path": "/adv/v0/normquery/bids",
    "hosts": [
@@ -3408,14 +3418,14 @@
     "Поисковые кластеры"
    ],
    "summary": "Удалить ставки поисковых кластеров",
-   "operationId": "",
+   "operationId": "deleteV0NormqueryBids",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "1a9ea58a59d3a0b5",
+   "fingerprint": "66eab528f06f0fde",
    "method": "POST",
    "path": "/adv/v0/normquery/bids",
    "hosts": [
@@ -3427,14 +3437,14 @@
     "Поисковые кластеры"
    ],
    "summary": "Установить ставки для поисковых кластеров",
-   "operationId": "",
+   "operationId": "postV0NormqueryBids",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "6978dee8b76cb178",
+   "fingerprint": "2fbf66fb0534a771",
    "method": "POST",
    "path": "/adv/v0/normquery/get-bids",
    "hosts": [
@@ -3446,14 +3456,14 @@
     "Поисковые кластеры"
    ],
    "summary": "Список ставок поисковых кластеров",
-   "operationId": "",
+   "operationId": "postV0NormqueryGetBids",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "c6f4039f30ad9567",
+   "fingerprint": "329306ef9196db90",
    "method": "POST",
    "path": "/adv/v0/normquery/get-minus",
    "hosts": [
@@ -3465,14 +3475,14 @@
     "Поисковые кластеры"
    ],
    "summary": "Список минус-фраз кампаний",
-   "operationId": "",
+   "operationId": "postV0NormqueryGetMinus",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "bacb1da8cd687388",
+   "fingerprint": "85ed1dfa05ab9cb5",
    "method": "POST",
    "path": "/adv/v0/normquery/list",
    "hosts": [
@@ -3484,14 +3494,14 @@
     "Поисковые кластеры"
    ],
    "summary": "Списки активных и неактивных поисковых кластеров",
-   "operationId": "",
+   "operationId": "postV0NormqueryList",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "52a5d809e8312aee",
+   "fingerprint": "cff187c794fb0c5c",
    "method": "POST",
    "path": "/adv/v0/normquery/set-minus",
    "hosts": [
@@ -3503,14 +3513,14 @@
     "Поисковые кластеры"
    ],
    "summary": "Установка и удаление минус-фраз",
-   "operationId": "",
+   "operationId": "postV0NormquerySetMinus",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "f6754aa32363c4b7",
+   "fingerprint": "b47be49274bfc8ac",
    "method": "POST",
    "path": "/adv/v0/normquery/stats",
    "hosts": [
@@ -3522,14 +3532,14 @@
     "Статистика"
    ],
    "summary": "Статистика поисковых кластеров",
-   "operationId": "",
+   "operationId": "postV0NormqueryStats",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "021e3acca5143701",
+   "fingerprint": "ec5b93b168dd4687",
    "method": "GET",
    "path": "/adv/v0/pause",
    "hosts": [
@@ -3542,14 +3552,14 @@
     "Управление кампаниями"
    ],
    "summary": "Пауза кампании",
-   "operationId": "",
+   "operationId": "getV0Pause",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "771d93083d199818",
+   "fingerprint": "be7be149a910c6ce",
    "method": "POST",
    "path": "/adv/v0/rename",
    "hosts": [
@@ -3562,14 +3572,14 @@
     "Управление кампаниями"
    ],
    "summary": "Переименование кампании",
-   "operationId": "",
+   "operationId": "postV0Rename",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "a4a130a3787bb0d7",
+   "fingerprint": "33764a0b095d322d",
    "method": "GET",
    "path": "/adv/v0/start",
    "hosts": [
@@ -3582,14 +3592,14 @@
     "Управление кампаниями"
    ],
    "summary": "Запуск кампании",
-   "operationId": "",
+   "operationId": "getV0Start",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "38079be1ccf5fcc9",
+   "fingerprint": "ea19e2b91bc7b0e4",
    "method": "GET",
    "path": "/adv/v0/stop",
    "hosts": [
@@ -3602,14 +3612,14 @@
     "Управление кампаниями"
    ],
    "summary": "Завершение кампании",
-   "operationId": "",
+   "operationId": "getV0Stop",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "b129a536d58dd8a9",
+   "fingerprint": "f27286f148a2eb92",
    "method": "GET",
    "path": "/adv/v1/advert",
    "hosts": [
@@ -3621,14 +3631,14 @@
     "Медиа"
    ],
    "summary": "Информация о медиакампании",
-   "operationId": "",
+   "operationId": "getV1Advert",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "9d9248fed13cb70e",
+   "fingerprint": "133aac825cc8604f",
    "method": "GET",
    "path": "/adv/v1/adverts",
    "hosts": [
@@ -3640,14 +3650,14 @@
     "Медиа"
    ],
    "summary": "Список медиакампаний",
-   "operationId": "",
+   "operationId": "getV1Adverts",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "d2c05c1875e3707a",
+   "fingerprint": "75587e7a90e3a345",
    "method": "GET",
    "path": "/adv/v1/balance",
    "hosts": [
@@ -3660,14 +3670,14 @@
     "Финансы"
    ],
    "summary": "Баланс",
-   "operationId": "",
+   "operationId": "getV1Balance",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "870b0ef32251bd45",
+   "fingerprint": "35d6f25e78c25dec",
    "method": "GET",
    "path": "/adv/v1/budget",
    "hosts": [
@@ -3680,14 +3690,14 @@
     "Финансы"
    ],
    "summary": "Бюджет кампании",
-   "operationId": "",
+   "operationId": "getV1Budget",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "33c08a10bb4cdc88",
+   "fingerprint": "1c4918df89049b9a",
    "method": "POST",
    "path": "/adv/v1/budget/deposit",
    "hosts": [
@@ -3700,14 +3710,14 @@
     "Финансы"
    ],
    "summary": "Пополнение бюджета кампании",
-   "operationId": "",
+   "operationId": "postV1BudgetDeposit",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "2c1cb5f4fb8d6553",
+   "fingerprint": "f16c29bb69cbafe2",
    "method": "GET",
    "path": "/adv/v1/count",
    "hosts": [
@@ -3719,14 +3729,14 @@
     "Медиа"
    ],
    "summary": "Количество медиакампаний",
-   "operationId": "",
+   "operationId": "getV1Count",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "40f394495a8641a9",
+   "fingerprint": "421e55b96c1f7f67",
    "method": "POST",
    "path": "/adv/v1/normquery/stats",
    "hosts": [
@@ -3738,14 +3748,14 @@
     "Статистика"
    ],
    "summary": "Статистика по поисковым кластерам с детализацией по дням",
-   "operationId": "",
+   "operationId": "postV1NormqueryStats",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "19893ceda2412d43",
+   "fingerprint": "d703765d345310f2",
    "method": "GET",
    "path": "/adv/v1/payments",
    "hosts": [
@@ -3758,14 +3768,14 @@
     "Финансы"
    ],
    "summary": "Получение истории пополнений счёта",
-   "operationId": "",
+   "operationId": "getV1Payments",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "edbb0929bc1c92dd",
+   "fingerprint": "d21cc9c2e1c93851",
    "method": "GET",
    "path": "/adv/v1/promotion/count",
    "hosts": [
@@ -3778,14 +3788,14 @@
     "Кампании"
    ],
    "summary": "Списки кампаний",
-   "operationId": "",
+   "operationId": "getV1PromotionCount",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "e78d1cc238577ea2",
+   "fingerprint": "ffd287fccc66d081",
    "method": "POST",
    "path": "/adv/v1/stats",
    "hosts": [
@@ -3797,14 +3807,14 @@
     "Статистика"
    ],
    "summary": "Статистика медиакампаний",
-   "operationId": "",
+   "operationId": "postV1Stats",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "92bd330926cff090",
+   "fingerprint": "78f28488fcf738da",
    "method": "GET",
    "path": "/adv/v1/supplier/subjects",
    "hosts": [
@@ -3817,14 +3827,14 @@
     "Создание кампаний"
    ],
    "summary": "Предметы для кампаний",
-   "operationId": "",
+   "operationId": "getV1SupplierSubjects",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "5e762ec8d971570b",
+   "fingerprint": "b86e9037d8b2d96c",
    "method": "GET",
    "path": "/adv/v1/upd",
    "hosts": [
@@ -3837,14 +3847,14 @@
     "Финансы"
    ],
    "summary": "Получение истории затрат",
-   "operationId": "",
+   "operationId": "getV1Upd",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "46a854a49d1ae93a",
+   "fingerprint": "51cd19df46f43d51",
    "method": "POST",
    "path": "/adv/v2/seacat/save-ad",
    "hosts": [
@@ -3857,14 +3867,14 @@
     "Создание кампаний"
    ],
    "summary": "Создать кампанию",
-   "operationId": "",
+   "operationId": "postV2SeacatSaveAd",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "b4a7b1d08f4d170c",
+   "fingerprint": "e649a4a9222614e7",
    "method": "POST",
    "path": "/adv/v2/supplier/nms",
    "hosts": [
@@ -3877,14 +3887,14 @@
     "Создание кампаний"
    ],
    "summary": "Карточки товаров для кампаний",
-   "operationId": "",
+   "operationId": "postV2SupplierNms",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "df799b3b953c84d3",
+   "fingerprint": "5e506d2998dd9531",
    "method": "GET",
    "path": "/adv/v3/fullstats",
    "hosts": [
@@ -3896,14 +3906,14 @@
     "Статистика"
    ],
    "summary": "Статистика кампаний",
-   "operationId": "",
+   "operationId": "getV3Fullstats",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "55031b60f620c0d0",
+   "fingerprint": "bd7e24f0a297c301",
    "method": "GET",
    "path": "/api/advert/v0/bids/recommendations",
    "hosts": [
@@ -3915,14 +3925,14 @@
     "Управление кампаниями"
    ],
    "summary": "Рекомендуемые ставки для карточек товаров и поисковых кластеров",
-   "operationId": "",
+   "operationId": "getV0BidsRecommendations",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "6534e44310926575",
+   "fingerprint": "9f32f8129287420c",
    "method": "PATCH",
    "path": "/api/advert/v1/bids",
    "hosts": [
@@ -3934,14 +3944,14 @@
     "Управление кампаниями"
    ],
    "summary": "Изменение ставок в кампаниях",
-   "operationId": "",
+   "operationId": "patchV1Bids",
    "category": "advert",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "6b656bfc4ef82897",
+   "fingerprint": "4a1353e5b1de3d28",
    "method": "POST",
    "path": "/api/advert/v1/bids/min",
    "hosts": [
@@ -3953,14 +3963,14 @@
     "Создание кампаний"
    ],
    "summary": "Минимальные ставки для карточек товаров",
-   "operationId": "",
+   "operationId": "postV1BidsMin",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "0fbe7036e396c919",
+   "fingerprint": "c53c1fd278ed5ecd",
    "method": "GET",
    "path": "/api/advert/v1/config",
    "hosts": [
@@ -4004,7 +4014,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f718b24b79ae0a59",
+   "fingerprint": "66f96fd449ae5663",
    "method": "GET",
    "path": "/api/advert/v2/adverts",
    "hosts": [
@@ -4016,14 +4026,14 @@
     "Кампании"
    ],
    "summary": "Информация о кампаниях",
-   "operationId": "",
+   "operationId": "getV2Adverts",
    "category": "advert",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "ed6420ddc865a76d",
+   "fingerprint": "25a85c04d20985e4",
    "method": "GET",
    "path": "/api/v1/calendar/promotions",
    "hosts": [
@@ -4035,14 +4045,14 @@
     "Календарь акций"
    ],
    "summary": "Список акций",
-   "operationId": "",
+   "operationId": "getV1CalendarPromotions",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "45f1aadf7a2349d4",
+   "fingerprint": "496f2b5e3098f7ca",
    "method": "GET",
    "path": "/api/v1/calendar/promotions/details",
    "hosts": [
@@ -4054,14 +4064,14 @@
     "Календарь акций"
    ],
    "summary": "Детальная информация об акциях",
-   "operationId": "",
+   "operationId": "getV1CalendarPromotionsDetails",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "acb9b74feb1f73a1",
+   "fingerprint": "8a8140a15490f1ef",
    "method": "GET",
    "path": "/api/v1/calendar/promotions/nomenclatures",
    "hosts": [
@@ -4073,14 +4083,14 @@
     "Календарь акций"
    ],
    "summary": "Список товаров для участия в акции",
-   "operationId": "",
+   "operationId": "getV1CalendarPromotionsNomenclatures",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "de40d6afbdf8cea3",
+   "fingerprint": "3b436933ef030578",
    "method": "POST",
    "path": "/api/v1/calendar/promotions/upload",
    "hosts": [
@@ -4092,7 +4102,7 @@
     "Календарь акций"
    ],
    "summary": "Добавить товар в акцию",
-   "operationId": "",
+   "operationId": "postV1CalendarPromotionsUpload",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": false,
@@ -4683,28 +4693,6 @@
    "deprecated": false
   },
   {
-   "fingerprint": "814368270444defd",
-   "method": "POST",
-   "path": "/api/analytics/v1/item-rating",
-   "hosts": [
-    "seller-analytics-api.wildberries.ru"
-   ],
-   "file": "11-analytics.yaml",
-   "section": "Аналитика и данные",
-   "tags": [
-    "Оценка товара"
-   ],
-   "summary": "Получить отчёт",
-   "operationId": "postV1ItemRating",
-   "category": "contentanalytics",
-   "tokens": [
-    "personal",
-    "service"
-   ],
-   "readonly": true,
-   "deprecated": true
-  },
-  {
    "fingerprint": "630a43284072db41",
    "method": "POST",
    "path": "/api/analytics/v1/order-feed",
@@ -5223,25 +5211,6 @@
    "tokens": [],
    "readonly": true,
    "deprecated": false
-  },
-  {
-   "fingerprint": "4581f0a91653ffcd",
-   "method": "GET",
-   "path": "/api/v1/analytics/banned-products/shadowed",
-   "hosts": [
-    "seller-analytics-api.wildberries.ru"
-   ],
-   "file": "12-reports.yaml",
-   "section": "Отчёты",
-   "tags": [
-    "Заблокированные карточки"
-   ],
-   "summary": "Скрытые из каталога",
-   "operationId": "getV1AnalyticsBannedProductsShadowed",
-   "category": "contentanalytics",
-   "tokens": [],
-   "readonly": true,
-   "deprecated": true
   },
   {
    "fingerprint": "a7cef304c7ef1976",

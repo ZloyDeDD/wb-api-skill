@@ -1,15 +1,15 @@
 {
- "updated_at": "2026-08-12T12:05:36+00:00",
- "snapshot_date": "2026-08-12",
+ "updated_at": "2026-08-16T10:00:46+00:00",
+ "snapshot_date": "2026-08-16",
  "source": "dev.wildberries.ru",
- "endpoint_count": 288,
- "previous_endpoint_count": 0,
+ "endpoint_count": 286,
+ "previous_endpoint_count": 288,
  "file_count": 13,
  "changes": {
-  "added": 288,
-  "removed": 0,
-  "changed": 0,
-  "new_sections": 13,
+  "added": 0,
+  "removed": 2,
+  "changed": 45,
+  "new_sections": 0,
   "gone_sections": 0
  },
  "renamed_sections": [],
@@ -19,12 +19,12 @@
    "bytes": 76913
   },
   "02-items.yaml": {
-   "sha256": "4f4ca2064a6c440764d5d5ecdaab7c25846797b8bdcbc0c9df98c010b7ad6994",
-   "bytes": 381104
+   "sha256": "85a834fd61b4a6bfb3b5886d530ef13b5b697e7ff98a5b2ca531fcc274f1b01a",
+   "bytes": 384104
   },
   "03-orders-fbs.yaml": {
-   "sha256": "c9cfc32948733a40259c8de00901433576511d0e8986006217ba7c69e09c6bd3",
-   "bytes": 237518
+   "sha256": "968a1c607b0ede0494036c0e0a772f5d17a225499f27f058c02abf04cf01d10c",
+   "bytes": 239093
   },
   "04-orders-dbw.yaml": {
    "sha256": "968bd0823e1df86a5aef65609fe47a46dd0a06c2ff0c0976d6f24d92c07e47f9",
@@ -43,8 +43,8 @@
    "bytes": 51163
   },
   "08-promotion.yaml": {
-   "sha256": "1900ba26cf89b9a8d2cda55dc2ee2707d5d0bb5d6c170e5b35523b08bff33426",
-   "bytes": 267760
+   "sha256": "42979157e03b2675017f1651d32365cdd12658a8584d5f83f26b908404b4cdb7",
+   "bytes": 269185
   },
   "09-communications.yaml": {
    "sha256": "d6050a8fba2f9f31b250952168d805ba2f5b52df1e4f69c54194367639bcde4f",
@@ -55,12 +55,12 @@
    "bytes": 44643
   },
   "11-analytics.yaml": {
-   "sha256": "5cd95dd4d0e6328575d03d5b0734081a2754959753a0ab99a50caa069d80a3c3",
-   "bytes": 294473
+   "sha256": "323acf20d02124278b1a588ce5c76eda7e065bf48450f0eb9fffb49b6bcd3eba",
+   "bytes": 283898
   },
   "12-reports.yaml": {
-   "sha256": "d36d1be3445139742895879a2241a1d92cb5eb058a311970ae213755df37ac7d",
-   "bytes": 156003
+   "sha256": "91d00f495ea3438b3c6315e6bf0b1be1e6f4ccec74c30e24d83f23e701bdcd7b",
+   "bytes": 150908
   },
   "13-finances.yaml": {
    "sha256": "23ac5b9baa63050c9238c6b226e3a0644c262f410be4395e7dd9671258429c68",
