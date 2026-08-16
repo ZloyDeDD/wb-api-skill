@@ -141,14 +141,17 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  {line}")
 
     if tag:
-        message = f"sync specs {date}: {describe_changes(changes)}"
+        prev_count = meta.get("previous_endpoint_count")
+        count = meta.get("endpoint_count")
+        changed = changes.get("changed", 0)
+        message = f"Снимок WB API обновлён: {prev_count} → {count} эндпоинтов, {changed} изменено"
         print(f"\nТег: {tag}")
         print("\nЗаметки к релизу:\n")
         print(release_notes.render(tag, meta, release_notes.extract_section(
             release_notes.CHANGELOG_PATH.read_text(encoding="utf-8")
         )))
     else:
-        message = f"sync specs {date}: без изменений API"
+        message = f"Снимок WB API обновлён на {date}, изменений в API нет"
         print("\nТега не будет: у WB ничего не поменялось, релиз не нужен.")
 
     if args.dry_run:
