@@ -1,5 +1,24 @@
 # Изменения Wildberries API
 
+## 2026-08-18
+
+Источник: dev.wildberries.ru. Эндпоинтов: 286 → 286.
+
+### Изменены (13)
+- `GET /api/tariffs/v1/acceptance/coefficients` — Тарифы на поставку (10-rates.yaml)
+- `GET /api/v1/analytics/brand-share/brands` — Бренды продавца (12-reports.yaml)
+- `GET /api/v1/paid_storage/tasks/{task_id}/download` — Получить отчёт (12-reports.yaml)
+- `GET /api/v1/supplier/orders` — Заказы (12-reports.yaml)
+- `GET /api/v1/supplier/sales` — Продажи (12-reports.yaml)
+- `GET /api/v1/transit-tariffs` — Транзитные направления (07-orders-fbw.yaml)
+- `GET /api/v1/warehouse_remains/tasks/{task_id}/download` — Получить отчёт (12-reports.yaml)
+- `GET /api/v1/warehouses` — Список складов (07-orders-fbw.yaml)
+- `GET /api/v2/nm-report/downloads/file/{downloadId}` — Получить отчёт (11-analytics.yaml)
+- `POST /api/v1/acceptance/options` — Опции приёмки (07-orders-fbw.yaml)
+- `POST /api/v3/orders/stickers` — Получить стикеры сборочных заданий (03-orders-fbs.yaml)
+- `POST /content/v2/cards/upload/add` — Создание карточек товаров с присоединением (02-items.yaml)
+- `POST /content/v2/get/cards/list` — Список карточек товаров (02-items.yaml)
+
 ## 2026-08-16
 
 Источник: dev.wildberries.ru. Эндпоинтов: 288 → 286.

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-16T10:00:46+00:00",
+ "generated_at": "2026-08-18T08:28:57+00:00",
  "files": [
   {
    "file": "01-general.yaml",
@@ -949,7 +949,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "23eef7bf85705bf9",
+   "fingerprint": "1d67f2b8c87866ff",
    "method": "POST",
    "path": "/content/v2/cards/upload/add",
    "hosts": [
@@ -1089,7 +1089,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b3a03866f5c2239b",
+   "fingerprint": "d056dfcf292ab5c3",
    "method": "POST",
    "path": "/content/v2/get/cards/list",
    "hosts": [
@@ -1633,7 +1633,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "bcfca60ac51a6554",
+   "fingerprint": "02da03e2b88d8e81",
    "method": "POST",
    "path": "/api/v3/orders/stickers",
    "hosts": [
@@ -3213,7 +3213,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "409af69044d902f2",
+   "fingerprint": "0369f3a2234a93ec",
    "method": "POST",
    "path": "/api/v1/acceptance/options",
    "hosts": [
@@ -3309,7 +3309,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "28c7c09ef31dd4e5",
+   "fingerprint": "141230167739e4fe",
    "method": "GET",
    "path": "/api/v1/transit-tariffs",
    "hosts": [
@@ -3328,7 +3328,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d2d00ca795381927",
+   "fingerprint": "ebeb946bad72e129",
    "method": "GET",
    "path": "/api/v1/warehouses",
    "hosts": [
@@ -4598,7 +4598,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "808bdf7eb6ac015f",
+   "fingerprint": "e2ab5f92608b2442",
    "method": "GET",
    "path": "/api/tariffs/v1/acceptance/coefficients",
    "hosts": [
@@ -4852,7 +4852,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2b3580b373340d7e",
+   "fingerprint": "b0742ceaeb3104cc",
    "method": "GET",
    "path": "/api/v2/nm-report/downloads/file/{downloadId}",
    "hosts": [
@@ -5232,7 +5232,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b190bd917009a2b4",
+   "fingerprint": "2f5984351e8a6402",
    "method": "GET",
    "path": "/api/v1/analytics/brand-share/brands",
    "hosts": [
@@ -5365,7 +5365,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a8c6951b994131df",
+   "fingerprint": "ff5845408e6a7ae8",
    "method": "GET",
    "path": "/api/v1/paid_storage/tasks/{task_id}/download",
    "hosts": [
@@ -5403,7 +5403,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8c65ccc642c3f52e",
+   "fingerprint": "359a69d9a2036a23",
    "method": "GET",
    "path": "/api/v1/supplier/orders",
    "hosts": [
@@ -5423,7 +5423,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "84859d5a76f51046",
+   "fingerprint": "8b8de8511c5eee89",
    "method": "GET",
    "path": "/api/v1/supplier/sales",
    "hosts": [
@@ -5462,7 +5462,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "df03391a9da1d339",
+   "fingerprint": "b5cb5cf8deb434f1",
    "method": "GET",
    "path": "/api/v1/warehouse_remains/tasks/{task_id}/download",
    "hosts": [
