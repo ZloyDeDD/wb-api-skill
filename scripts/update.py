@@ -33,6 +33,7 @@ from wb import INDEX_PATH, META_PATH, ROOT, SWAGGER_DIR, build_index, configure_
 
 CONFIG_PATH = ROOT / "sources.yaml"
 CHANGELOG_PATH = ROOT / "CHANGELOG.md"
+MAX_FIELD_DIFF_LINES = 20
 
 # Имя файла спецификации написано в HTML страницы раздела.
 XFN_PATTERN = re.compile(r'x-file-name\\?"?:\s*\\?"?([a-z0-9-]+)', re.IGNORECASE)
@@ -155,7 +156,25 @@ def validate_payloads(payloads: dict[str, str], previous_count: int, max_drop_pc
 # --------------------------------------------------------------------------
 
 
-def diff_indexes(old: dict[str, Any], new: dict[str, Any]) -> dict[str, list[str]]:
+def diff_operation_fields(old: dict[str, str], new: dict[str, str]) -> list[str]:
+    """Построчный дифф двух operation_fields: что добавилось/пропало/изменилось."""
+    lines: list[str] = []
+    for key in sorted(new.keys() - old.keys()):
+        lines.append(f"+ {key}: {new[key]}")
+    for key in sorted(old.keys() - new.keys()):
+        lines.append(f"- {key}: {old[key]}")
+    for key in sorted(old.keys() & new.keys()):
+        if old[key] != new[key]:
+            lines.append(f"~ {key}: {old[key]} → {new[key]}")
+    return lines
+
+
+def diff_indexes(
+    old: dict[str, Any],
+    new: dict[str, Any],
+    old_ops: dict[tuple[str, str], tuple[dict[str, Any], dict[str, Any], dict[str, Any]]] | None = None,
+    new_ops: dict[tuple[str, str], tuple[dict[str, Any], dict[str, Any], dict[str, Any]]] | None = None,
+) -> dict[str, list[str]]:
     def key(record: dict[str, Any]) -> tuple[str, str]:
         return record["method"], record["path"]
 
@@ -165,10 +184,25 @@ def diff_indexes(old: dict[str, Any], new: dict[str, Any]) -> dict[str, list[str
     def describe(record: dict[str, Any]) -> str:
         return f"`{record['method']} {record['path']}` — {record.get('summary') or '—'} ({record['file']})"
 
+    def describe_change(k: tuple[str, str]) -> str:
+        line = describe(new_map[k])
+        if not old_ops or not new_ops or k not in old_ops or k not in new_ops:
+            return line
+        field_diff = diff_operation_fields(
+            wb.operation_fields(*old_ops[k]),
+            wb.operation_fields(*new_ops[k]),
+        )
+        if not field_diff:
+            return line
+        shown = field_diff[:MAX_FIELD_DIFF_LINES]
+        if len(field_diff) > MAX_FIELD_DIFF_LINES:
+            shown = shown + [f"…ещё {len(field_diff) - MAX_FIELD_DIFF_LINES}"]
+        return line + "\n" + "\n".join(f"  - {item}" for item in shown)
+
     added = [describe(new_map[k]) for k in sorted(new_map.keys() - old_map.keys())]
     removed = [describe(old_map[k]) for k in sorted(old_map.keys() - new_map.keys())]
     changed = [
-        describe(new_map[k])
+        describe_change(k)
         for k in sorted(old_map.keys() & new_map.keys())
         if old_map[k].get("fingerprint") != new_map[k].get("fingerprint")
     ]
@@ -299,7 +333,9 @@ def main(argv: list[str] | None = None) -> int:
             (staging / name).write_text(text, encoding="utf-8", newline="\n")
         new_index = build_index(staging)
 
-        diff = diff_indexes(old_index, new_index)
+        old_ops = wb.load_operations(SWAGGER_DIR) if SWAGGER_DIR.exists() else {}
+        new_ops = wb.load_operations(staging)
+        diff = diff_indexes(old_index, new_index, old_ops, new_ops)
         new_count = len(new_index["endpoints"])
         changes = sum(len(items) for items in diff.values())
 

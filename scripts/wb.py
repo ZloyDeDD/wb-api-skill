@@ -285,6 +285,130 @@ def render_schema(
     return lines
 
 
+def flatten_schema(
+    spec: dict[str, Any],
+    schema: Any,
+    prefix: str = "",
+    depth: int = 0,
+    required: set[str] | None = None,
+) -> dict[str, str]:
+    """Разворачивает схему в словарь путь.к.полю -> описание — для сравнения версий.
+
+    В отличие от render_schema хранит полный путь, а не отступ, иначе
+    одноимённые поля на разной глубине вложенности перепутались бы при диффе.
+    """
+    result: dict[str, str] = {}
+    schema = deref(spec, schema)
+    if not isinstance(schema, dict) or depth > MAX_SCHEMA_DEPTH:
+        return result
+
+    label = _type_label(schema)
+
+    if prefix:
+        leaf = prefix.rsplit(".", 1)[-1].rstrip("[]")
+        flag = "обяз." if required and leaf in required else "необяз."
+        note = _short(schema.get("description"))
+        enum = schema.get("enum")
+        extra = f"; enum: {', '.join(map(str, enum[:8]))}" if enum else ""
+        result[prefix] = f"{label}, {flag}" + (f" — {note}" if note else "") + extra
+
+    if label == "array":
+        items = deref(spec, schema.get("items"))
+        if isinstance(items, dict) and (items.get("properties") or items.get("items")):
+            child_prefix = f"{prefix}[]" if prefix else "[]"
+            result.update(flatten_schema(spec, items, child_prefix, depth + 1))
+        return result
+
+    for combinator in ("oneOf", "anyOf", "allOf"):
+        for variant in schema.get(combinator) or []:
+            result.update(flatten_schema(spec, variant, prefix, depth + 1, required))
+
+    properties = schema.get("properties")
+    if isinstance(properties, dict):
+        req = set(schema.get("required") or [])
+        for prop_name, prop_schema in properties.items():
+            child_prefix = f"{prefix}.{prop_name}" if prefix else prop_name
+            result.update(flatten_schema(spec, prop_schema, child_prefix, depth + 1, req))
+
+    return result
+
+
+def operation_fields(spec: dict[str, Any], path_item: dict[str, Any], operation: dict[str, Any]) -> dict[str, str]:
+    """Плоский словарь значимых полей операции — ключ -> отображаемое значение.
+
+    Используется для сравнения версий одного эндпоинта между снимками.
+    """
+    fields: dict[str, str] = {}
+
+    if operation.get("summary"):
+        fields["summary"] = operation["summary"].strip()
+    if operation.get("description"):
+        fields["description"] = _short(operation["description"])
+    fields["deprecated"] = "да" if operation.get("deprecated") else "нет"
+    tags = ", ".join(operation.get("tags") or [])
+    if tags:
+        fields["tags"] = tags
+    if operation.get("operationId"):
+        fields["operationId"] = operation["operationId"]
+
+    security = operation.get("security") or spec.get("security") or []
+    names = sorted({name for rule in security for name in rule})
+    if names:
+        fields["security"] = ", ".join(names)
+
+    if operation.get("x-category"):
+        fields["x-category"] = operation["x-category"]
+    tokens = operation.get("x-token-types")
+    if tokens:
+        fields["x-token-types"] = ", ".join(tokens) if isinstance(tokens, list) else str(tokens)
+
+    parameters = list(path_item.get("parameters") or []) + list(operation.get("parameters") or [])
+    for raw in parameters:
+        param = deref(spec, raw)
+        schema = deref(spec, param.get("schema") or {})
+        name = param.get("name", "?")
+        loc = param.get("in", "?")
+        req = "обяз." if param.get("required") else "необяз."
+        note = _short(param.get("description"))
+        fields[f"параметр {loc}.{name}"] = f"{_type_label(schema)}, {req}" + (f" — {note}" if note else "")
+
+    body = deref(spec, operation.get("requestBody") or {})
+    for media, media_obj in (body.get("content") or {}).items():
+        schema = (media_obj or {}).get("schema")
+        for path, value in flatten_schema(spec, schema).items():
+            fields[f"тело {media}.{path}"] = value
+
+    responses = operation.get("responses") or {}
+    for code, raw in responses.items():
+        response = deref(spec, raw)
+        fields[f"ответ {code}"] = _short(response.get("description")) or "—"
+        for media, media_obj in (response.get("content") or {}).items():
+            schema = (media_obj or {}).get("schema")
+            for path, value in flatten_schema(spec, schema).items():
+                fields[f"ответ {code} {media}.{path}"] = value
+
+    return fields
+
+
+def load_operations(swagger_dir: Path) -> dict[tuple[str, str], tuple[dict[str, Any], dict[str, Any], dict[str, Any]]]:
+    """method+path -> (spec, path_item, operation) по всем файлам директории.
+
+    В отличие от _find_operation грузит сразу всё — нужно для сравнения
+    старого и нового снимка целиком, а не поиска одного эндпоинта.
+    """
+    result: dict[tuple[str, str], tuple[dict[str, Any], dict[str, Any], dict[str, Any]]] = {}
+    for path in spec_files(swagger_dir):
+        spec = load_spec(path)
+        for endpoint_path, item in (spec.get("paths") or {}).items():
+            if not isinstance(item, dict):
+                continue
+            for method in METHODS:
+                operation = item.get(method)
+                if isinstance(operation, dict):
+                    result[(method.upper(), endpoint_path)] = (spec, item, operation)
+    return result
+
+
 # --------------------------------------------------------------------------
 # Команды
 # --------------------------------------------------------------------------

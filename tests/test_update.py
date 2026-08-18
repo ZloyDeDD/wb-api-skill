@@ -179,6 +179,16 @@ def test_accepts_good_payload() -> None:
 # --------------------------------------------------------------------------
 
 
+def _ops_map(spec: dict) -> dict[tuple[str, str], tuple[dict, dict, dict]]:
+    result: dict[tuple[str, str], tuple[dict, dict, dict]] = {}
+    for path, item in (spec.get("paths") or {}).items():
+        for method in wb.METHODS:
+            operation = item.get(method)
+            if isinstance(operation, dict):
+                result[(method.upper(), path)] = (spec, item, operation)
+    return result
+
+
 def test_diff_detects_changes() -> None:
     spec = yaml.safe_load(SPEC)
     old_index = {
@@ -194,6 +204,13 @@ def test_diff_detects_changes() -> None:
     check("диф видит удалённый эндпоинт", len(diff["Удалены эндпоинты"]) == 1, f"-> {diff}")
     check("диф видит изменённый эндпоинт", len(diff["Изменены"]) == 1, f"-> {diff}")
     check("диф не выдумывает добавленных", not diff["Добавлены эндпоинты"], f"-> {diff}")
+
+    detailed = update.diff_indexes(old_index, new_index, _ops_map(spec), _ops_map(changed))
+    check(
+        "диф с operation_fields показывает было -> стало",
+        "~ summary: Новости → Новости портала" in detailed["Изменены"][0],
+        f"-> {detailed['Изменены']}",
+    )
 
 
 def test_path_arg_survives_git_bash() -> None:
