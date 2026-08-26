@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-18T08:28:57+00:00",
+ "generated_at": "2026-08-26T13:09:37+00:00",
  "files": [
   {
    "file": "01-general.yaml",
@@ -65,7 +65,7 @@
    "file": "11-analytics.yaml",
    "title": "Аналитика и данные",
    "version": "analytics",
-   "endpoints": 19
+   "endpoints": 20
   },
   {
    "file": "12-reports.yaml",
@@ -349,7 +349,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "55779a67a6fd1765",
+   "fingerprint": "129fcb98211a5b15",
    "method": "POST",
    "path": "/api/discounts-prices/v1/upload/task/b2b/wholesale",
    "hosts": [
@@ -371,7 +371,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1aa02db53d3a620e",
+   "fingerprint": "0e6ad0d2834dbcc3",
    "method": "GET",
    "path": "/api/v2/buffer/goods/task",
    "hosts": [
@@ -391,7 +391,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c79c641bb1db1265",
+   "fingerprint": "efb9f55628b2d5f1",
    "method": "GET",
    "path": "/api/v2/buffer/tasks",
    "hosts": [
@@ -411,7 +411,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "aa903cdb4b4f5510",
+   "fingerprint": "24d91aba9eaa9c0c",
    "method": "GET",
    "path": "/api/v2/history/goods/task",
    "hosts": [
@@ -431,7 +431,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ec1b863565f182c7",
+   "fingerprint": "dfe1e6fe47bf100c",
    "method": "GET",
    "path": "/api/v2/history/tasks",
    "hosts": [
@@ -451,7 +451,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "72bdff129dcfe319",
+   "fingerprint": "8b7547f0ae22a8fc",
    "method": "GET",
    "path": "/api/v2/list/goods/filter",
    "hosts": [
@@ -471,7 +471,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "43c1c4325b63893f",
+   "fingerprint": "c338dd38132ac461",
    "method": "POST",
    "path": "/api/v2/list/goods/filter",
    "hosts": [
@@ -491,7 +491,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "65a811f2fee1d2cf",
+   "fingerprint": "3c5ebed223381d0c",
    "method": "GET",
    "path": "/api/v2/list/goods/size/nm",
    "hosts": [
@@ -511,7 +511,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "713dd52489e22088",
+   "fingerprint": "da0ca03cfc926488",
    "method": "GET",
    "path": "/api/v2/quarantine/goods",
    "hosts": [
@@ -531,7 +531,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8b5d84dac833d061",
+   "fingerprint": "ad10c5163759dbc1",
    "method": "POST",
    "path": "/api/v2/upload/task",
    "hosts": [
@@ -551,7 +551,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d52556990c201688",
+   "fingerprint": "d67750e4c4016c0c",
    "method": "POST",
    "path": "/api/v2/upload/task/club-discount",
    "hosts": [
@@ -571,7 +571,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2aebf6c5eab52f7c",
+   "fingerprint": "b04b93b9b78c3fa7",
    "method": "POST",
    "path": "/api/v2/upload/task/size",
    "hosts": [
@@ -629,7 +629,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c70e560fc691d033",
+   "fingerprint": "d941432ef998c7c1",
    "method": "GET",
    "path": "/api/v3/offices",
    "hosts": [
@@ -669,7 +669,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "dad6aa66d9278345",
+   "fingerprint": "9ac73a1d3ece1e02",
    "method": "POST",
    "path": "/api/v3/stocks/{warehouseId}",
    "hosts": [
@@ -689,7 +689,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7a104fe9e572e4b5",
+   "fingerprint": "fcbde300a3d6d224",
    "method": "PUT",
    "path": "/api/v3/stocks/{warehouseId}",
    "hosts": [
@@ -709,7 +709,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "70ce5907a55f6c52",
+   "fingerprint": "257edc50f70a7a84",
    "method": "GET",
    "path": "/api/v3/warehouses",
    "hosts": [
@@ -729,7 +729,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e321f18b5d0d648e",
+   "fingerprint": "e7d5bb4ae9d8b341",
    "method": "POST",
    "path": "/api/v3/warehouses",
    "hosts": [
@@ -749,7 +749,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "55b9c915a9378086",
+   "fingerprint": "0408a2094444d05f",
    "method": "DELETE",
    "path": "/api/v3/warehouses/{warehouseId}",
    "hosts": [
@@ -769,7 +769,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ebc4cd7cf7add585",
+   "fingerprint": "b8e69b45e5ddaff8",
    "method": "PUT",
    "path": "/api/v3/warehouses/{warehouseId}",
    "hosts": [
@@ -789,7 +789,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9f1a2429874cfe13",
+   "fingerprint": "51a3cd546eed3b5b",
    "method": "POST",
    "path": "/content/v2/barcodes",
    "hosts": [
@@ -829,7 +829,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "411d87dd887c091f",
+   "fingerprint": "47f2f690f8fc2868",
    "method": "POST",
    "path": "/content/v2/cards/error/list",
    "hosts": [
@@ -849,7 +849,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5e64665b81c0436e",
+   "fingerprint": "04ff98af8a6d50fd",
    "method": "GET",
    "path": "/content/v2/cards/limits",
    "hosts": [
@@ -869,7 +869,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "65bfd235b6abfd65",
+   "fingerprint": "b216e69d739da3c6",
    "method": "POST",
    "path": "/content/v2/cards/moveNm",
    "hosts": [
@@ -969,7 +969,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "657ac90a5f1b88e7",
+   "fingerprint": "cee0c08ce5da53ff",
    "method": "GET",
    "path": "/content/v2/directory/colors",
    "hosts": [
@@ -989,7 +989,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f281d830c3f87b4d",
+   "fingerprint": "aab680c30ac00ffd",
    "method": "GET",
    "path": "/content/v2/directory/countries",
    "hosts": [
@@ -1009,7 +1009,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "41367cac69b194b6",
+   "fingerprint": "419f42f634d44943",
    "method": "GET",
    "path": "/content/v2/directory/kinds",
    "hosts": [
@@ -1029,7 +1029,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c7edfeb764e3d1dd",
+   "fingerprint": "8f589d775dcc3339",
    "method": "GET",
    "path": "/content/v2/directory/seasons",
    "hosts": [
@@ -1049,7 +1049,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a363cc44b76914c8",
+   "fingerprint": "fa591b9397427636",
    "method": "GET",
    "path": "/content/v2/directory/tnved",
    "hosts": [
@@ -1069,7 +1069,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4c85bb8f408c2cf9",
+   "fingerprint": "643726340f6aa825",
    "method": "GET",
    "path": "/content/v2/directory/vat",
    "hosts": [
@@ -1109,7 +1109,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e29f0cc48d5a6f7c",
+   "fingerprint": "39cfe68587e2c95f",
    "method": "POST",
    "path": "/content/v2/get/cards/trash",
    "hosts": [
@@ -1129,7 +1129,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "42d8c96042c6fa78",
+   "fingerprint": "6f4f6bc29033625b",
    "method": "GET",
    "path": "/content/v2/object/all",
    "hosts": [
@@ -1149,7 +1149,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3dfb4b2a8adbd02c",
+   "fingerprint": "ef96eec8495605fc",
    "method": "GET",
    "path": "/content/v2/object/charcs/{subjectId}",
    "hosts": [
@@ -1169,7 +1169,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2e69cb290a6e2aba",
+   "fingerprint": "7caae1ddd5f53531",
    "method": "GET",
    "path": "/content/v2/object/parent/all",
    "hosts": [
@@ -1189,7 +1189,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a5ce78827a08ace0",
+   "fingerprint": "ba4ab6955c36f9a4",
    "method": "POST",
    "path": "/content/v2/tag",
    "hosts": [
@@ -1209,7 +1209,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "aa9894fd355c0468",
+   "fingerprint": "81df68cd4fac2012",
    "method": "POST",
    "path": "/content/v2/tag/nomenclature/link",
    "hosts": [
@@ -1229,7 +1229,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8e65ba3e69818e67",
+   "fingerprint": "7e727fae072809db",
    "method": "DELETE",
    "path": "/content/v2/tag/{id}",
    "hosts": [
@@ -1249,7 +1249,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ed990d0e2de24065",
+   "fingerprint": "3179097231d672df",
    "method": "PATCH",
    "path": "/content/v2/tag/{id}",
    "hosts": [
@@ -1269,7 +1269,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5449cffab4701f7e",
+   "fingerprint": "b7050206f3de9fbb",
    "method": "GET",
    "path": "/content/v2/tags",
    "hosts": [
@@ -1289,7 +1289,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ccf7bbfeae647bc0",
+   "fingerprint": "ed5bcec0d4f35cdc",
    "method": "POST",
    "path": "/content/v3/media/file",
    "hosts": [
@@ -1309,7 +1309,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e9238257225f4973",
+   "fingerprint": "307fdae42ddbcd53",
    "method": "POST",
    "path": "/content/v3/media/save",
    "hosts": [
@@ -1329,7 +1329,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8d7805074b4a78f4",
+   "fingerprint": "fdc5e5adcaf96106",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/orders/archive",
    "hosts": [
@@ -1348,7 +1348,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "6af1ace83e109ba7",
+   "fingerprint": "7df1919406ddd690",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns",
    "hosts": [
@@ -1369,7 +1369,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e700524bb9086c2c",
+   "fingerprint": "dcbffe98f0be83cc",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns",
    "hosts": [
@@ -1390,7 +1390,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ca2b7d7c5709d9f2",
+   "fingerprint": "e4ddc0528de3a9ce",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/items",
    "hosts": [
@@ -1411,7 +1411,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "90243fb0216e3fd1",
+   "fingerprint": "09fcc48fa8c20efc",
    "method": "POST",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/items",
    "hosts": [
@@ -1432,7 +1432,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5d07630db45d395b",
+   "fingerprint": "d420eb46070663fd",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/subcategories/restricted",
    "hosts": [
@@ -1453,7 +1453,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "169b03026f77d9e8",
+   "fingerprint": "3a5e88072028eca9",
    "method": "POST",
    "path": "/api/marketplace/v3/orders/meta",
    "hosts": [
@@ -1473,7 +1473,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "40d0fbb4a0f91200",
+   "fingerprint": "e177a78b14a3fd76",
    "method": "PUT",
    "path": "/api/marketplace/v3/orders/{orderId}/meta/customs-declaration",
    "hosts": [
@@ -1493,7 +1493,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d11d2d0c36c4f039",
+   "fingerprint": "1fdf1ad499a0f4dd",
    "method": "GET",
    "path": "/api/marketplace/v3/supplies/{supplyId}/order-ids",
    "hosts": [
@@ -1513,7 +1513,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "74fabd143012e409",
+   "fingerprint": "1565554c01384c0c",
    "method": "PATCH",
    "path": "/api/marketplace/v3/supplies/{supplyId}/orders",
    "hosts": [
@@ -1533,7 +1533,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "82f18a1c46dda81d",
+   "fingerprint": "a79a604f9a6286a9",
    "method": "GET",
    "path": "/api/v3/orders",
    "hosts": [
@@ -1553,7 +1553,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4d5d6db36f8988d1",
+   "fingerprint": "788d878690efa8bc",
    "method": "POST",
    "path": "/api/v3/orders/client",
    "hosts": [
@@ -1573,7 +1573,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e66deb1a5821ba45",
+   "fingerprint": "1ced7ce890a7d1e8",
    "method": "GET",
    "path": "/api/v3/orders/new",
    "hosts": [
@@ -1593,7 +1593,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "29892fb0e3fa6940",
+   "fingerprint": "e28a1da4fccbb0d6",
    "method": "POST",
    "path": "/api/v3/orders/status",
    "hosts": [
@@ -1613,7 +1613,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f2039874fae6d219",
+   "fingerprint": "72c2ac0fb9d25d57",
    "method": "POST",
    "path": "/api/v3/orders/status/history",
    "hosts": [
@@ -1633,7 +1633,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "02da03e2b88d8e81",
+   "fingerprint": "945e5eae08edf363",
    "method": "POST",
    "path": "/api/v3/orders/stickers",
    "hosts": [
@@ -1653,7 +1653,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c3cf5706b5726cf5",
+   "fingerprint": "8f609c224fa9ad21",
    "method": "POST",
    "path": "/api/v3/orders/stickers/cross-border",
    "hosts": [
@@ -1672,7 +1672,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "07bc5c034d68079f",
+   "fingerprint": "6ab1e215da1fdafa",
    "method": "PATCH",
    "path": "/api/v3/orders/{orderId}/cancel",
    "hosts": [
@@ -1692,7 +1692,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e70d79b98b0ddcba",
+   "fingerprint": "de73d8ff0056812c",
    "method": "DELETE",
    "path": "/api/v3/orders/{orderId}/meta",
    "hosts": [
@@ -1712,7 +1712,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1b026253b28a0437",
+   "fingerprint": "f1e0ecd9d62501d2",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/expiration",
    "hosts": [
@@ -1732,7 +1732,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f818d90e90391894",
+   "fingerprint": "49a09a66c456084d",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/gtin",
    "hosts": [
@@ -1752,7 +1752,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8258912e5ce0b8c3",
+   "fingerprint": "ba1d0eb9022a94b6",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/imei",
    "hosts": [
@@ -1772,7 +1772,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "101f090115fe3793",
+   "fingerprint": "600a9f8eb0fc617b",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/sgtin",
    "hosts": [
@@ -1792,7 +1792,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e75825ea250bdb0e",
+   "fingerprint": "4ba07625286db0c4",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/uin",
    "hosts": [
@@ -1812,7 +1812,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "98a7ea9f2e0fe066",
+   "fingerprint": "fd2ffbc29a6231e8",
    "method": "GET",
    "path": "/api/v3/passes",
    "hosts": [
@@ -1832,7 +1832,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "12eaa75a91f83e0e",
+   "fingerprint": "b658c51f8f915fc3",
    "method": "POST",
    "path": "/api/v3/passes",
    "hosts": [
@@ -1852,7 +1852,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "48f966795a776401",
+   "fingerprint": "31b2903f66c2e878",
    "method": "GET",
    "path": "/api/v3/passes/offices",
    "hosts": [
@@ -1872,7 +1872,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ac41cfff00b356ab",
+   "fingerprint": "9c8ef476ba92d433",
    "method": "DELETE",
    "path": "/api/v3/passes/{passId}",
    "hosts": [
@@ -1892,7 +1892,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ee416e5e754c2f18",
+   "fingerprint": "ab978a3a6ec513d0",
    "method": "PUT",
    "path": "/api/v3/passes/{passId}",
    "hosts": [
@@ -1912,7 +1912,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7c34d1efbe9b8a1a",
+   "fingerprint": "2ae0e8e80aa05bd1",
    "method": "GET",
    "path": "/api/v3/supplies",
    "hosts": [
@@ -1932,7 +1932,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "46817867114dd650",
+   "fingerprint": "5361b6505ff13d84",
    "method": "POST",
    "path": "/api/v3/supplies",
    "hosts": [
@@ -1952,7 +1952,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9f8db0a376fdc29e",
+   "fingerprint": "c89084ec1f731018",
    "method": "GET",
    "path": "/api/v3/supplies/orders/reshipment",
    "hosts": [
@@ -1972,7 +1972,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "527b6794e4cb2b88",
+   "fingerprint": "c4541e599d8ac8b7",
    "method": "DELETE",
    "path": "/api/v3/supplies/{supplyId}",
    "hosts": [
@@ -1992,7 +1992,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2628cf7daff69f19",
+   "fingerprint": "56bbcacdc098e2dd",
    "method": "GET",
    "path": "/api/v3/supplies/{supplyId}",
    "hosts": [
@@ -2012,7 +2012,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0359f5c0ddf770f3",
+   "fingerprint": "889c4de723e5a306",
    "method": "GET",
    "path": "/api/v3/supplies/{supplyId}/barcode",
    "hosts": [
@@ -2032,7 +2032,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3b861490518c90e4",
+   "fingerprint": "65bbf4669ef7dda1",
    "method": "PATCH",
    "path": "/api/v3/supplies/{supplyId}/deliver",
    "hosts": [
@@ -2052,7 +2052,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7d80e31b7e60d54f",
+   "fingerprint": "c7423e8db9a7df7f",
    "method": "DELETE",
    "path": "/api/v3/supplies/{supplyId}/trbx",
    "hosts": [
@@ -2072,7 +2072,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "987a36d8118da651",
+   "fingerprint": "d260b69dc339af84",
    "method": "GET",
    "path": "/api/v3/supplies/{supplyId}/trbx",
    "hosts": [
@@ -2092,7 +2092,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "94fb140b23b3737b",
+   "fingerprint": "cff29a85fce8fc2c",
    "method": "POST",
    "path": "/api/v3/supplies/{supplyId}/trbx",
    "hosts": [
@@ -2112,7 +2112,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1455ef8941748767",
+   "fingerprint": "5352c5593c98d8c6",
    "method": "POST",
    "path": "/api/v3/supplies/{supplyId}/trbx/stickers",
    "hosts": [
@@ -2436,7 +2436,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "48017d1459911173",
+   "fingerprint": "92ed67fb3014de4f",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/b2b/info",
    "hosts": [
@@ -2455,7 +2455,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c53fbd79997be3e1",
+   "fingerprint": "3c66eb9ce2dfe398",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/final-price",
    "hosts": [
@@ -2474,7 +2474,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ab1742528c7cd190",
+   "fingerprint": "9d525642ab8a5e87",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/customs-declaration",
    "hosts": [
@@ -2494,7 +2494,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "63c377a512441263",
+   "fingerprint": "5f2913149bf7b3ee",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/delete",
    "hosts": [
@@ -2514,7 +2514,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "dc788b241028fff3",
+   "fingerprint": "5fbebc5b0c07658a",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/details",
    "hosts": [
@@ -2533,7 +2533,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2051ebd22eff92c1",
+   "fingerprint": "483961d6942e5b3c",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/gtin",
    "hosts": [
@@ -2553,7 +2553,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "abe6190d60b7d494",
+   "fingerprint": "c7ebc456dc9e0492",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/imei",
    "hosts": [
@@ -2573,7 +2573,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "fffa5c89038cc1c1",
+   "fingerprint": "5e21d06da478290a",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/sgtin",
    "hosts": [
@@ -2593,7 +2593,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "77ef7675b61c1f8e",
+   "fingerprint": "5e18370324befb36",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/uin",
    "hosts": [
@@ -2613,7 +2613,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "bc705e95a0469b38",
+   "fingerprint": "39ac0fc38d7fed31",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/cancel",
    "hosts": [
@@ -2633,7 +2633,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "65696e115b8b7833",
+   "fingerprint": "4cf7228a09e6a76f",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/confirm",
    "hosts": [
@@ -2653,7 +2653,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3b7c2c88c0acb5e3",
+   "fingerprint": "6a446900e8fe1853",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/deliver",
    "hosts": [
@@ -2673,7 +2673,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7d3515b620b6fb29",
+   "fingerprint": "a02a2262e722e543",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/info",
    "hosts": [
@@ -2693,7 +2693,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "83bc6abfdeb57146",
+   "fingerprint": "4c5380dfa8497815",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/receive",
    "hosts": [
@@ -2713,7 +2713,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "927220754ad9ec25",
+   "fingerprint": "ff9325fe8c08922b",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/reject",
    "hosts": [
@@ -2733,7 +2733,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1f8d779866ca3bb0",
+   "fingerprint": "c475c6d21b07df70",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/stickers",
    "hosts": [
@@ -2756,7 +2756,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "969c7a38e938a57e",
+   "fingerprint": "d661e06890e6c456",
    "method": "POST",
    "path": "/api/v3/dbs/groups/info",
    "hosts": [
@@ -2776,7 +2776,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b241a1f06b266436",
+   "fingerprint": "947872bb768bc007",
    "method": "GET",
    "path": "/api/v3/dbs/orders",
    "hosts": [
@@ -2796,7 +2796,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "daa63ed09a0ab49b",
+   "fingerprint": "89a25d83d1367c5c",
    "method": "POST",
    "path": "/api/v3/dbs/orders/client",
    "hosts": [
@@ -2816,7 +2816,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "742a540dc41e7020",
+   "fingerprint": "681ad4bdcac72c38",
    "method": "POST",
    "path": "/api/v3/dbs/orders/delivery-date",
    "hosts": [
@@ -2836,7 +2836,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "51dfc5ec6ee9d9e6",
+   "fingerprint": "7327fc63c98ca890",
    "method": "GET",
    "path": "/api/v3/dbs/orders/new",
    "hosts": [
@@ -2856,7 +2856,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b4f6c1e2055001ee",
+   "fingerprint": "976b5e6eb30c7c0e",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/final-price",
    "hosts": [
@@ -2875,7 +2875,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ce27da52debc4c4b",
+   "fingerprint": "bd26273e14533985",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/customs-declaration",
    "hosts": [
@@ -2894,7 +2894,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b34fa67e5bbd1098",
+   "fingerprint": "11ec3008ef6e90b7",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/delete",
    "hosts": [
@@ -2914,7 +2914,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "6ea104ea7ea0a880",
+   "fingerprint": "e719b2eac9046a43",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/details",
    "hosts": [
@@ -2933,7 +2933,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b95f1143be538e7c",
+   "fingerprint": "5cedefe4254da6a4",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/gtin",
    "hosts": [
@@ -2953,7 +2953,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "466ca2b133744658",
+   "fingerprint": "ec7a7bf64ee7dca3",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/imei",
    "hosts": [
@@ -2973,7 +2973,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a2bb3344425096c6",
+   "fingerprint": "bf065294574b8f4e",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/sgtin",
    "hosts": [
@@ -2993,7 +2993,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f249307f422de0b2",
+   "fingerprint": "b22bc13ab0b16644",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/uin",
    "hosts": [
@@ -3013,7 +3013,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "98b3df57478ff31f",
+   "fingerprint": "2e4bb50ea50f2bc8",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/cancel",
    "hosts": [
@@ -3033,7 +3033,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a480d443a126b42a",
+   "fingerprint": "818b50e71968d728",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/confirm",
    "hosts": [
@@ -3053,7 +3053,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7cfdf8e867f2616d",
+   "fingerprint": "de8ed5fd454d0571",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/info",
    "hosts": [
@@ -3073,7 +3073,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "837f61b0bae3ce82",
+   "fingerprint": "88205307652d3fb0",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/prepare",
    "hosts": [
@@ -3093,7 +3093,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4fa0c0d51ab2bff3",
+   "fingerprint": "fe9be0e7cd6b50b6",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/receive",
    "hosts": [
@@ -3113,7 +3113,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7e973d7fe474d3f4",
+   "fingerprint": "f8f063a3b1b3cfd6",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/reject",
    "hosts": [
@@ -3133,7 +3133,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "82cd94026660e8dc",
+   "fingerprint": "18534a704e5e5c29",
    "method": "GET",
    "path": "/api/v3/click-collect/orders",
    "hosts": [
@@ -3153,7 +3153,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0f7f5f34e230a67d",
+   "fingerprint": "2417dce713622388",
    "method": "POST",
    "path": "/api/v3/click-collect/orders/client",
    "hosts": [
@@ -3173,7 +3173,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ebf313a8e4aa009a",
+   "fingerprint": "4395078f01771a0c",
    "method": "POST",
    "path": "/api/v3/click-collect/orders/client/identity",
    "hosts": [
@@ -3193,7 +3193,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b00ee438fc05ed64",
+   "fingerprint": "42c5adf4e1056e53",
    "method": "GET",
    "path": "/api/v3/click-collect/orders/new",
    "hosts": [
@@ -3213,7 +3213,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0369f3a2234a93ec",
+   "fingerprint": "b132eae02714c794",
    "method": "POST",
    "path": "/api/v1/acceptance/options",
    "hosts": [
@@ -3328,7 +3328,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ebeb946bad72e129",
+   "fingerprint": "f4cb2f34fea234c9",
    "method": "GET",
    "path": "/api/v1/warehouses",
    "hosts": [
@@ -3406,7 +3406,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "94d2a98088a8b085",
+   "fingerprint": "0bcf9b44ccc7ea0c",
    "method": "DELETE",
    "path": "/adv/v0/normquery/bids",
    "hosts": [
@@ -3992,7 +3992,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "52b58398016279eb",
+   "fingerprint": "a6ce4d3849b8cb97",
    "method": "POST",
    "path": "/api/advert/v1/normquery/bids",
    "hosts": [
@@ -4262,7 +4262,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ff049137fdeff431",
+   "fingerprint": "6a63f016e6c480e1",
    "method": "GET",
    "path": "/api/v1/feedbacks",
    "hosts": [
@@ -4342,7 +4342,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "19ff812506461e97",
+   "fingerprint": "11e956b5d9ed8584",
    "method": "GET",
    "path": "/api/v1/feedbacks/count",
    "hosts": [
@@ -4462,7 +4462,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c252aaf537842ee7",
+   "fingerprint": "8ddb36d151de5fc1",
    "method": "PATCH",
    "path": "/api/v1/questions",
    "hosts": [
@@ -4712,7 +4712,29 @@
    "deprecated": false
   },
   {
-   "fingerprint": "605059aafd874677",
+   "fingerprint": "aec9d5c4ccbbe71f",
+   "method": "POST",
+   "path": "/api/analytics/v1/stocks-report/seller-warehouses",
+   "hosts": [
+    "seller-analytics-api.wildberries.ru"
+   ],
+   "file": "11-analytics.yaml",
+   "section": "Аналитика и данные",
+   "tags": [
+    "История остатков"
+   ],
+   "summary": "Остатки на складах продавца",
+   "operationId": "postAnalyticsV1StocksReportSellerWarehouses",
+   "category": "contentanalytics",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": true,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "a2a56bb1ee20c4a0",
    "method": "POST",
    "path": "/api/analytics/v1/stocks-report/wb-warehouses",
    "hosts": [
