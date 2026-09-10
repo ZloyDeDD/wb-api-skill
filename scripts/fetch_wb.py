@@ -37,15 +37,9 @@ def _require_driver() -> tuple[Any, str]:
         from patchright.sync_api import sync_playwright
 
         return sync_playwright, "patchright"
-    except ImportError:
-        pass
-    try:
-        from playwright.sync_api import sync_playwright
-
-        return sync_playwright, "playwright"
     except ImportError as exc:
         raise FetchUnavailable(
-            "Не установлен ни patchright, ни playwright — загрузка невозможна.\n"
+            "Не установлен patchright — обычный playwright обнаруживается антиботом WB.\n"
             "Установка: python -m pip install -r requirements-update.txt"
         ) from exc
 

@@ -13,6 +13,8 @@ from __future__ import annotations
 import sys
 from contextlib import contextmanager
 from pathlib import Path
+from types import ModuleType
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -174,6 +176,22 @@ def test_accepts_good_payload() -> None:
     check("нормальный набор принят", not problems, f"-> {problems}")
 
 
+def test_plain_playwright_is_rejected() -> None:
+    playwright = ModuleType("playwright.sync_api")
+    playwright.sync_playwright = object()
+    with patch.dict(
+        sys.modules,
+        {"patchright": None, "patchright.sync_api": None, "playwright.sync_api": playwright},
+    ):
+        try:
+            fetch_wb._require_driver()
+        except fetch_wb.FetchUnavailable:
+            rejected = True
+        else:
+            rejected = False
+    check("обычный playwright не используется против антибота", rejected)
+
+
 # --------------------------------------------------------------------------
 # Отчёт об изменениях и разбор аргументов
 # --------------------------------------------------------------------------
@@ -317,6 +335,7 @@ def main() -> int:
     test_rejects_empty_paths()
     test_rejects_big_drop()
     test_accepts_good_payload()
+    test_plain_playwright_is_rejected()
 
     print("Отчёт об изменениях и разбор аргументов:")
     test_diff_detects_changes()
