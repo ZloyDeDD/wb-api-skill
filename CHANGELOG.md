@@ -1,5 +1,575 @@
 # Изменения Wildberries API
 
+## 2026-09-10
+
+Источник: dev.wildberries.ru. Эндпоинтов: 287 → 294.
+
+### Добавлены эндпоинты (7)
+- `GET /api/marketplace/v3/fbs/dictionaries/countries/oksm` — Получить список стран ОКСМ (03-orders-fbs.yaml)
+- `GET /api/marketplace/v3/fbs/shipping-points` — Получить список пунктов отгрузки поставок (03-orders-fbs.yaml)
+- `GET /api/marketplace/v3/fbs/supplies/{supplyId}/stickers/spot` — Получить QR-код СПОТ (03-orders-fbs.yaml)
+- `PATCH /api/marketplace/v3/fbs/supplies/shipping-method` — Установить параметры отгрузки поставок (03-orders-fbs.yaml)
+- `PATCH /api/marketplace/v3/fbs/supplies/waybill` — Установить ID ЭТрН поставок (03-orders-fbs.yaml)
+- `POST /api/marketplace/v3/fbs/supplies/spot/list` — Получить данные СПОТ для списка поставок (03-orders-fbs.yaml)
+- `PUT /api/marketplace/v3/fbs/supplies/{supplyId}/spot` — Добавить данные СПОТ в поставку (03-orders-fbs.yaml)
+
+### Изменены (280)
+- `DELETE /adv/v0/normquery/bids` — Удалить ставки поисковых кластеров (08-promotion.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /api/feedbacks/v1/pins` — Открепить отзывы (09-communications.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /api/v1/user` — Удалить пользователя (01-general.yaml)
+- `DELETE /api/v3/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания (03-orders-fbs.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /api/v3/passes/{passId}` — Удалить пропуск (03-orders-fbs.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /api/v3/stocks/{warehouseId}` — Удалить остатки товаров (02-items.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку (03-orders-fbs.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить грузоместа из поставки (03-orders-fbs.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /api/v3/warehouses/{warehouseId}` — Удалить склад продавца (02-items.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `DELETE /content/v2/tag/{id}` — Удаление ярлыка (02-items.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v0/delete` — Удаление кампании (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v0/pause` — Пауза кампании (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v0/start` — Запуск кампании (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v0/stop` — Завершение кампании (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/advert` — Информация о медиакампании (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/adverts` — Список медиакампаний (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/balance` — Баланс (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/budget` — Бюджет кампании (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/count` — Количество медиакампаний (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/payments` — Получение истории пополнений счёта (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/promotion/count` — Списки кампаний (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/supplier/subjects` — Предметы для кампаний (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v1/upd` — Получение истории затрат (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /adv/v3/fullstats` — Статистика кампаний (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+  - ~ ответ 200 application/json.[].boosterStats: any, необяз. → any, необяз. — Статистика по бустеру
+  - ~ ответ 200 application/json.[].days: any, обяз. → any, обяз. — Статистика с разбивкой по дням
+- `GET /api/advert/v0/bids/recommendations` — Рекомендуемые ставки для карточек товаров и поисковых кластеров (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/advert/v1/config` — Конфигурационные значения продвижения (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/advert/v2/adverts` — Информация о кампаниях (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/analytics/v1/deductions` — Подмены и неверные вложения (12-reports.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/analytics/v1/measurement-penalties` — Удержания за занижение габаритов упаковки (12-reports.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/analytics/v1/warehouse-measurements` — Замеры склада (12-reports.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/common/v1/rating` — Получить рейтинг продавца (01-general.yaml)
+- `GET /api/common/v1/subscriptions` — Получить информацию о подписке Джем (01-general.yaml)
+- `GET /api/common/v1/tariff-constructor/options` — Получить информацию об опциях Конструктора тарифов (01-general.yaml)
+  - ~ ответ 200 application/json.options[].promotion: any, необяз. → any, необяз. — Акция, по которой подключена опция. Не возвращается, если опция подключена без акции или срок действия акции …
+- `GET /api/content/v1/brands` — Бренды (02-items.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/feedbacks/v1/pins` — Список закреплённых и откреплённых отзывов (09-communications.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/feedbacks/v1/pins/count` — Количество закреплённых и откреплённых отзывов (09-communications.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/feedbacks/v1/pins/limits` — Лимиты закреплённых отзывов (09-communications.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/marketplace/v3/fbs/orders/archive` — Получить список архивных сборочных заданий (03-orders-fbs.yaml)
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - ~ ответ 200 application/json.orders[].metaDetails: any, обяз. → any, обяз. — Идентификаторы маркировки сборочного задания
+  - ~ ответ 403 application/problem+json.code: string, необяз. — Код ошибки → string, необяз. — Внутренний код ошибки
+  - ~ ответ 403 application/problem+json.detail: string, обяз. — Детали ошибки → string, необяз. — Детали ошибки
+  - ~ ответ 403 application/problem+json.requestId: string, необяз. — Уникальный ID запроса → string, необяз. — ID запроса
+  - ~ ответ 403 application/problem+json.status: integer, необяз. — HTTP статус-код ответа → number, необяз. — HTTP статус-код
+  - ~ ответ 403 application/problem+json.title: string, обяз. — Заголовок ошибки → string, необяз. — Заголовок ошибки
+- `GET /api/marketplace/v3/fbs/settings/autoreturns` — Получить настройки автовозврата продавца (03-orders-fbs.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/marketplace/v3/fbs/settings/autoreturns/subcategories/restricted` — Получить предметы, которые не хранятся на складах WB (03-orders-fbs.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки (03-orders-fbs.yaml)
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/acceptance_report` — Создать отчёт (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/acceptance_report/tasks/{task_id}/download` — Получить отчёт (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/acceptance_report/tasks/{task_id}/status` — Проверить статус (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/account/balance` — Получить баланс продавца (13-finances.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/antifraud-details` — Самовыкупы (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/banned-products/blocked` — Получить отчёт (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/brand-share` — Получить отчёт (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/brand-share/brands` — Бренды продавца (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/brand-share/parent-subjects` — Родительские категории бренда (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/goods-labeling` — Маркировка товара (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/goods-return` — Получить отчёт (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/analytics/region-sale` — Получить отчёт (12-reports.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/calendar/promotions` — Список акций (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/calendar/promotions/details` — Детальная информация об акциях (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/calendar/promotions/nomenclatures` — Список товаров для участия в акции (08-promotion.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/claims` — Заявки покупателей на возврат (09-communications.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/documents/categories` — Категории документов (13-finances.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/documents/download` — Получить документ (13-finances.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- `GET /api/v1/documents/list` — Список документов (13-finances.yaml)
+  - + ответ 403: Доступ запрещён
+  - + ответ 403 application/problem+json.code: string, необяз. — Внутренний код ошибки
+  - + ответ 403 application/problem+json.detail: string, необяз. — Детали ошибки
+  - + ответ 403 application/problem+json.origin: string, необяз. — ID внутреннего сервиса WB
+  - + ответ 403 application/problem+json.requestId: string, необяз. — ID запроса
+  - + ответ 403 application/problem+json.status: number, необяз. — HTTP статус-код
+  - + ответ 403 application/problem+json.statusText: string, необяз. — Расшифровка HTTP статус-кода
+  - + ответ 403 application/problem+json.timestamp: string<date-time>, необяз. — Дата и время запроса
+  - + ответ 403 application/problem+json.title: string, необяз. — Заголовок ошибки
+- …ещё 220
+
 ## 2026-08-26
 
 Источник: dev.wildberries.ru. Эндпоинтов: 286 → 287.

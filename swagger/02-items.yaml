@@ -158,6 +158,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/object/all:
@@ -292,6 +298,8 @@ paths:
                 additionalErrors: null
         '401':
           $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/object/charcs/{subjectId}:
@@ -470,6 +478,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/directory/colors:
@@ -568,6 +582,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/directory/kinds:
@@ -660,6 +680,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/directory/countries:
@@ -768,6 +794,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/directory/seasons:
@@ -860,6 +892,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/directory/vat:
@@ -957,6 +995,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/directory/tnved:
@@ -1081,6 +1125,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/content/v1/brands:
@@ -1142,6 +1192,8 @@ paths:
                   $ref: '#/components/examples/BrandsResponseBadRequest2'
         '401':
           $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/403'
         '404':
           description: Не найдено
           content:
@@ -1238,6 +1290,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/tag:
@@ -1332,6 +1390,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/tag/{id}:
@@ -1408,8 +1472,7 @@ paths:
           content:
             application/json:
               schema:
-                oneOf:
-                  - $ref: '#/components/schemas/responseBodyContentError400'
+                $ref: '#/components/schemas/responseBodyContentError400'
               examples:
                 responseBodyContentError400:
                   $ref: '#/components/examples/responseBodyContentError400'
@@ -1425,6 +1488,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
     delete:
@@ -1493,6 +1562,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/tag/nomenclature/link:
@@ -1580,6 +1655,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/get/cards/list:
@@ -1868,6 +1949,115 @@ paths:
                                 - `true` — не выявлена. `"isValid":true` не гарантирует, что размеры указаны корректно. В отдельных случаях (например, при создании новой категории товаров) `"isValid":true` будет возвращаться при любых значениях, кроме нулевых.
 
                                 - `false` — указанные габариты значительно отличаются от средних по категории (предмету). Рекомендуется перепроверить, правильно ли указаны размеры товара в упаковке в `сантиметрах`. Функциональность карточки товара, в том числе начисление логистики и хранения, при этом ограничена не будет. Логистика и хранение продолжают начисляться — по текущим габаритам. Также `"isValid":false` возвращается при отсутствии значений или нулевом значении любой стороны.
+                        documents:
+                          type: object
+                          description: Документы
+                          properties:
+                            items:
+                              type: array
+                              description: Список документов
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: string
+                                    description: ID документа
+                                  type:
+                                    type: integer
+                                    description: |
+                                      Тип документа:
+                                        - `1` — Сертификат соответствия
+                                        - `2` — Декларация о соответствии
+                                        - `3` — Свидетельство о государственной регистрации (СГР)
+                                        - `4` — Регистрационное удостоверение (РУ) на медицинские изделия
+                                        - `5` — Регистрационное удостоверение Республики Беларусь
+                                        - `7` — Данные о регистрации пестицида
+                                        - `8` — Данные о регистрации агрохимиката
+                                        - `9` — Регистрационное удостоверение (РУ) на лекарственные препараты
+                                  number:
+                                    type: string
+                                    description: Номер документа
+                                  productNumber:
+                                    type: string
+                                    description: Дополнительный номер документа
+                                  tradeName:
+                                    type: string
+                                    description: Торговое наименование
+                                  applicant:
+                                    type: string
+                                    description: Представитель изготовителя медицинского изделия
+                                  startDate:
+                                    type: string
+                                    format: date-time
+                                    description: Дата и время начала срока действия документа
+                                  endDate:
+                                    type: string
+                                    format: date-time
+                                    description: Дата и время окончания срока действия документа
+                                  isEndless:
+                                    type: boolean
+                                    description: |
+                                      Бессрочный ли документ:
+                                        - `true` — да, документ бессрочный
+                                        - `false` — нет, у документа есть срок действия
+                                  verdict:
+                                    description: Результат проверки документа. Возвращается, когда проверка завершена
+                                    type: object
+                                    properties:
+                                      verified:
+                                        type: boolean
+                                        description: |
+                                          - `true` — документ проверен
+                                          - `false` — документ не проверен
+                                      status:
+                                        type: integer
+                                        description: |
+                                          Результат проверки документа:
+                                            - `1` — проверка пройдена
+                                            - `2` — проверка не пройдена
+                                      reason:
+                                        allOf:
+                                          - $ref: '#/components/schemas/reasonDocument'
+                                      additionalData:
+                                        type: object
+                                        nullable: true
+                                        description: Дополнительная информация
+                                      createdAt:
+                                        type: string
+                                        format: date-time
+                                        description: Дата проверки документа
+                                  createdAt:
+                                    type: string
+                                    format: date-time
+                                    description: Дата добавления документа
+                            overallVerdict:
+                              type: object
+                              description: Результат проверки карточки товара. Возвращается, когда проверка завершена
+                              properties:
+                                isFullyChecked:
+                                  type: boolean
+                                  description: |
+                                    - `true` — карточка товара проверена
+                                    - `false` — карточка товара не проверена
+                                status:
+                                  type: integer
+                                  description: |
+                                    Результат проверки карточки товара:
+                                      - `1` — проверка пройдена
+                                      - `2` — проверка не пройдена
+                                reason:
+                                  allOf:
+                                    - $ref: '#/components/schemas/reasonListing'
+                                createdAt:
+                                  type: string
+                                  format: date-time
+                                  description: Дата и время проверки карточки товара
+                            excludeDocuments:
+                              type: boolean
+                              description: |
+                                Исключены ли документы из проверки карточки товара:
+                                  - `true` — да, документы не проверяются при проверке карточки
+                                  - `false` — нет, документы проверяются при проверке карточки
                         characteristics:
                           type: array
                           description: Характеристики
@@ -1890,6 +2080,7 @@ paths:
                             properties:
                               chrtID:
                                 type: integer
+                                format: int64
                                 description: Числовой ID размера для данного артикула WB
                               techSize:
                                 type: string
@@ -1974,6 +2165,29 @@ paths:
                       height: 15
                       weightBrutto: 6.24
                       isValid: false
+                    documents:
+                      items:
+                        - id: 019f3c09-8c1f-7063-aee4-c45969fb2dc5
+                          type: 1
+                          number: '123456'
+                          productNumber: '123456'
+                          tradeName: Trade Name
+                          applicant: Applicant Name
+                          startDate: '2023-01-15T03:00:00+03:00'
+                          endDate: '2026-01-14T03:00:00+03:00'
+                          verdict:
+                            verified: true
+                            status: 1
+                            reason: null
+                            additionalData: null
+                            createdAt: '2026-05-28T18:10:43.375306+03:00'
+                          createdAt: '2026-05-28T18:09:25.394692+03:00'
+                      overallVerdict:
+                        isFullyChecked: true
+                        status: 1
+                        reason: null
+                        createdAt: '2026-05-28T18:19:19.99444+03:00'
+                      excludeDocuments: false
                     characteristics:
                       - id: 14177449
                         name: Цвет
@@ -2012,6 +2226,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/cards/error/list:
@@ -2179,6 +2399,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/cards/update:
@@ -2286,6 +2512,28 @@ paths:
                       weightBrutto:
                         type: number
                         description: Вес, кг<br>Количество знаков после запятой <=3
+                  documents:
+                    type: object
+                    description: Документы
+                    properties:
+                      items:
+                        type: array
+                        description: Список документов
+                        items:
+                          allOf:
+                            - type: object
+                              properties:
+                                id:
+                                  type: string
+                                  description: ID документа
+                            - $ref: '#/components/schemas/documentsRequest'
+                      excludeDocuments:
+                        type: boolean
+                        default: false
+                        description: |
+                          Исключить ли документы из проверки:
+                            - `true` — да, не проверять документы при проверке карточки товара. При `true` все значения, переданные в `documents`, будут заменены на пустые значения
+                            - `false` — нет, проверять документы при проверке карточки товара
                   characteristics:
                     type: array
                     description: |
@@ -2338,31 +2586,9 @@ paths:
                           items:
                             type: string
                           description: Баркоды
-              example:
-                - nmID: 11111111
-                  vendorCode: wbiz72wmro
-                  kizMarked: true
-                  brand: ''
-                  title: Свитер женский оверсайз с горлом
-                  description: '12345'
-                  dimensions:
-                    length: 35
-                    width: 40
-                    height: 15
-                    weightBrutto: 3
-                  characteristics:
-                    - id: 14177450
-                      value:
-                        - хлопок 50% акрил 50%
-                    - id: 50
-                      value:
-                        - свободный крой
-                  sizes:
-                    - chrtID: 12345678
-                      techSize: ONE SIZE
-                      wbSize: 78-90
-                      skus:
-                        - '123487653460134'
+            examples:
+              UpdateListings:
+                $ref: '#/components/examples/UpdateListings'
       responses:
         '200':
           description: Успешно
@@ -2396,6 +2622,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '413':
           description: Превышен лимит объёма данных в запросе
           content:
@@ -2429,7 +2661,7 @@ paths:
                 detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
-                origin: s2s-api-auth-content
+                origin: ag-content
                 status: 413
                 statusText: Request Entity Too Large
         '429':
@@ -2544,6 +2776,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseItemList'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '413':
           description: Превышен лимит объёма данных в запросе
           content:
@@ -2654,6 +2892,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/cards/recover:
@@ -2750,6 +2994,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/get/cards/trash:
@@ -3089,6 +3339,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/cards/limits:
@@ -3179,6 +3435,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/barcodes:
@@ -3271,6 +3533,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/responseBodyContentError403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v2/cards/upload:
@@ -3421,6 +3689,22 @@ paths:
                                   Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе [Характеристики предмета](./work-with-products#tag/categoriesSubcategoriesAndCharacteristics/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get).
                                   <br>
                                   Допустимое количество значений отображено в поле `maxCount` того же метода
+                        documents:
+                          type: object
+                          description: Документы
+                          properties:
+                            items:
+                              type: array
+                              description: Список документов
+                              items:
+                                $ref: '#/components/schemas/documentsRequest'
+                            excludeDocuments:
+                              type: boolean
+                              default: false
+                              description: |
+                                Исключить ли документы из проверки:
+                                  - `true` — да, не проверять документы при проверке карточки товара. При `true` все значения, переданные в `documents`, будут заменены на пустые значения
+                                  - `false` — нет, проверять документы при проверке карточки товара
             examples:
               creatingOneListing:
                 $ref: '#/components/examples/creatingOneListing'
@@ -3463,6 +3747,8 @@ paths:
           $ref: '#/components/responses/401'
         '402':
           $ref: '#/components/responses/402'
+        '403':
+          $ref: '#/components/responses/403'
         '413':
           description: Превышен лимит объёма данных в запросе
           content:
@@ -3496,7 +3782,7 @@ paths:
                 detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
-                origin: s2s-api-auth-content
+                origin: ag-content
                 status: 413
                 statusText: Request Entity Too Large
         '429':
@@ -3659,6 +3945,22 @@ paths:
                                 Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе [Характеристики предмета](./work-with-products#tag/categoriesSubcategoriesAndCharacteristics/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get).
                                 <br>
                                 Допустимое количество значений отображено в поле `maxCount` того же метода
+                      documents:
+                        type: object
+                        description: Документы
+                        properties:
+                          items:
+                            type: array
+                            description: Список документов
+                            items:
+                              $ref: '#/components/schemas/documentsRequest'
+                          excludeDocuments:
+                            type: boolean
+                            default: false
+                            description: |
+                              Исключить ли документы из проверки:
+                                - `true` — да, не проверять документы при проверке карточки товара. При `true` все значения, переданные в `documents`, будут заменены на пустые значения
+                                - `false` — нет, проверять документы при проверке карточки товара
             example:
               imtID: 987654321
               cardsToAdd:
@@ -3687,6 +3989,17 @@ paths:
                   sizes:
                     - skus:
                         - '12345678'
+                  documents:
+                    items:
+                      - type: 1
+                        number: РОСС RU.АЯ46.В12346
+                        productNumber: УД-2024-001235
+                        tradeName: Тест Продукт2
+                        applicant: ООО Ромашка
+                        startDate: '2023-01-15T03:00:00+03:00'
+                        endDate: '2026-01-14T03:00:00+03:00'
+                        isEndless: false
+                    excludeDocuments: false
                 - vendorCode: myVariant2
                   title: Наименование товара
                   description: Описание товаров
@@ -3708,6 +4021,17 @@ paths:
                   sizes:
                     - skus:
                         - '222222222222'
+                  documents:
+                    items:
+                      - type: 1
+                        number: РОСС RU.АЯ46.В12345
+                        productNumber: УД-2024-001234
+                        tradeName: Тест Продукт
+                        applicant: ООО Ромашка
+                        startDate: '2023-01-15T03:00:00+03:00'
+                        endDate: '2026-01-14T03:00:00+03:00'
+                        isEndless: false
+                    excludeDocuments: false
       responses:
         '200':
           description: Успешно
@@ -3743,6 +4067,8 @@ paths:
           $ref: '#/components/responses/401'
         '402':
           $ref: '#/components/responses/402'
+        '403':
+          $ref: '#/components/responses/403'
         '413':
           description: Превышен лимит объёма данных в запросе
           content:
@@ -3776,7 +4102,7 @@ paths:
                 detail: https://openapi.wildberries.ru/content/api/ru/
                 code: 71d3de1b-001e-488f-bbf5-55c31254fbeb
                 requestId: MN8usr6RfrzWHZfucSvNgb
-                origin: s2s-api-auth-content
+                origin: ag-content
                 status: 413
                 statusText: Request Entity Too Large
         '429':
@@ -3866,6 +4192,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/mediaErrors'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /content/v3/media/save:
@@ -3946,6 +4278,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/mediaErrors'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '409':
           description: Ошибка сохранения части ссылок
           content:
@@ -4011,7 +4349,16 @@ paths:
         '401':
           $ref: '#/components/responses/401'
         '403':
-          $ref: '#/components/responses/403'
+          description: Доступ запрещён
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
+                Response403TokenType:
+                  $ref: '#/components/examples/Response403TokenType'
         '429':
           $ref: '#/components/responses/429'
   /api/content/v1/recommendations/set:
@@ -4071,7 +4418,16 @@ paths:
         '401':
           $ref: '#/components/responses/401'
         '403':
-          $ref: '#/components/responses/403'
+          description: Доступ запрещён
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
+                Response403TokenType:
+                  $ref: '#/components/examples/Response403TokenType'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/upload/task:
@@ -4164,6 +4520,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '409':
           description: Ошибка при конвертации валюты
           content:
@@ -4278,6 +4640,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '409':
           description: Ошибка при конвертации валюты
           content:
@@ -4372,6 +4740,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '409':
           description: Ошибка при конвертации валюты
           content:
@@ -4459,7 +4833,12 @@ paths:
                 $ref: '#/components/schemas/ResponseErrorV3'
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/Response403General'
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
+                Response403TokenType:
+                  $ref: '#/components/examples/Response403TokenType'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/history/tasks:
@@ -4526,6 +4905,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/history/goods/task:
@@ -4594,6 +4979,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/buffer/tasks:
@@ -4660,6 +5051,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/buffer/goods/task:
@@ -4728,6 +5125,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/list/goods/filter:
@@ -4803,6 +5206,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
     post:
@@ -4865,6 +5274,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/list/goods/size/nm:
@@ -4935,6 +5350,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/v2/quarantine/goods:
@@ -4982,6 +5403,12 @@ paths:
               examples:
                 AccessDenied:
                   $ref: '#/components/examples/Result403'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '422':
           description: Неожидаемый результат
           content:
@@ -5080,7 +5507,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '404':
           $ref: '#/components/responses/NotFound'
         '406':
@@ -5187,7 +5627,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '404':
           description: Не найдено
           content:
@@ -5298,7 +5751,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '404':
           $ref: '#/components/responses/NotFound'
         '429':
@@ -5350,7 +5816,20 @@ paths:
         '401':
           $ref: '#/components/responses/401'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
   /api/v3/warehouses:
@@ -5400,7 +5879,20 @@ paths:
         '401':
           $ref: '#/components/responses/401'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
     post:
@@ -5480,7 +5972,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
@@ -5568,7 +6073,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '404':
           $ref: '#/components/responses/NotFound'
         '409':
@@ -5614,7 +6132,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '404':
           $ref: '#/components/responses/NotFound'
         '429':
@@ -5691,7 +6222,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
     put:
@@ -5758,7 +6302,20 @@ paths:
         '402':
           $ref: '#/components/responses/402'
         '403':
-          $ref: '#/components/responses/AccessDenied'
+          description: Доступ запрещён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                AccessDenied:
+                  $ref: '#/components/examples/AccessDenied'
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/Response4XX'
+              examples:
+                Response403TokenCategory:
+                  $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
 components:
@@ -5874,10 +6431,10 @@ components:
           description: Дополнительные ошибки
           oneOf:
             - type: object
-              nullable: true
               properties:
                 string:
                   type: string
+                  nullable: true
               additionalProperties: false
             - type: string
               nullable: true
@@ -5927,6 +6484,8 @@ components:
       additionalProperties: false
     responseIncorrectDate:
       type: object
+      required:
+        - error
       properties:
         error:
           type: string
@@ -7207,42 +7766,103 @@ components:
           description: Детали ошибки
           type: string
           example: incorrect request body format
-    Response403General:
+    documentsRequest:
+      type: object
+      properties:
+        type:
+          type: integer
+          description: |
+            Тип документа:
+              - `1` — Сертификат соответствия
+              - `2` — Декларация о соответствии
+              - `3` — Свидетельство о государственной регистрации (СГР)
+              - `4` — Регистрационное удостоверение (РУ) на медицинские изделия
+              - `5` — Регистрационное удостоверение Республики Беларусь
+              - `7` — Данные о регистрации пестицида
+              - `8` — Данные о регистрации агрохимиката
+              - `9` — Регистрационное удостоверение (РУ) на лекарственные препараты
+        number:
+          type: string
+          description: Номер документа
+        productNumber:
+          type: string
+          description: Дополнительный номер документа
+        tradeName:
+          type: string
+          description: Торговое наименование
+        applicant:
+          type: string
+          description: Представитель изготовителя медицинского изделия
+        startDate:
+          type: string
+          format: date-time
+          description: Дата и время начала срока действия документа
+        endDate:
+          type: string
+          format: date-time
+          description: Дата и время окончания срока действия документа
+        isEndless:
+          type: boolean
+          description: |
+            Бессрочный ли документ:
+              - `true` — да, документ бессрочный
+              - `false` — нет, у документа есть срок действия
+    reasonDocument:
+      type: string
+      nullable: true
+      description: |
+        Ошибка при проверке, возвращается для `status: 2`. <br>
+        Возможные значения:
+          - `document_missing` — Документ не загружен
+          - `document_not_found` — Документ не найден в реестре
+          - `document_inactive` — У документа нет юридической силы
+          - `document_expired` — Истёк срок действия документа
+          - `applicant_mismatch` — Данные заявителя в документе и карточке различаются
+          - `trade_name_mismatch` — Торговое наименование в карточке отличается от документа
+          - `unknown` — Проверка не пройдена
+          - `document_type_mismatch` — Номер документа не соответствует указанному типу документа
+          - `document_dates_mismatch` — Неверная дата регистрации или окончания действия документа
+    reasonListing:
+      type: string
+      nullable: true
+      description: |
+        Ошибка при проверке, возвращается для `status: 2`. <br>
+        Возможные значения:
+          - `tnved_missing` — Не указан код ТН ВЭД
+          - `supplier_inn_missing` — Не указан ИНН
+          - `supplier_not_registered` — Поставщик не найден в реестре
+          - `supplier_inactive` — Ошибка в статусе поставщика, проверьте его в реестре
+          - `product_group_not_registered` — Добавлена неверная товарная группа в системе маркировки
+          - `kiz_required` — Этот товар нельзя продавать в России без кода маркировки Честного Знака
+          - `kiz_certificate_missing` — Нет подтверждения, что на товар нанесена необходимая маркировка
+    Response4XX:
       type: object
       properties:
         title:
           type: string
           description: Заголовок ошибки
-          example: forbidden
         detail:
           type: string
           description: Детали ошибки
-          example: base token is not allowed
         code:
           type: string
           description: Внутренний код ошибки
-          example: base token is not allowed for this path
         requestId:
           type: string
           description: ID запроса
-          example: 722199b2e15bbca48cc1d488a7989976
         origin:
           type: string
           description: ID внутреннего сервиса WB
-          example: s2s-finance
         status:
           type: number
           description: HTTP статус-код
-          example: 403
         statusText:
           type: string
           description: Расшифровка HTTP статус-кода
-          example: Forbidden
         timestamp:
           type: string
           format: date-time
           description: Дата и время запроса
-          example: '2026-05-25T02:47:09Z'
   parameters:
     Warehouse:
       name: warehouseId
@@ -7414,7 +8034,7 @@ components:
             detail: 'token problem; token is malformed: could not base64 decode signature: illegal base64 data at input byte 84'
             code: 07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75
             requestId: 7b80742415072fe8b6b7f7761f1d1211
-            origin: s2s-api-auth-catalog
+            origin: ag-marketplace
             status: 401
             statusText: Unauthorized
             timestamp: '2024-09-30T06:52:38Z'
@@ -7466,15 +8086,17 @@ components:
                 type: string
                 format: date-time
                 description: Дата и время запроса
-          example:
-            title: forbidden
-            detail: base token is not allowed
-            code: base token is not allowed for this path
-            requestId: 722199b2e15bbca48cc1d488a7989976
-            origin: s2s-finance
-            status: 403
-            statusText: Forbidden
-            timestamp: '2026-05-25T02:47:09Z'
+          examples:
+            Response403TokenCategory:
+              value:
+                status: 403
+                statusText: Forbidden
+                title: Forbidden
+                detail: scope is not allowed for this resource
+                requestId: 2dbf6fc9-bad8-4ef9-a058-c938a8553ba5
+                origin: ag-marketplace
+                timestamp: '2026-09-03T13:55:15Z'
+              description: Неверная категория токена
     '429':
       description: Слишком много запросов
       content:
@@ -7512,7 +8134,7 @@ components:
             detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
             code: 07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]
             requestId: 9d3c02cc698f8b041c661a7c28bed293
-            origin: s2s-api-auth-catalog
+            origin: ag-marketplace
             status: 429
             statusText: Too Many Requests
             timestamp: '2024-09-30T06:52:38Z'
@@ -7524,15 +8146,6 @@ components:
             $ref: '#/components/schemas/Error'
           example:
             code: NotFound
-            message: ''
-    AccessDenied:
-      description: Доступ запрещён
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-          example:
-            code: AccessDenied
             message: ''
     ResponseItemsLists:
       description: Успешно
@@ -7958,6 +8571,17 @@ components:
                 width: 7
                 height: 5
                 weightBrutto: 1.242
+              documents:
+                items:
+                  - type: 1
+                    number: РОСС RU.АЯ46.В12345
+                    productNumber: УД-2024-001234
+                    tradeName: Тест Продукт
+                    applicant: Тест
+                    startDate: '2023-01-15T03:00:00+03:00'
+                    endDate: '2026-01-14T03:00:00+03:00'
+                    isEndless: false
+                excludeDocuments: false
               characteristics:
                 - id: 12
                   value:
@@ -7991,6 +8615,17 @@ components:
                 width: 40
                 height: 15
                 weightBrutto: 6.24
+              documents:
+                items:
+                  - type: 1
+                    number: РОСС RU.АЯ46.В12345
+                    productNumber: УД-2024-001234
+                    tradeName: Тест Продукт
+                    applicant: Тест
+                    startDate: '2023-01-15T03:00:00+03:00'
+                    endDate: '2026-01-14T03:00:00+03:00'
+                    isEndless: false
+                excludeDocuments: false
               characteristics:
                 - id: 12
                   value:
@@ -8012,6 +8647,17 @@ components:
                 width: 40
                 height: 15
                 weightBrutto: 6.241
+              documents:
+                items:
+                  - type: 1
+                    number: РОСС RU.АЯ46.В123
+                    productNumber: УД-2025-001234
+                    tradeName: Тест Продукт2
+                    applicant: Тест2
+                    startDate: '2023-01-15T03:00:00+03:00'
+                    endDate: '2026-01-14T03:00:00+03:00'
+                    isEndless: false
+                excludeDocuments: false
               characteristics:
                 - id: 12
                   value:
@@ -8042,6 +8688,17 @@ components:
                 width: 40
                 height: 15
                 weightBrutto: 6
+              documents:
+                items:
+                  - type: 1
+                    number: РОСС RU.АЯ46.В12345
+                    productNumber: УД-2024-001234
+                    tradeName: Тест Продукт
+                    applicant: Тест
+                    startDate: '2023-01-15T03:00:00+03:00'
+                    endDate: '2026-01-14T03:00:00+03:00'
+                    isEndless: false
+                excludeDocuments: false
               characteristics:
                 - id: 12
                   value:
@@ -8065,6 +8722,17 @@ components:
                 width: 5
                 height: 4
                 weightBrutto: 0.94
+              documents:
+                items:
+                  - type: 1
+                    number: РОСС RU.АЯ46.В12346
+                    productNumber: УД-2025-001234
+                    tradeName: Тест Продукт2
+                    applicant: Тест2
+                    startDate: '2023-01-15T03:00:00+03:00'
+                    endDate: '2026-01-14T03:00:00+03:00'
+                    isEndless: false
+                excludeDocuments: false
               characteristics:
                 - id: 12
                   value:
@@ -8080,6 +8748,44 @@ components:
                   price: 5000
                   skus:
                     - '2222222222222'
+    UpdateListings:
+      value:
+        - nmID: 11111111
+          vendorCode: wbiz72wmro
+          kizMarked: true
+          brand: ''
+          title: Свитер женский оверсайз с горлом
+          description: '12345'
+          dimensions:
+            length: 35
+            width: 40
+            height: 15
+            weightBrutto: 3
+          documents:
+            items:
+              - id: 019f3c09-8c1f-7063-aee4-c45969fb2dc5
+                type: 1
+                number: '123456'
+                productNumber: '123456'
+                tradeName: Trade Name
+                applicant: Applicant Name
+                startDate: '2023-01-15T03:00:00+03:00'
+                endDate: '2026-01-14T03:00:00+03:00'
+                isEndless: false
+            excludeDocuments: false
+          characteristics:
+            - id: 14177450
+              value:
+                - хлопок 50% акрил 50%
+            - id: 50
+              value:
+                - свободный крой
+          sizes:
+            - chrtID: 12345678
+              techSize: ONE SIZE
+              wbSize: 78-90
+              skus:
+                - '123487653460134'
     responseIncorrectBeginDate:
       description: Некорректная дата начала
       value:
@@ -8572,6 +9278,31 @@ components:
         detail: Brands not found
         origin: brands-api
         requestId: 102d2641a932d61bed60649d6c99d80a
+    AccessDenied:
+      value:
+        code: AccessDenied
+        message: ''
+    Response403TokenCategory:
+      value:
+        status: 403
+        statusText: Forbidden
+        title: Forbidden
+        detail: scope is not allowed for this resource
+        requestId: 2dbf6fc9-bad8-4ef9-a058-c938a8553ba5
+        origin: ag-marketplace
+        timestamp: '2026-09-03T13:55:15Z'
+      description: Неверная категория токена
+    Response403TokenType:
+      value:
+        title: forbidden
+        detail: base token is not allowed
+        code: base token is not allowed for this path
+        requestId: 722199b2e15bbca48cc1d488a7989976
+        origin: ag-marketplace
+        status: 403
+        statusText: Forbidden
+        timestamp: '2026-05-25T02:47:09Z'
+      description: Неверный тип токена
   securitySchemes:
     HeaderApiKey:
       type: apiKey
