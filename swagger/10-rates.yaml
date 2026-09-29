@@ -10,10 +10,10 @@ info:
     <div class="api-block">
 
     В разделе описаны методы получения:
-      1. [Комиссий](/openapi/wb-tariffs#tag/fees)
-      2. [Тарифов на поставку](/openapi/wb-tariffs#tag/supplyRates)
-      3. [Тарифов на остаток](/openapi/wb-tariffs#tag/stockRates)
-      4. [Тарифов на возврат товаров продавцу](/openapi/wb-tariffs#tag/returnCostToSeller)
+      1. [Комиссий](/openapi/rates#tag/fees)
+      2. [Тарифов на поставку](/openapi/rates#tag/supplyRates)
+      3. [Тарифов на остаток](/openapi/rates#tag/stockRates)
+      4. [Тарифов на возврат товаров продавцу](/openapi/rates#tag/returnCostToSeller)
 
     </div>
   x-file-name: rates
@@ -23,15 +23,19 @@ tags:
   - name: Комиссии
     x-displayName: Комиссии
     description: ''
+    x-tagKey: fees
   - name: Тарифы на поставку
     x-displayName: Тарифы на поставку
     description: ''
+    x-tagKey: supplyRates
   - name: Тарифы на остаток
     x-displayName: Тарифы на остаток
     description: ''
+    x-tagKey: stockRates
   - name: Стоимость возврата продавцу
     x-displayName: Стоимость возврата продавцу
     description: ''
+    x-tagKey: returnCostToSeller
 paths:
   /api/v1/tariffs/commission:
     servers:
@@ -44,7 +48,7 @@ paths:
       tags:
         - Комиссии
       description: |
-        Метод возвращает данные о [комиссии](https://seller.wildberries.ru/dynamic-product-categories/commission) WB по [родительским категориям товаров](/openapi/work-with-products#tag/categoriesSubcategoriesAndCharacteristics/paths/~1content~1v2~1object~1parent~1all/get) согласно модели продаж.
+        Метод возвращает данные о [комиссии](https://seller.wildberries.ru/dynamic-product-categories/commission) WB по [родительским категориям товаров](/openapi/item-management#tag/categoriesSubcategoriesAndCharacteristics/operation/getV2ObjectParentAll) согласно модели продаж.
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/introduction/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -99,6 +103,7 @@ paths:
           $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: fees
   /api/tariffs/v1/acceptance/coefficients:
     servers:
       - url: https://common-api.wildberries.ru
@@ -163,6 +168,7 @@ paths:
           description: Не найдено
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: supplyRates
   /api/v1/tariffs/box:
     servers:
       - url: https://common-api.wildberries.ru
@@ -200,6 +206,7 @@ paths:
           $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: stockRates
   /api/v1/tariffs/pallet:
     servers:
       - url: https://common-api.wildberries.ru
@@ -237,6 +244,7 @@ paths:
           $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: stockRates
   /api/v1/tariffs/return:
     servers:
       - url: https://common-api.wildberries.ru
@@ -274,6 +282,7 @@ paths:
           $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: returnCostToSeller
 components:
   examples:
     ResponseCoefficients:
@@ -738,7 +747,7 @@ components:
                 description: Комиссия по модели **Самовывоз из магазина продавца** (`C&C`), %
               kgvpSupplier:
                 type: number
-                description: Комиссия по моделям **Витрина** (`DBS`) и **Курьер WB** (`DBW`), %
+                description: Комиссия по моделям **Витрина** (`DBS`) и **Деливери WB** (`DBW`), %
               kgvpSupplierExpress:
                 type: number
                 description: Комиссия по модели **Витрина экспресс** (`EDBS`), %

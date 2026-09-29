@@ -1,5 +1,136 @@
 # Изменения Wildberries API
 
+## 2026-09-29
+
+Источник: dev.wildberries.ru. Эндпоинтов: 294 → 305.
+
+### Добавлены эндпоинты (11)
+- `DELETE /api/supplies/v1/drafts/{draftId}` — Удалить черновик (07-orders-fbw.yaml)
+- `DELETE /api/supplies/v1/drafts/{draftId}/items` — Удалить товары из черновика (07-orders-fbw.yaml)
+- `GET /api/advert/v0/daily-limits` — Получить настройки дневных лимитов кампаний (08-promotion.yaml)
+- `GET /api/analytics/v1/item-returns` — Получить отчёт (12-reports.yaml)
+- `GET /api/supplies/v1/discrepancies/{supplyId}` — Расхождения в поставке (07-orders-fbw.yaml)
+- `GET /api/supplies/v1/drafts` — Список черновиков (07-orders-fbw.yaml)
+- `GET /api/supplies/v1/drafts/{draftId}/items` — Список товаров в черновике (07-orders-fbw.yaml)
+- `POST /api/advert/v2/budget` — Остатки бюджетов кампаний (08-promotion.yaml)
+- `POST /api/supplies/v1/drafts` — Создать черновик (07-orders-fbw.yaml)
+- `POST /api/supplies/v1/drafts/{draftId}/items` — Добавить товары в черновик (07-orders-fbw.yaml)
+- `PUT /api/advert/v0/daily-limits` — Настройка дневных лимитов кампаний (08-promotion.yaml)
+
+### Изменены (294)
+- `DELETE /adv/v0/normquery/bids` — Удалить ставки поисковых кластеров (08-promotion.yaml)
+- `DELETE /api/feedbacks/v1/pins` — Открепить отзывы (09-communications.yaml)
+  - ~ operationId: deleteFeedbacksV1Pins → deleteV1Pins
+- `DELETE /api/v1/user` — Удалить пользователя (01-general.yaml)
+- `DELETE /api/v3/orders/{orderId}/meta` — Удалить идентификаторы маркировки сборочного задания (03-orders-fbs.yaml)
+  - + operationId: deleteV3OrdersOrderIdMeta
+- `DELETE /api/v3/passes/{passId}` — Удалить пропуск (03-orders-fbs.yaml)
+  - + operationId: deleteV3PassesPassId
+  - ~ description: Метод удаляет пропуск продавца [из списка](/openapi/orders-fbs#tag/Propuska-FBS/paths/~1api~1v3~1passes/get).… → Метод удаляет пропуск продавца [из списка](/openapi/orders-fbs#tag/fbsPasses/operation/getV3Passes).  Лимит з…
+- `DELETE /api/v3/stocks/{warehouseId}` — Удалить остатки товаров (02-items.yaml)
+  - + operationId: deleteV3StocksWarehouseId
+  - ~ description: Метод удаляет запись об остатках товаров продавца из [списка остатков](/openapi/work-with-products#tag/Ostatk… → Метод удаляет запись об остатках товаров продавца из [списка остатков](/openapi/item-management#tag/sellerWar…
+- `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку (03-orders-fbs.yaml)
+  - + operationId: deleteV3SuppliesSupplyId
+  - ~ description: Метод удаляет [поставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D/get),… → Метод удаляет [поставку](/openapi/orders-fbs#tag/fbsSupplies/operation/getV3SuppliesSupplyId), если она актив…
+- `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить грузоместа из поставки (03-orders-fbs.yaml)
+  - + operationId: deleteV3SuppliesSupplyIdTrbx
+- `DELETE /api/v3/warehouses/{warehouseId}` — Удалить склад продавца (02-items.yaml)
+  - + operationId: deleteV3WarehousesWarehouseId
+  - ~ description: Метод удаляет [склад продавца](/openapi/work-with-products#tag/Sklady-prodavca/paths/~1api~1v3~1warehouses/ge… → Метод удаляет [склад продавца](/openapi/item-management#tag/sellerWarehouses/operation/getV3Warehouses).  Лим…
+- `DELETE /content/v2/tag/{id}` — Удаление ярлыка (02-items.yaml)
+  - + operationId: deleteV2TagId
+  - ~ description: Метод удаляет ярлык из [списка ярлыков](/openapi/work-with-products#tag/labels/paths/~1content~1v2~1tags/get)… → Метод удаляет ярлык из [списка ярлыков](/openapi/item-management#tag/labels/operation/getV2Tags) продавца.  Л…
+  - ~ ответ 200 application/json.errorText: string, необяз. — Текст ошибки → string, необяз. — Описание ошибки
+  - ~ ответ 400 application/json.errorText: string, необяз. — Текст ошибки → string, необяз. — Описание ошибки
+  - ~ ответ 403 application/json.errorText: string, необяз. — Текст ошибки → string, необяз. — Описание ошибки
+- `GET /adv/v0/delete` — Удаление кампании (08-promotion.yaml)
+- `GET /adv/v0/pause` — Пауза кампании (08-promotion.yaml)
+- `GET /adv/v0/start` — Запуск кампании (08-promotion.yaml)
+- `GET /adv/v0/stop` — Завершение кампании (08-promotion.yaml)
+- `GET /adv/v1/advert` — Информация о медиакампании (08-promotion.yaml)
+- `GET /adv/v1/adverts` — Список медиакампаний (08-promotion.yaml)
+- `GET /adv/v1/balance` — Баланс (08-promotion.yaml)
+- `GET /adv/v1/budget` — Бюджет кампании (08-promotion.yaml)
+  - ~ deprecated: нет → да
+  - ~ description: Метод возвращает информацию о бюджете [кампании](/openapi/promotion#tag/campaigns/operation/getV2Adverts) — м… → Метод будет отключен [16 ноября](https://dev.wildberries.ru/release-notes?id=582).  Лимит запросов на один ак…
+- `GET /adv/v1/count` — Количество медиакампаний (08-promotion.yaml)
+- `GET /adv/v1/payments` — Получение истории пополнений счёта (08-promotion.yaml)
+- `GET /adv/v1/promotion/count` — Списки кампаний (08-promotion.yaml)
+- `GET /adv/v1/supplier/subjects` — Предметы для кампаний (08-promotion.yaml)
+  - ~ description: Метод возвращает список [предметов](/openapi/work-with-products#tag/categoriesSubcategoriesAndCharacteristics… → Метод возвращает список [предметов](/openapi/item-management#tag/categoriesSubcategoriesAndCharacteristics/op…
+- `GET /adv/v1/upd` — Получение истории затрат (08-promotion.yaml)
+- `GET /adv/v3/fullstats` — Статистика кампаний (08-promotion.yaml)
+- `GET /api/advert/v0/bids/recommendations` — Рекомендуемые ставки для карточек товаров и поисковых кластеров (08-promotion.yaml)
+- `GET /api/advert/v1/config` — Конфигурационные значения продвижения (08-promotion.yaml)
+  - + ответ 200 application/json.minDailyLimit: integer<int64>, обяз. — Минимально допустимый размер дневного лимита, вне зависимости от ставок кампании. Указывается в разменных еди…
+- `GET /api/advert/v2/adverts` — Информация о кампаниях (08-promotion.yaml)
+- `GET /api/analytics/v1/deductions` — Подмены и неверные вложения (12-reports.yaml)
+- `GET /api/analytics/v1/measurement-penalties` — Удержания за занижение габаритов упаковки (12-reports.yaml)
+  - + ответ 200 application/json.data.reports[].dateEnd: string<date-time>, необяз. — Дата и время окончания действия коэффициента
+  - + ответ 200 application/json.data.reports[].dateStart: string<date-time>, необяз. — Дата и время начала действия коэффициента
+  - ~ ответ 200 application/json.data.reports[].dimId: integer, необяз. — ID замера → integer, обяз. — ID замера
+  - ~ ответ 200 application/json.data.reports[].height: integer, необяз. — Высота, см (фактические габариты по замеру на складе) → integer, обяз. — Высота, см (фактические габариты по замеру на складе)
+  - ~ ответ 200 application/json.data.reports[].heightSup: integer, необяз. — Высота, см (габариты карточки товара) → integer, обяз. — Высота, см (габариты карточки товара)
+  - ~ ответ 200 application/json.data.reports[].length: integer, необяз. — Длина, см (фактические габариты по замеру на складе) → integer, обяз. — Длина, см (фактические габариты по замеру на складе)
+  - ~ ответ 200 application/json.data.reports[].lengthSup: integer, необяз. — Длина, см (габариты карточки товара) → integer, обяз. — Длина, см (габариты карточки товара)
+  - ~ ответ 200 application/json.data.reports[].nmId: integer, необяз. — Артикул WB → integer, обяз. — Артикул WB
+  - ~ ответ 200 application/json.data.reports[].photoUrls: array, необяз. — Фото замеров → array, обяз. — Фото замеров
+  - ~ ответ 200 application/json.data.reports[].prcOver: number, необяз. — Разница в габаритах, % → number, обяз. — Разница в габаритах, %
+  - ~ ответ 200 application/json.data.reports[].subjectName: string, необяз. — Предмет → string, обяз. — Предмет
+  - ~ ответ 200 application/json.data.reports[].volume: number, необяз. — Объём, л (фактические габариты по замеру на складе) → number, обяз. — Объём, л (фактические габариты по замеру на складе)
+  - ~ ответ 200 application/json.data.reports[].volumeSup: number, необяз. — Объём, л (габариты карточки товара) → number, обяз. — Объём, л (габариты карточки товара)
+  - ~ ответ 200 application/json.data.reports[].width: integer, необяз. — Ширина, см (фактические габариты по замеру на складе) → integer, обяз. — Ширина, см (фактические габариты по замеру на складе)
+  - ~ ответ 200 application/json.data.reports[].widthSup: integer, необяз. — Ширина, см (габариты карточки товара) → integer, обяз. — Ширина, см (габариты карточки товара)
+- `GET /api/analytics/v1/warehouse-measurements` — Замеры склада (12-reports.yaml)
+- `GET /api/common/v1/rating` — Получить рейтинг продавца (01-general.yaml)
+- `GET /api/common/v1/subscriptions` — Получить информацию о подписке Джем (01-general.yaml)
+- `GET /api/common/v1/tariff-constructor/options` — Получить информацию об опциях Конструктора тарифов (01-general.yaml)
+- `GET /api/communications/v2/news` — Получение новостей портала продавцов (01-general.yaml)
+- `GET /api/content/v1/brands` — Бренды (02-items.yaml)
+  - + operationId: getV1Brands
+- `GET /api/feedbacks/v1/pins` — Список закреплённых и откреплённых отзывов (09-communications.yaml)
+  - ~ operationId: getFeedbacksV1Pins → getV1Pins
+- `GET /api/feedbacks/v1/pins/count` — Количество закреплённых и откреплённых отзывов (09-communications.yaml)
+  - ~ operationId: getFeedbacksV1PinsCount → getV1PinsCount
+- `GET /api/feedbacks/v1/pins/limits` — Лимиты закреплённых отзывов (09-communications.yaml)
+  - ~ operationId: getFeedbacksV1PinsLimits → getV1PinsLimits
+- `GET /api/marketplace/v3/fbs/dictionaries/countries/oksm` — Получить список стран ОКСМ (03-orders-fbs.yaml)
+- `GET /api/marketplace/v3/fbs/orders/archive` — Получить список архивных сборочных заданий (03-orders-fbs.yaml)
+  - + operationId: getV3FbsOrdersArchive
+  - ~ ответ 200 application/json.orders[].crossBorder: object, обяз. — Информация о заказе по модели кроссбордер → object, обяз. — Информация о трансграничной поставке
+  - ~ ответ 200 application/json.orders[].product.chrtId: integer, обяз. — ID размера товара в системе WB → integer<uint64>, обяз. — ID размера товара в системе WB
+- `GET /api/marketplace/v3/fbs/settings/autoreturns` — Получить настройки автовозврата продавца (03-orders-fbs.yaml)
+  - ~ description: Метод доступен по Персональному токену  Метод возвращает информацию о настройках автовозврата, установленных … → Метод доступен по Персональному токену, Сервисному токену, Базовому токену с секретом  Метод возвращает инфор…
+  - ~ operationId: getMarketplaceV3FbsSettingsAutoreturns → getV3FbsSettingsAutoreturns
+  - ~ x-token-types: personal → personal, service, base-with-secret
+- `GET /api/marketplace/v3/fbs/settings/autoreturns/subcategories/restricted` — Получить предметы, которые не хранятся на складах WB (03-orders-fbs.yaml)
+  - ~ description: Метод доступен по Персональному токену  Метод возвращает список ID предметов, товары которых не могут хранить… → Метод доступен по Персональному токену, Сервисному токену, Базовому токену с секретом  Метод возвращает списо…
+  - ~ operationId: getMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestricted → getV3FbsSettingsAutoreturnsSubcategoriesRestricted
+  - ~ x-token-types: personal → personal, service, base-with-secret
+- `GET /api/marketplace/v3/fbs/shipping-points` — Получить список пунктов отгрузки поставок (03-orders-fbs.yaml)
+- `GET /api/marketplace/v3/fbs/supplies/{supplyId}/stickers/spot` — Получить QR-код СПОТ (03-orders-fbs.yaml)
+- `GET /api/marketplace/v3/supplies/{supplyId}/order-ids` — Получить ID сборочных заданий поставки (03-orders-fbs.yaml)
+  - + operationId: getV3SuppliesSupplyIdOrderIds
+- `GET /api/tariffs/v1/acceptance/coefficients` — Тарифы на поставку (10-rates.yaml)
+- `GET /api/v1/acceptance_report` — Создать отчёт (12-reports.yaml)
+- `GET /api/v1/acceptance_report/tasks/{task_id}/download` — Получить отчёт (12-reports.yaml)
+- `GET /api/v1/acceptance_report/tasks/{task_id}/status` — Проверить статус (12-reports.yaml)
+- `GET /api/v1/account/balance` — Получить баланс продавца (13-finances.yaml)
+- `GET /api/v1/analytics/antifraud-details` — Самовыкупы (12-reports.yaml)
+- `GET /api/v1/analytics/banned-products/blocked` — Получить отчёт (12-reports.yaml)
+- `GET /api/v1/analytics/brand-share` — Получить отчёт (12-reports.yaml)
+- `GET /api/v1/analytics/brand-share/brands` — Бренды продавца (12-reports.yaml)
+- `GET /api/v1/analytics/brand-share/parent-subjects` — Родительские категории бренда (12-reports.yaml)
+- `GET /api/v1/analytics/goods-labeling` — Маркировка товара (12-reports.yaml)
+- `GET /api/v1/analytics/goods-return` — Получить отчёт (12-reports.yaml)
+  - ~ deprecated: нет → да
+  - ~ description: Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-r… → Метод будет отключен [26 октября](/release-notes?id=577).
+- `GET /api/v1/analytics/region-sale` — Получить отчёт (12-reports.yaml)
+- `GET /api/v1/calendar/promotions` — Список акций (08-promotion.yaml)
+- `GET /api/v1/calendar/promotions/details` — Детальная информация об акциях (08-promotion.yaml)
+- …ещё 234
+
 ## 2026-09-10
 
 Источник: dev.wildberries.ru. Эндпоинтов: 287 → 294.

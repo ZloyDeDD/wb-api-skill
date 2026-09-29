@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-10T07:19:26+00:00",
+ "generated_at": "2026-09-29T15:44:28+00:00",
  "files": [
   {
    "file": "01-general.yaml",
@@ -41,13 +41,13 @@
    "file": "07-orders-fbw.yaml",
    "title": "Поставки FBW",
    "version": "ordersfbw",
-   "endpoints": 7
+   "endpoints": 14
   },
   {
    "file": "08-promotion.yaml",
    "title": "Маркетинг и продвижение",
    "version": "promotion",
-   "endpoints": 39
+   "endpoints": 42
   },
   {
    "file": "09-communications.yaml",
@@ -71,7 +71,7 @@
    "file": "12-reports.yaml",
    "title": "Отчёты",
    "version": "reports",
-   "endpoints": 23
+   "endpoints": 24
   },
   {
    "file": "13-finances.yaml",
@@ -82,7 +82,7 @@
  ],
  "endpoints": [
   {
-   "fingerprint": "3b406f761a3fd023",
+   "fingerprint": "b1d95b7064819c86",
    "method": "GET",
    "path": "/api/common/v1/rating",
    "hosts": [
@@ -103,7 +103,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d41b430724937a02",
+   "fingerprint": "531ab72cf3e3bd66",
    "method": "GET",
    "path": "/api/common/v1/subscriptions",
    "hosts": [
@@ -124,7 +124,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4476c2edb28b317e",
+   "fingerprint": "9bbbc3fa4cc33035",
    "method": "GET",
    "path": "/api/common/v1/tariff-constructor/options",
    "hosts": [
@@ -145,7 +145,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9cd1f2a7971428e9",
+   "fingerprint": "1a54ec67ab290bec",
    "method": "GET",
    "path": "/api/communications/v2/news",
    "hosts": [
@@ -164,7 +164,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1f569587f7e35e3b",
+   "fingerprint": "93e4f4368f78e578",
    "method": "POST",
    "path": "/api/v1/invite",
    "hosts": [
@@ -185,7 +185,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b8d65e6cdc1a2a21",
+   "fingerprint": "5a36722ff9f6ec44",
    "method": "GET",
    "path": "/api/v1/seller-info",
    "hosts": [
@@ -204,7 +204,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0d9edfb5c9a4a89f",
+   "fingerprint": "ffe5e3d4dd6be5e3",
    "method": "DELETE",
    "path": "/api/v1/user",
    "hosts": [
@@ -225,7 +225,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "829e99d98324befe",
+   "fingerprint": "285e26b1c694054d",
    "method": "GET",
    "path": "/api/v1/users",
    "hosts": [
@@ -246,7 +246,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4abed48796148b55",
+   "fingerprint": "34ee9e5ec5dfe816",
    "method": "PUT",
    "path": "/api/v1/users/access",
    "hosts": [
@@ -267,7 +267,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "00f1777ea23197dd",
+   "fingerprint": "0dfc2af867f83428",
    "method": "GET",
    "path": "/ping",
    "hosts": [
@@ -280,13 +280,13 @@
    ],
    "summary": "Проверка подключения",
    "operationId": "getPing",
-   "category": "all",
+   "category": "commonapi",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "167491da3faaadcb",
+   "fingerprint": "224b6e4db2978d74",
    "method": "GET",
    "path": "/api/content/v1/brands",
    "hosts": [
@@ -298,14 +298,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Бренды",
-   "operationId": "",
+   "operationId": "getV1Brands",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "f292c3dfb890f4ee",
+   "fingerprint": "784fac03c3ac0c93",
    "method": "POST",
    "path": "/api/content/v1/recommendations/list",
    "hosts": [
@@ -327,7 +327,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "6a11ee69df6233c1",
+   "fingerprint": "7827892de13a9059",
    "method": "POST",
    "path": "/api/content/v1/recommendations/set",
    "hosts": [
@@ -349,7 +349,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b488bc85b024ec0b",
+   "fingerprint": "f9ccb3fb90cca7a0",
    "method": "POST",
    "path": "/api/discounts-prices/v1/upload/task/b2b/wholesale",
    "hosts": [
@@ -371,7 +371,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "525bc5b5db4f0c34",
+   "fingerprint": "e86162a7a0380c55",
    "method": "GET",
    "path": "/api/v2/buffer/goods/task",
    "hosts": [
@@ -384,14 +384,14 @@
     "Цены и скидки"
    ],
    "summary": "Детализация необработанной загрузки",
-   "operationId": "",
+   "operationId": "getV2BufferGoodsTask",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "85d0c86b690b22ec",
+   "fingerprint": "405b75c8fb8794a0",
    "method": "GET",
    "path": "/api/v2/buffer/tasks",
    "hosts": [
@@ -404,14 +404,14 @@
     "Цены и скидки"
    ],
    "summary": "Состояние необработанной загрузки",
-   "operationId": "",
+   "operationId": "getV2BufferTasks",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "8a588bf52ef6aed9",
+   "fingerprint": "4d200ace8fdf63b2",
    "method": "GET",
    "path": "/api/v2/history/goods/task",
    "hosts": [
@@ -424,14 +424,14 @@
     "Цены и скидки"
    ],
    "summary": "Детализация обработанной загрузки",
-   "operationId": "",
+   "operationId": "getV2HistoryGoodsTask",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "25f0238b6ca49dc8",
+   "fingerprint": "8d7013b03987765e",
    "method": "GET",
    "path": "/api/v2/history/tasks",
    "hosts": [
@@ -444,14 +444,14 @@
     "Цены и скидки"
    ],
    "summary": "Состояние обработанной загрузки",
-   "operationId": "",
+   "operationId": "getV2HistoryTasks",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "d86b6f327222a6d6",
+   "fingerprint": "c262cc6d54a5675e",
    "method": "GET",
    "path": "/api/v2/list/goods/filter",
    "hosts": [
@@ -464,14 +464,14 @@
     "Цены и скидки"
    ],
    "summary": "Получить товары с ценами",
-   "operationId": "",
+   "operationId": "getV2ListGoodsFilter",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "3e9fab7db6761d38",
+   "fingerprint": "19771412239c2f16",
    "method": "POST",
    "path": "/api/v2/list/goods/filter",
    "hosts": [
@@ -484,14 +484,14 @@
     "Цены и скидки"
    ],
    "summary": "Получить товары с ценами по артикулам",
-   "operationId": "",
+   "operationId": "postV2ListGoodsFilter",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "0cf1294b17b70eb9",
+   "fingerprint": "c2553327481a9a43",
    "method": "GET",
    "path": "/api/v2/list/goods/size/nm",
    "hosts": [
@@ -504,14 +504,14 @@
     "Цены и скидки"
    ],
    "summary": "Получить размеры товара с ценами",
-   "operationId": "",
+   "operationId": "getV2ListGoodsSizeNm",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "60ad90561d384b2a",
+   "fingerprint": "37f18b29a6ca8ffd",
    "method": "GET",
    "path": "/api/v2/quarantine/goods",
    "hosts": [
@@ -524,14 +524,14 @@
     "Цены и скидки"
    ],
    "summary": "Получить товары в карантине",
-   "operationId": "",
+   "operationId": "getV2QuarantineGoods",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "a4d361c9b4d814e4",
+   "fingerprint": "89df4b3bcbaf9a37",
    "method": "POST",
    "path": "/api/v2/upload/task",
    "hosts": [
@@ -544,14 +544,14 @@
     "Цены и скидки"
    ],
    "summary": "Установить цены и скидки",
-   "operationId": "",
+   "operationId": "postV2UploadTask",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "8e579f3d787db890",
+   "fingerprint": "f7d451fa1924b409",
    "method": "POST",
    "path": "/api/v2/upload/task/club-discount",
    "hosts": [
@@ -564,14 +564,14 @@
     "Цены и скидки"
    ],
    "summary": "Установить скидки WB Клуба",
-   "operationId": "",
+   "operationId": "postV2UploadTaskClubDiscount",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "bea2cab9f407c9d0",
+   "fingerprint": "ddbe1ae51929144c",
    "method": "POST",
    "path": "/api/v2/upload/task/size",
    "hosts": [
@@ -584,14 +584,14 @@
     "Цены и скидки"
    ],
    "summary": "Установить цены для размеров",
-   "operationId": "",
+   "operationId": "postV2UploadTaskSize",
    "category": "discountsandprices",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "30869a9b7e595cd2",
+   "fingerprint": "6b5fb2f883cfef16",
    "method": "GET",
    "path": "/api/v3/dbw/warehouses/{warehouseId}/contacts",
    "hosts": [
@@ -603,14 +603,14 @@
     "Склады продавца"
    ],
    "summary": "Список контактов",
-   "operationId": "",
+   "operationId": "getV3DbwWarehousesWarehouseIdContacts",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "9053161d03a1f080",
+   "fingerprint": "806a9b6c82984f14",
    "method": "PUT",
    "path": "/api/v3/dbw/warehouses/{warehouseId}/contacts",
    "hosts": [
@@ -622,14 +622,14 @@
     "Склады продавца"
    ],
    "summary": "Обновить список контактов",
-   "operationId": "",
+   "operationId": "putV3DbwWarehousesWarehouseIdContacts",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "0ec54552f548c7b3",
+   "fingerprint": "d04cd1799e8b826b",
    "method": "GET",
    "path": "/api/v3/offices",
    "hosts": [
@@ -642,14 +642,14 @@
     "Склады продавца"
    ],
    "summary": "Получить список складов WB",
-   "operationId": "",
+   "operationId": "getV3Offices",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "63a78f748fa0cbf6",
+   "fingerprint": "1231bdb0e72e64c7",
    "method": "DELETE",
    "path": "/api/v3/stocks/{warehouseId}",
    "hosts": [
@@ -662,14 +662,14 @@
     "Остатки на складах продавца"
    ],
    "summary": "Удалить остатки товаров",
-   "operationId": "",
+   "operationId": "deleteV3StocksWarehouseId",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "7e89b39255cc6240",
+   "fingerprint": "9bf48bb6fcb727da",
    "method": "POST",
    "path": "/api/v3/stocks/{warehouseId}",
    "hosts": [
@@ -682,14 +682,14 @@
     "Остатки на складах продавца"
    ],
    "summary": "Получить остатки товаров",
-   "operationId": "",
+   "operationId": "postV3StocksWarehouseId",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "af43f9b040210bec",
+   "fingerprint": "d804e8c4e9f060fa",
    "method": "PUT",
    "path": "/api/v3/stocks/{warehouseId}",
    "hosts": [
@@ -702,14 +702,14 @@
     "Остатки на складах продавца"
    ],
    "summary": "Обновить остатки товаров",
-   "operationId": "",
+   "operationId": "putV3StocksWarehouseId",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "cad46fb705853da4",
+   "fingerprint": "391969eda2173141",
    "method": "GET",
    "path": "/api/v3/warehouses",
    "hosts": [
@@ -722,14 +722,14 @@
     "Склады продавца"
    ],
    "summary": "Получить список складов продавца",
-   "operationId": "",
+   "operationId": "getV3Warehouses",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "290acc8269677b71",
+   "fingerprint": "406bee2db43cd5f4",
    "method": "POST",
    "path": "/api/v3/warehouses",
    "hosts": [
@@ -742,14 +742,14 @@
     "Склады продавца"
    ],
    "summary": "Создать склад продавца",
-   "operationId": "",
+   "operationId": "postV3Warehouses",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "ca7e572ffc655fe8",
+   "fingerprint": "bb971c7c78d66c6f",
    "method": "DELETE",
    "path": "/api/v3/warehouses/{warehouseId}",
    "hosts": [
@@ -762,14 +762,14 @@
     "Склады продавца"
    ],
    "summary": "Удалить склад продавца",
-   "operationId": "",
+   "operationId": "deleteV3WarehousesWarehouseId",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "20bdb1894eb21da8",
+   "fingerprint": "9f1a728225a7a13f",
    "method": "PUT",
    "path": "/api/v3/warehouses/{warehouseId}",
    "hosts": [
@@ -782,14 +782,14 @@
     "Склады продавца"
    ],
    "summary": "Обновить склад продавца",
-   "operationId": "",
+   "operationId": "putV3WarehousesWarehouseId",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "b5a80e3499961d07",
+   "fingerprint": "c049c91a2f528f8c",
    "method": "POST",
    "path": "/content/v2/barcodes",
    "hosts": [
@@ -802,14 +802,14 @@
     "Создание карточек товаров"
    ],
    "summary": "Генерация баркодов",
-   "operationId": "",
+   "operationId": "postV2Barcodes",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "a3a6e5ca4dada3bf",
+   "fingerprint": "6d71cfe5bac45842",
    "method": "POST",
    "path": "/content/v2/cards/delete/trash",
    "hosts": [
@@ -822,14 +822,14 @@
     "Карточки товаров"
    ],
    "summary": "Перенос карточек товаров в корзину",
-   "operationId": "",
+   "operationId": "postV2CardsDeleteTrash",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "92ed45d37e83abdf",
+   "fingerprint": "c08050903a341226",
    "method": "POST",
    "path": "/content/v2/cards/error/list",
    "hosts": [
@@ -842,14 +842,14 @@
     "Карточки товаров"
    ],
    "summary": "Список несозданных карточек товаров с ошибками",
-   "operationId": "",
+   "operationId": "postV2CardsErrorList",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "8ea33645bc0ec77c",
+   "fingerprint": "2f9626e7a50f449c",
    "method": "GET",
    "path": "/content/v2/cards/limits",
    "hosts": [
@@ -862,14 +862,14 @@
     "Создание карточек товаров"
    ],
    "summary": "Лимиты карточек товаров",
-   "operationId": "",
+   "operationId": "getV2CardsLimits",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "60d112ac34db844c",
+   "fingerprint": "55c11b704f8bcd59",
    "method": "POST",
    "path": "/content/v2/cards/moveNm",
    "hosts": [
@@ -882,14 +882,14 @@
     "Карточки товаров"
    ],
    "summary": "Объединение и разъединение карточек товаров",
-   "operationId": "",
+   "operationId": "postV2CardsMoveNm",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "79cc9925a22c43bf",
+   "fingerprint": "b100fcd537109f63",
    "method": "POST",
    "path": "/content/v2/cards/recover",
    "hosts": [
@@ -902,14 +902,14 @@
     "Карточки товаров"
    ],
    "summary": "Восстановление карточек товаров из корзины",
-   "operationId": "",
+   "operationId": "postV2CardsRecover",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "26bb983f1b3fd7ef",
+   "fingerprint": "3cd3aedcd75cbf99",
    "method": "POST",
    "path": "/content/v2/cards/update",
    "hosts": [
@@ -922,14 +922,14 @@
     "Карточки товаров"
    ],
    "summary": "Редактирование карточек товаров",
-   "operationId": "",
+   "operationId": "postV2CardsUpdate",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "d34a1e72d3c03f86",
+   "fingerprint": "e795a579d09f8c97",
    "method": "POST",
    "path": "/content/v2/cards/upload",
    "hosts": [
@@ -942,14 +942,14 @@
     "Создание карточек товаров"
    ],
    "summary": "Создание карточек товаров",
-   "operationId": "",
+   "operationId": "postV2CardsUpload",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "0cc602834b5c3154",
+   "fingerprint": "5c8b84094be921e4",
    "method": "POST",
    "path": "/content/v2/cards/upload/add",
    "hosts": [
@@ -962,14 +962,14 @@
     "Создание карточек товаров"
    ],
    "summary": "Создание карточек товаров с присоединением",
-   "operationId": "",
+   "operationId": "postV2CardsUploadAdd",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "0c531c6dfe3cae8a",
+   "fingerprint": "af8297e08de29363",
    "method": "GET",
    "path": "/content/v2/directory/colors",
    "hosts": [
@@ -982,14 +982,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Цвет",
-   "operationId": "",
+   "operationId": "getV2DirectoryColors",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "8d6fe92969ada6af",
+   "fingerprint": "0dae0760e5409e98",
    "method": "GET",
    "path": "/content/v2/directory/countries",
    "hosts": [
@@ -1002,14 +1002,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Страна производства",
-   "operationId": "",
+   "operationId": "getV2DirectoryCountries",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "ea40a28542f44eb3",
+   "fingerprint": "cb6afaec9f40a21f",
    "method": "GET",
    "path": "/content/v2/directory/kinds",
    "hosts": [
@@ -1022,14 +1022,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Пол",
-   "operationId": "",
+   "operationId": "getV2DirectoryKinds",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "997bdc263ede68df",
+   "fingerprint": "267346fff129115f",
    "method": "GET",
    "path": "/content/v2/directory/seasons",
    "hosts": [
@@ -1042,14 +1042,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Сезон",
-   "operationId": "",
+   "operationId": "getV2DirectorySeasons",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "10cce6606d55f03e",
+   "fingerprint": "677b71e2f237977e",
    "method": "GET",
    "path": "/content/v2/directory/tnved",
    "hosts": [
@@ -1062,14 +1062,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "ТНВЭД-код",
-   "operationId": "",
+   "operationId": "getV2DirectoryTnved",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "6ecda894b632ce3f",
+   "fingerprint": "f43eaf2fdcf305b1",
    "method": "GET",
    "path": "/content/v2/directory/vat",
    "hosts": [
@@ -1082,14 +1082,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Ставка НДС",
-   "operationId": "",
+   "operationId": "getV2DirectoryVat",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "c35a208254cd8197",
+   "fingerprint": "1a96f00b572ee8aa",
    "method": "POST",
    "path": "/content/v2/get/cards/list",
    "hosts": [
@@ -1102,14 +1102,14 @@
     "Карточки товаров"
    ],
    "summary": "Список карточек товаров",
-   "operationId": "",
+   "operationId": "postV2GetCardsList",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "38f9cc586c8cbc6b",
+   "fingerprint": "54fe99ff330896b9",
    "method": "POST",
    "path": "/content/v2/get/cards/trash",
    "hosts": [
@@ -1122,14 +1122,14 @@
     "Карточки товаров"
    ],
    "summary": "Список карточек товаров в корзине",
-   "operationId": "",
+   "operationId": "postV2GetCardsTrash",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "088c64cd8ec0961c",
+   "fingerprint": "b914f8fd317e701d",
    "method": "GET",
    "path": "/content/v2/object/all",
    "hosts": [
@@ -1142,14 +1142,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Список предметов",
-   "operationId": "",
+   "operationId": "getV2ObjectAll",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "67b47926ef3913ad",
+   "fingerprint": "d2fbb55cdd905672",
    "method": "GET",
    "path": "/content/v2/object/charcs/{subjectId}",
    "hosts": [
@@ -1162,14 +1162,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Характеристики предмета",
-   "operationId": "",
+   "operationId": "getV2ObjectCharcsSubjectId",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "c5dbf08d924c9b6b",
+   "fingerprint": "5d5d9a65bb66bf50",
    "method": "GET",
    "path": "/content/v2/object/parent/all",
    "hosts": [
@@ -1182,14 +1182,14 @@
     "Категории, предметы и характеристики"
    ],
    "summary": "Родительские категории товаров",
-   "operationId": "",
+   "operationId": "getV2ObjectParentAll",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "3632201b646e6651",
+   "fingerprint": "57cce9168f39c395",
    "method": "POST",
    "path": "/content/v2/tag",
    "hosts": [
@@ -1202,14 +1202,14 @@
     "Ярлыки"
    ],
    "summary": "Создание ярлыка",
-   "operationId": "",
+   "operationId": "postV2Tag",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "831287c910bcaf3f",
+   "fingerprint": "f2377ecf2699f549",
    "method": "POST",
    "path": "/content/v2/tag/nomenclature/link",
    "hosts": [
@@ -1222,14 +1222,14 @@
     "Ярлыки"
    ],
    "summary": "Управление ярлыками в карточке товара",
-   "operationId": "",
+   "operationId": "postV2TagNomenclatureLink",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "4db921c004f3fa32",
+   "fingerprint": "622e209f1c017fef",
    "method": "DELETE",
    "path": "/content/v2/tag/{id}",
    "hosts": [
@@ -1242,14 +1242,14 @@
     "Ярлыки"
    ],
    "summary": "Удаление ярлыка",
-   "operationId": "",
+   "operationId": "deleteV2TagId",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "779aa56506d1b3e6",
+   "fingerprint": "1b5d53a2654b1b77",
    "method": "PATCH",
    "path": "/content/v2/tag/{id}",
    "hosts": [
@@ -1262,14 +1262,14 @@
     "Ярлыки"
    ],
    "summary": "Изменение ярлыка",
-   "operationId": "",
+   "operationId": "patchV2TagId",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "cde3d8e3d0ea9773",
+   "fingerprint": "d33d05f4c0865d0b",
    "method": "GET",
    "path": "/content/v2/tags",
    "hosts": [
@@ -1282,14 +1282,14 @@
     "Ярлыки"
    ],
    "summary": "Список ярлыков",
-   "operationId": "",
+   "operationId": "getV2Tags",
    "category": "content",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "b8ce74acf99b3bb7",
+   "fingerprint": "d2795cabdccb4404",
    "method": "POST",
    "path": "/content/v3/media/file",
    "hosts": [
@@ -1302,14 +1302,14 @@
     "Медиафайлы"
    ],
    "summary": "Загрузить медиафайл",
-   "operationId": "",
+   "operationId": "postV3MediaFile",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "469b4fb667bf2797",
+   "fingerprint": "59f7f64ac5c1e132",
    "method": "POST",
    "path": "/content/v3/media/save",
    "hosts": [
@@ -1322,14 +1322,14 @@
     "Медиафайлы"
    ],
    "summary": "Загрузить медиафайлы по ссылкам",
-   "operationId": "",
+   "operationId": "postV3MediaSave",
    "category": "content",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "2941a369a3513721",
+   "fingerprint": "c2aa8ccbd7adfb7b",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/dictionaries/countries/oksm",
    "hosts": [
@@ -1348,7 +1348,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0caf08af4b63808d",
+   "fingerprint": "8a6cacd1624ac5c7",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/orders/archive",
    "hosts": [
@@ -1360,14 +1360,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Получить список архивных сборочных заданий",
-   "operationId": "",
+   "operationId": "getV3FbsOrdersArchive",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "07595a5e327046c3",
+   "fingerprint": "de9e0541159289d1",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns",
    "hosts": [
@@ -1379,16 +1379,18 @@
     "Настройки автовозврата"
    ],
    "summary": "Получить настройки автовозврата продавца",
-   "operationId": "getMarketplaceV3FbsSettingsAutoreturns",
+   "operationId": "getV3FbsSettingsAutoreturns",
    "category": "marketplace",
    "tokens": [
-    "personal"
+    "personal",
+    "service",
+    "base-with-secret"
    ],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "f7471dd0b30fac53",
+   "fingerprint": "86b3da043748ef4e",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns",
    "hosts": [
@@ -1400,16 +1402,18 @@
     "Настройки автовозврата"
    ],
    "summary": "Обновить настройки автовозврата продавца",
-   "operationId": "patchMarketplaceV3FbsSettingsAutoreturns",
+   "operationId": "patchV3FbsSettingsAutoreturns",
    "category": "marketplace",
    "tokens": [
-    "personal"
+    "personal",
+    "service",
+    "base-with-secret"
    ],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "787afc675d759e82",
+   "fingerprint": "3ef5b5081b234e86",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/items",
    "hosts": [
@@ -1421,16 +1425,18 @@
     "Настройки автовозврата"
    ],
    "summary": "Обновить настройки автовозврата товаров",
-   "operationId": "patchMarketplaceV3FbsSettingsAutoreturnsItems",
+   "operationId": "patchV3FbsSettingsAutoreturnsItems",
    "category": "marketplace",
    "tokens": [
-    "personal"
+    "personal",
+    "service",
+    "base-with-secret"
    ],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "8ef4817cdc372cbb",
+   "fingerprint": "fe7c02535f5b1453",
    "method": "POST",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/items",
    "hosts": [
@@ -1442,16 +1448,18 @@
     "Настройки автовозврата"
    ],
    "summary": "Получить настройки автовозврата товаров",
-   "operationId": "postMarketplaceV3FbsSettingsAutoreturnsItems",
+   "operationId": "postV3FbsSettingsAutoreturnsItems",
    "category": "marketplace",
    "tokens": [
-    "personal"
+    "personal",
+    "service",
+    "base-with-secret"
    ],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "eedef7e537c4eb11",
+   "fingerprint": "b0afa810da9684c9",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/settings/autoreturns/subcategories/restricted",
    "hosts": [
@@ -1463,16 +1471,18 @@
     "Настройки автовозврата"
    ],
    "summary": "Получить предметы, которые не хранятся на складах WB",
-   "operationId": "getMarketplaceV3FbsSettingsAutoreturnsSubcategoriesRestricted",
+   "operationId": "getV3FbsSettingsAutoreturnsSubcategoriesRestricted",
    "category": "marketplace",
    "tokens": [
-    "personal"
+    "personal",
+    "service",
+    "base-with-secret"
    ],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "e2d11627c0dcf5ec",
+   "fingerprint": "f43751523341c6d1",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/shipping-points",
    "hosts": [
@@ -1491,7 +1501,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5b33e03628f7b44f",
+   "fingerprint": "f85656a8c2e8f94f",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/supplies/shipping-method",
    "hosts": [
@@ -1510,7 +1520,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "fe33f39f459fe778",
+   "fingerprint": "fb3054711f4a16c9",
    "method": "POST",
    "path": "/api/marketplace/v3/fbs/supplies/spot/list",
    "hosts": [
@@ -1529,7 +1539,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "74889ff9f9460265",
+   "fingerprint": "1cbbc6a447fd63e9",
    "method": "PATCH",
    "path": "/api/marketplace/v3/fbs/supplies/waybill",
    "hosts": [
@@ -1548,7 +1558,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5cbd2b4e91aa59cc",
+   "fingerprint": "2ba2356e61debcfd",
    "method": "PUT",
    "path": "/api/marketplace/v3/fbs/supplies/{supplyId}/spot",
    "hosts": [
@@ -1567,7 +1577,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b2abad4c96a93645",
+   "fingerprint": "29f572570863178e",
    "method": "GET",
    "path": "/api/marketplace/v3/fbs/supplies/{supplyId}/stickers/spot",
    "hosts": [
@@ -1586,7 +1596,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "21ad8aa04ca2a08a",
+   "fingerprint": "b21055a7fab95bfb",
    "method": "POST",
    "path": "/api/marketplace/v3/orders/meta",
    "hosts": [
@@ -1599,14 +1609,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Получить идентификаторы маркировки сборочных заданий",
-   "operationId": "",
+   "operationId": "postV3OrdersMeta",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "43d10c4e3059457f",
+   "fingerprint": "adcb0b4d720c07dd",
    "method": "PUT",
    "path": "/api/marketplace/v3/orders/{orderId}/meta/customs-declaration",
    "hosts": [
@@ -1619,14 +1629,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Закрепить номер ДТ за сборочным заданием",
-   "operationId": "",
+   "operationId": "putV3OrdersOrderIdMetaCustomsDeclaration",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "fe082c603a230428",
+   "fingerprint": "bc67bfed19d14f5c",
    "method": "GET",
    "path": "/api/marketplace/v3/supplies/{supplyId}/order-ids",
    "hosts": [
@@ -1639,14 +1649,14 @@
     "Поставки FBS"
    ],
    "summary": "Получить ID сборочных заданий поставки",
-   "operationId": "",
+   "operationId": "getV3SuppliesSupplyIdOrderIds",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "932dbc0b427a640b",
+   "fingerprint": "987f99c5b965b903",
    "method": "PATCH",
    "path": "/api/marketplace/v3/supplies/{supplyId}/orders",
    "hosts": [
@@ -1659,14 +1669,14 @@
     "Поставки FBS"
    ],
    "summary": "Добавить сборочные задания к поставке",
-   "operationId": "",
+   "operationId": "patchV3SuppliesSupplyIdOrders",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "7e09860f421bfadc",
+   "fingerprint": "2d38d058efeee78b",
    "method": "GET",
    "path": "/api/v3/orders",
    "hosts": [
@@ -1679,14 +1689,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Получить информацию о сборочных заданиях",
-   "operationId": "",
+   "operationId": "getV3Orders",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "ee50567fd6e605de",
+   "fingerprint": "32726dd72e1abc90",
    "method": "POST",
    "path": "/api/v3/orders/client",
    "hosts": [
@@ -1699,14 +1709,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Заказы с информацией по клиенту",
-   "operationId": "",
+   "operationId": "postV3OrdersClient",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "f63b140a528d6fb6",
+   "fingerprint": "20b7a495081de4ca",
    "method": "GET",
    "path": "/api/v3/orders/new",
    "hosts": [
@@ -1719,14 +1729,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Получить список новых сборочных заданий",
-   "operationId": "",
+   "operationId": "getV3OrdersNew",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "a2c323aa4c92dc1d",
+   "fingerprint": "03485f42c0bf57c1",
    "method": "POST",
    "path": "/api/v3/orders/status",
    "hosts": [
@@ -1739,14 +1749,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Получить статусы сборочных заданий",
-   "operationId": "",
+   "operationId": "postV3OrdersStatus",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "d5ded5875cd2a210",
+   "fingerprint": "6aa62e11e38e8675",
    "method": "POST",
    "path": "/api/v3/orders/status/history",
    "hosts": [
@@ -1759,14 +1769,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "История статусов для сборочных заданий трансграничных поставок",
-   "operationId": "",
+   "operationId": "postV3OrdersStatusHistory",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "84987cfcb709be66",
+   "fingerprint": "47e3a671168bc19b",
    "method": "POST",
    "path": "/api/v3/orders/stickers",
    "hosts": [
@@ -1779,14 +1789,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Получить стикеры сборочных заданий",
-   "operationId": "",
+   "operationId": "postV3OrdersStickers",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "5b07f704a031ed82",
+   "fingerprint": "ff868dbe7ab59276",
    "method": "POST",
    "path": "/api/v3/orders/stickers/cross-border",
    "hosts": [
@@ -1798,14 +1808,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Получить стикеры сборочных заданий трансграничных поставок",
-   "operationId": "",
+   "operationId": "postV3OrdersStickersCrossBorder",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "611f6f246cb35d71",
+   "fingerprint": "64b9574abc6b9047",
    "method": "PATCH",
    "path": "/api/v3/orders/{orderId}/cancel",
    "hosts": [
@@ -1818,14 +1828,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Отменить сборочное задание",
-   "operationId": "",
+   "operationId": "patchV3OrdersOrderIdCancel",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "3acf2b1c0cd36c33",
+   "fingerprint": "0c24ce3a02b13ce9",
    "method": "DELETE",
    "path": "/api/v3/orders/{orderId}/meta",
    "hosts": [
@@ -1838,14 +1848,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Удалить идентификаторы маркировки сборочного задания",
-   "operationId": "",
+   "operationId": "deleteV3OrdersOrderIdMeta",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "10ec586b85a8a012",
+   "fingerprint": "83b307088bf9c428",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/expiration",
    "hosts": [
@@ -1858,14 +1868,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Закрепить за сборочным заданием срок годности товара",
-   "operationId": "",
+   "operationId": "putV3OrdersOrderIdMetaExpiration",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "c7521cc4c25b840e",
+   "fingerprint": "d459bc05d0b06e70",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/gtin",
    "hosts": [
@@ -1878,14 +1888,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Закрепить GTIN за сборочным заданием",
-   "operationId": "",
+   "operationId": "putV3OrdersOrderIdMetaGtin",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "ea85037f7a6e1b4d",
+   "fingerprint": "682ecf9b275d5c17",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/imei",
    "hosts": [
@@ -1898,14 +1908,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Закрепить IMEI за сборочным заданием",
-   "operationId": "",
+   "operationId": "putV3OrdersOrderIdMetaImei",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "8133e3b4a433dce1",
+   "fingerprint": "6cdf88d25ade20cc",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/sgtin",
    "hosts": [
@@ -1918,14 +1928,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Закрепить код маркировки Честного знака за сборочным заданием",
-   "operationId": "",
+   "operationId": "putV3OrdersOrderIdMetaSgtin",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "935394d5a960d776",
+   "fingerprint": "490cb103e0d98fee",
    "method": "PUT",
    "path": "/api/v3/orders/{orderId}/meta/uin",
    "hosts": [
@@ -1938,14 +1948,14 @@
     "Идентификаторы маркировки FBS"
    ],
    "summary": "Закрепить УИН за сборочным заданием",
-   "operationId": "",
+   "operationId": "putV3OrdersOrderIdMetaUin",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "78264b162bf06bfd",
+   "fingerprint": "f54196a3d63fdd84",
    "method": "GET",
    "path": "/api/v3/passes",
    "hosts": [
@@ -1958,14 +1968,14 @@
     "Пропуска FBS"
    ],
    "summary": "Получить список пропусков",
-   "operationId": "",
+   "operationId": "getV3Passes",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "546175707d3c9a5f",
+   "fingerprint": "8f1fabc6ac6fd114",
    "method": "POST",
    "path": "/api/v3/passes",
    "hosts": [
@@ -1978,14 +1988,14 @@
     "Пропуска FBS"
    ],
    "summary": "Создать пропуск",
-   "operationId": "",
+   "operationId": "postV3Passes",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "0d5160e313ce1675",
+   "fingerprint": "630584386bcdb6a7",
    "method": "GET",
    "path": "/api/v3/passes/offices",
    "hosts": [
@@ -1998,14 +2008,14 @@
     "Пропуска FBS"
    ],
    "summary": "Получить список складов, для которых требуется пропуск",
-   "operationId": "",
+   "operationId": "getV3PassesOffices",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "dd1c74b70f7ad51d",
+   "fingerprint": "84ed7ab20e2caa36",
    "method": "DELETE",
    "path": "/api/v3/passes/{passId}",
    "hosts": [
@@ -2018,14 +2028,14 @@
     "Пропуска FBS"
    ],
    "summary": "Удалить пропуск",
-   "operationId": "",
+   "operationId": "deleteV3PassesPassId",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "acdd2e12590b8b3e",
+   "fingerprint": "2dbec7c722e2daf6",
    "method": "PUT",
    "path": "/api/v3/passes/{passId}",
    "hosts": [
@@ -2038,14 +2048,14 @@
     "Пропуска FBS"
    ],
    "summary": "Обновить пропуск",
-   "operationId": "",
+   "operationId": "putV3PassesPassId",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "232e18cb3820b937",
+   "fingerprint": "031d8785049cc46c",
    "method": "GET",
    "path": "/api/v3/supplies",
    "hosts": [
@@ -2058,14 +2068,14 @@
     "Поставки FBS"
    ],
    "summary": "Получить список поставок",
-   "operationId": "",
+   "operationId": "getV3Supplies",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "fc7295eb20d82162",
+   "fingerprint": "da976782f7e9e547",
    "method": "POST",
    "path": "/api/v3/supplies",
    "hosts": [
@@ -2078,14 +2088,14 @@
     "Поставки FBS"
    ],
    "summary": "Создать новую поставку",
-   "operationId": "",
+   "operationId": "postV3Supplies",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "d6042be443ebe60b",
+   "fingerprint": "c2cec5b2b275e2de",
    "method": "GET",
    "path": "/api/v3/supplies/orders/reshipment",
    "hosts": [
@@ -2098,14 +2108,14 @@
     "Сборочные задания FBS"
    ],
    "summary": "Получить все сборочные задания для повторной отгрузки",
-   "operationId": "",
+   "operationId": "getV3SuppliesOrdersReshipment",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "8db1bbe2fb3c2c8a",
+   "fingerprint": "cbda9c931b691d2d",
    "method": "DELETE",
    "path": "/api/v3/supplies/{supplyId}",
    "hosts": [
@@ -2118,14 +2128,14 @@
     "Поставки FBS"
    ],
    "summary": "Удалить поставку",
-   "operationId": "",
+   "operationId": "deleteV3SuppliesSupplyId",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "03eb455c9c77d36a",
+   "fingerprint": "ff4a955bb11361cf",
    "method": "GET",
    "path": "/api/v3/supplies/{supplyId}",
    "hosts": [
@@ -2138,14 +2148,14 @@
     "Поставки FBS"
    ],
    "summary": "Получить информацию о поставке",
-   "operationId": "",
+   "operationId": "getV3SuppliesSupplyId",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "7824bef0eeb76d15",
+   "fingerprint": "c9169ae381ff99d9",
    "method": "GET",
    "path": "/api/v3/supplies/{supplyId}/barcode",
    "hosts": [
@@ -2158,14 +2168,14 @@
     "Поставки FBS"
    ],
    "summary": "Получить QR-код поставки",
-   "operationId": "",
+   "operationId": "getV3SuppliesSupplyIdBarcode",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "022a9e3876e4eb69",
+   "fingerprint": "58f6c868851a71a5",
    "method": "PATCH",
    "path": "/api/v3/supplies/{supplyId}/deliver",
    "hosts": [
@@ -2178,14 +2188,14 @@
     "Поставки FBS"
    ],
    "summary": "Передать поставку в доставку",
-   "operationId": "",
+   "operationId": "patchV3SuppliesSupplyIdDeliver",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "e570a3a581722e29",
+   "fingerprint": "ae2d2e26652dafb2",
    "method": "DELETE",
    "path": "/api/v3/supplies/{supplyId}/trbx",
    "hosts": [
@@ -2198,14 +2208,14 @@
     "Поставки FBS"
    ],
    "summary": "Удалить грузоместа из поставки",
-   "operationId": "",
+   "operationId": "deleteV3SuppliesSupplyIdTrbx",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "7b030c704882ec54",
+   "fingerprint": "0a6f0ac2a261bb6d",
    "method": "GET",
    "path": "/api/v3/supplies/{supplyId}/trbx",
    "hosts": [
@@ -2218,14 +2228,14 @@
     "Поставки FBS"
    ],
    "summary": "Получить список грузомест поставки",
-   "operationId": "",
+   "operationId": "getV3SuppliesSupplyIdTrbx",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "2cec598330972de6",
+   "fingerprint": "83be26186c49c79a",
    "method": "POST",
    "path": "/api/v3/supplies/{supplyId}/trbx",
    "hosts": [
@@ -2238,14 +2248,14 @@
     "Поставки FBS"
    ],
    "summary": "Добавить грузоместа к поставке",
-   "operationId": "",
+   "operationId": "postV3SuppliesSupplyIdTrbx",
    "category": "marketplace",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "4cdc7cfa5614940d",
+   "fingerprint": "b8dd5bcbb248cfea",
    "method": "POST",
    "path": "/api/v3/supplies/{supplyId}/trbx/stickers",
    "hosts": [
@@ -2258,14 +2268,14 @@
     "Поставки FBS"
    ],
    "summary": "Получить стикеры грузомест поставки",
-   "operationId": "",
+   "operationId": "postV3SuppliesSupplyIdTrbxStickers",
    "category": "marketplace",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "b7158c1ec20b7b9b",
+   "fingerprint": "f75806988973bb7c",
    "method": "POST",
    "path": "/api/marketplace/v3/dbw/orders/client",
    "hosts": [
@@ -2284,7 +2294,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "54757e28bbc85b85",
+   "fingerprint": "dde7bab4356598ea",
    "method": "POST",
    "path": "/api/marketplace/v3/dbw/orders/meta/delete",
    "hosts": [
@@ -2303,7 +2313,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "63b8d0da15f3fc57",
+   "fingerprint": "de213bb5689ae447",
    "method": "POST",
    "path": "/api/marketplace/v3/dbw/orders/meta/details",
    "hosts": [
@@ -2322,7 +2332,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9190b1466d853bf1",
+   "fingerprint": "440327328f220392",
    "method": "POST",
    "path": "/api/marketplace/v3/dbw/orders/meta/sgtin",
    "hosts": [
@@ -2341,7 +2351,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "71607546acba2bf4",
+   "fingerprint": "cf87b0db453ce3a9",
    "method": "POST",
    "path": "/api/marketplace/v3/dbw/orders/status/deliver",
    "hosts": [
@@ -2360,7 +2370,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ae6357cab0b0828c",
+   "fingerprint": "eec299d8b4ff535f",
    "method": "GET",
    "path": "/api/v3/dbw/orders",
    "hosts": [
@@ -2379,7 +2389,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1c0da014ebeb2ce8",
+   "fingerprint": "60d68a45844ca1bc",
    "method": "POST",
    "path": "/api/v3/dbw/orders/courier",
    "hosts": [
@@ -2398,7 +2408,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "916b35477cb76d6c",
+   "fingerprint": "ccc04eb8a8b3172a",
    "method": "POST",
    "path": "/api/v3/dbw/orders/delivery-date",
    "hosts": [
@@ -2417,7 +2427,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "74850260154365ba",
+   "fingerprint": "6a8337e825350c7b",
    "method": "GET",
    "path": "/api/v3/dbw/orders/new",
    "hosts": [
@@ -2436,7 +2446,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "55aa12482dcdcf57",
+   "fingerprint": "2e5e1624a691248d",
    "method": "POST",
    "path": "/api/v3/dbw/orders/status",
    "hosts": [
@@ -2455,7 +2465,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b8f5620d30d63a9a",
+   "fingerprint": "5a231eeb4041dd73",
    "method": "POST",
    "path": "/api/v3/dbw/orders/stickers",
    "hosts": [
@@ -2474,7 +2484,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "30e29680b8d0f3de",
+   "fingerprint": "4c7d43c6a953f4ce",
    "method": "PATCH",
    "path": "/api/v3/dbw/orders/{orderId}/cancel",
    "hosts": [
@@ -2493,7 +2503,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3c648c778158a30f",
+   "fingerprint": "96871f9c7ed81d05",
    "method": "PATCH",
    "path": "/api/v3/dbw/orders/{orderId}/confirm",
    "hosts": [
@@ -2512,7 +2522,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e7d19525e13a12f2",
+   "fingerprint": "0e6d37be92c04225",
    "method": "PUT",
    "path": "/api/v3/dbw/orders/{orderId}/meta/gtin",
    "hosts": [
@@ -2531,7 +2541,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c5501eb29cb2026f",
+   "fingerprint": "17f7781062d6e894",
    "method": "PUT",
    "path": "/api/v3/dbw/orders/{orderId}/meta/imei",
    "hosts": [
@@ -2550,7 +2560,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "28c5a8e9f5605880",
+   "fingerprint": "40739d9686e62f30",
    "method": "PUT",
    "path": "/api/v3/dbw/orders/{orderId}/meta/uin",
    "hosts": [
@@ -2569,7 +2579,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8f614c3b0b096471",
+   "fingerprint": "36bfdc028e0e332c",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/b2b/info",
    "hosts": [
@@ -2588,7 +2598,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0e7310f0bbb0cf09",
+   "fingerprint": "72be1444e4cf0d25",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/final-price",
    "hosts": [
@@ -2607,7 +2617,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c2f1d114835ceb2b",
+   "fingerprint": "04c73a129254705c",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/customs-declaration",
    "hosts": [
@@ -2627,7 +2637,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b5237910020d3a91",
+   "fingerprint": "c78af0630e61d3d6",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/delete",
    "hosts": [
@@ -2647,7 +2657,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f38a272b1c4c5cfa",
+   "fingerprint": "de26b325cece6232",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/details",
    "hosts": [
@@ -2666,7 +2676,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a9cc1db7c41e6b10",
+   "fingerprint": "4a9aeabe8a47989b",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/gtin",
    "hosts": [
@@ -2686,7 +2696,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d0e71b53b74376c2",
+   "fingerprint": "5fccb06b671e27a0",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/imei",
    "hosts": [
@@ -2706,7 +2716,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "94bcd6cf47492236",
+   "fingerprint": "9d03cd8799b4e0c6",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/sgtin",
    "hosts": [
@@ -2726,7 +2736,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4b89765e5aa515b9",
+   "fingerprint": "93886ef3e2dec71b",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/meta/uin",
    "hosts": [
@@ -2746,7 +2756,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4fa6a5de45dc0f09",
+   "fingerprint": "25dcc83822142e78",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/cancel",
    "hosts": [
@@ -2766,7 +2776,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c789562bf7b6ffb2",
+   "fingerprint": "1c6c29e2ee0833da",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/confirm",
    "hosts": [
@@ -2786,7 +2796,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "268c6e11ce526478",
+   "fingerprint": "d4f824fb0f504e69",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/deliver",
    "hosts": [
@@ -2806,7 +2816,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ae12d58374082088",
+   "fingerprint": "70c32ba8632db064",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/info",
    "hosts": [
@@ -2826,7 +2836,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "80686852a793f905",
+   "fingerprint": "0c1982d893bab151",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/receive",
    "hosts": [
@@ -2846,7 +2856,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f66da0f702815696",
+   "fingerprint": "9636afcbe601713b",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/status/reject",
    "hosts": [
@@ -2866,7 +2876,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4b33c257996ef882",
+   "fingerprint": "9e8d2fd119eea2c9",
    "method": "POST",
    "path": "/api/marketplace/v3/dbs/orders/stickers",
    "hosts": [
@@ -2889,7 +2899,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2a28461e3606a7d2",
+   "fingerprint": "43e25cbf390830ba",
    "method": "POST",
    "path": "/api/v3/dbs/groups/info",
    "hosts": [
@@ -2909,7 +2919,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "aada80c2a1f3be34",
+   "fingerprint": "62ec6d65d1969190",
    "method": "GET",
    "path": "/api/v3/dbs/orders",
    "hosts": [
@@ -2929,7 +2939,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d47054217885d0d0",
+   "fingerprint": "2f8f016000e453e9",
    "method": "POST",
    "path": "/api/v3/dbs/orders/client",
    "hosts": [
@@ -2949,7 +2959,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1a2f19dd54921246",
+   "fingerprint": "0fe6a1a62ebc2c79",
    "method": "POST",
    "path": "/api/v3/dbs/orders/delivery-date",
    "hosts": [
@@ -2969,7 +2979,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "54273ffda55d3a52",
+   "fingerprint": "a90751779f3bef29",
    "method": "GET",
    "path": "/api/v3/dbs/orders/new",
    "hosts": [
@@ -2989,7 +2999,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9ac0b67e9f6069cd",
+   "fingerprint": "b6ed20e5d5bb6f85",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/final-price",
    "hosts": [
@@ -3008,7 +3018,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c947f247c488de2a",
+   "fingerprint": "3188cd12af1aa1c8",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/customs-declaration",
    "hosts": [
@@ -3027,7 +3037,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0b7f931b94bda393",
+   "fingerprint": "5ebe51d20a1231c3",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/delete",
    "hosts": [
@@ -3047,7 +3057,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "87127cb1b47cfd16",
+   "fingerprint": "6b6926729b2d3d6d",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/details",
    "hosts": [
@@ -3066,7 +3076,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "08d3759e8c242e65",
+   "fingerprint": "930eecfd29d94e55",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/gtin",
    "hosts": [
@@ -3086,7 +3096,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b1e2760aec669803",
+   "fingerprint": "bc1f7fb2c51c2f20",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/imei",
    "hosts": [
@@ -3106,7 +3116,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "92f5eb0d125b309d",
+   "fingerprint": "957261699054d4ce",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/sgtin",
    "hosts": [
@@ -3126,7 +3136,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a8fd33454904410d",
+   "fingerprint": "fbeb9eda404a4ef4",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/meta/uin",
    "hosts": [
@@ -3146,7 +3156,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5618598c192b1aa3",
+   "fingerprint": "6c3a629c8868d2b9",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/cancel",
    "hosts": [
@@ -3166,7 +3176,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "636c05c8ee8153c1",
+   "fingerprint": "3ee9da20628be1a1",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/confirm",
    "hosts": [
@@ -3186,7 +3196,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "47cc57669e1a08bc",
+   "fingerprint": "41e98b1eab5ac128",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/info",
    "hosts": [
@@ -3206,7 +3216,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0fb158ce57d50a4c",
+   "fingerprint": "dc1f400c775e40a3",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/prepare",
    "hosts": [
@@ -3226,7 +3236,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "746f01642145031d",
+   "fingerprint": "1aff338a6acd5eff",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/receive",
    "hosts": [
@@ -3246,7 +3256,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "af7e2be1f248387d",
+   "fingerprint": "d710a6fdd3c05364",
    "method": "POST",
    "path": "/api/marketplace/v3/click-collect/orders/status/reject",
    "hosts": [
@@ -3266,7 +3276,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1bfbecb567bc078b",
+   "fingerprint": "d65523c08a5a4eab",
    "method": "GET",
    "path": "/api/v3/click-collect/orders",
    "hosts": [
@@ -3286,7 +3296,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2e81e2dc25fc996a",
+   "fingerprint": "12eb87c65b316f4d",
    "method": "POST",
    "path": "/api/v3/click-collect/orders/client",
    "hosts": [
@@ -3306,7 +3316,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "cd12a812ff7a0bec",
+   "fingerprint": "01ee6a49b82bac56",
    "method": "POST",
    "path": "/api/v3/click-collect/orders/client/identity",
    "hosts": [
@@ -3326,7 +3336,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2fc73112028e35bf",
+   "fingerprint": "81bcd9ab5d6862ab",
    "method": "GET",
    "path": "/api/v3/click-collect/orders/new",
    "hosts": [
@@ -3346,7 +3356,161 @@
    "deprecated": false
   },
   {
-   "fingerprint": "89a5488a54a227f7",
+   "fingerprint": "aeb107382a14d780",
+   "method": "GET",
+   "path": "/api/supplies/v1/discrepancies/{supplyId}",
+   "hosts": [
+    "supplies-api.wildberries.ru"
+   ],
+   "file": "07-orders-fbw.yaml",
+   "section": "Поставки FBW",
+   "tags": [
+    "Информация о поставках"
+   ],
+   "summary": "Расхождения в поставке",
+   "operationId": "getV1SuppliesSupplyIdDiscrepanciesQuantity",
+   "category": "supplies",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": true,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "ea7af0c60147a931",
+   "method": "GET",
+   "path": "/api/supplies/v1/drafts",
+   "hosts": [
+    "supplies-api.wildberries.ru"
+   ],
+   "file": "07-orders-fbw.yaml",
+   "section": "Поставки FBW",
+   "tags": [
+    "Черновики поставок"
+   ],
+   "summary": "Список черновиков",
+   "operationId": "getV1Drafts",
+   "category": "supplies",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": true,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "8c3d31d369b73794",
+   "method": "POST",
+   "path": "/api/supplies/v1/drafts",
+   "hosts": [
+    "supplies-api.wildberries.ru"
+   ],
+   "file": "07-orders-fbw.yaml",
+   "section": "Поставки FBW",
+   "tags": [
+    "Черновики поставок"
+   ],
+   "summary": "Создать черновик",
+   "operationId": "postV1Drafts",
+   "category": "supplies",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": false,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "3cbf7e1266ec09da",
+   "method": "DELETE",
+   "path": "/api/supplies/v1/drafts/{draftId}",
+   "hosts": [
+    "supplies-api.wildberries.ru"
+   ],
+   "file": "07-orders-fbw.yaml",
+   "section": "Поставки FBW",
+   "tags": [
+    "Черновики поставок"
+   ],
+   "summary": "Удалить черновик",
+   "operationId": "deleteV1DraftsDraftId",
+   "category": "supplies",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": false,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "97c9f4ece1f0999f",
+   "method": "DELETE",
+   "path": "/api/supplies/v1/drafts/{draftId}/items",
+   "hosts": [
+    "supplies-api.wildberries.ru"
+   ],
+   "file": "07-orders-fbw.yaml",
+   "section": "Поставки FBW",
+   "tags": [
+    "Черновики поставок"
+   ],
+   "summary": "Удалить товары из черновика",
+   "operationId": "deleteV1DraftsDraftIdItems",
+   "category": "supplies",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": false,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "81b81753964cc549",
+   "method": "GET",
+   "path": "/api/supplies/v1/drafts/{draftId}/items",
+   "hosts": [
+    "supplies-api.wildberries.ru"
+   ],
+   "file": "07-orders-fbw.yaml",
+   "section": "Поставки FBW",
+   "tags": [
+    "Черновики поставок"
+   ],
+   "summary": "Список товаров в черновике",
+   "operationId": "getV1DraftsDraftIdItems",
+   "category": "supplies",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": true,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "ffce1e4964139043",
+   "method": "POST",
+   "path": "/api/supplies/v1/drafts/{draftId}/items",
+   "hosts": [
+    "supplies-api.wildberries.ru"
+   ],
+   "file": "07-orders-fbw.yaml",
+   "section": "Поставки FBW",
+   "tags": [
+    "Черновики поставок"
+   ],
+   "summary": "Добавить товары в черновик",
+   "operationId": "postV1DraftsDraftIdItems",
+   "category": "supplies",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": false,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "7ba8f646e08db88d",
    "method": "POST",
    "path": "/api/v1/acceptance/options",
    "hosts": [
@@ -3366,7 +3530,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f6f048d7ef19c997",
+   "fingerprint": "7c43afef74c477d0",
    "method": "POST",
    "path": "/api/v1/supplies",
    "hosts": [
@@ -3385,7 +3549,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b1d7c5ad7b774f20",
+   "fingerprint": "7d65c20ab884b747",
    "method": "GET",
    "path": "/api/v1/supplies/{ID}",
    "hosts": [
@@ -3404,7 +3568,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "dfd5249a91fe6f8d",
+   "fingerprint": "16d36f8aac24b6ec",
    "method": "GET",
    "path": "/api/v1/supplies/{ID}/goods",
    "hosts": [
@@ -3423,7 +3587,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "95e5800f52c24c29",
+   "fingerprint": "348dc66b53d8d226",
    "method": "GET",
    "path": "/api/v1/supplies/{ID}/package",
    "hosts": [
@@ -3442,7 +3606,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "cb5d32a2449ee319",
+   "fingerprint": "9b35a54640174a61",
    "method": "GET",
    "path": "/api/v1/transit-tariffs",
    "hosts": [
@@ -3461,7 +3625,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "bcee7586ebfd3efe",
+   "fingerprint": "e822bda086e0f87c",
    "method": "GET",
    "path": "/api/v1/warehouses",
    "hosts": [
@@ -3481,7 +3645,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5b4cc2da6c35d4a4",
+   "fingerprint": "b836c81e928f8797",
    "method": "PATCH",
    "path": "/adv/v0/auction/nms",
    "hosts": [
@@ -3500,7 +3664,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "6e2d4aa22b49c42a",
+   "fingerprint": "7ef0c3983fd7d5c6",
    "method": "PUT",
    "path": "/adv/v0/auction/placements",
    "hosts": [
@@ -3519,7 +3683,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b485a28295c80625",
+   "fingerprint": "f7fb1f41c9317f58",
    "method": "GET",
    "path": "/adv/v0/delete",
    "hosts": [
@@ -3539,7 +3703,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "19e773192d17d2db",
+   "fingerprint": "1b59eb4bc78b6c2f",
    "method": "DELETE",
    "path": "/adv/v0/normquery/bids",
    "hosts": [
@@ -3558,7 +3722,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b85db5c7915321bd",
+   "fingerprint": "b061be4dca113f48",
    "method": "POST",
    "path": "/adv/v0/normquery/bids",
    "hosts": [
@@ -3577,7 +3741,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "aa4da74073be1fc9",
+   "fingerprint": "d26154e857016c96",
    "method": "POST",
    "path": "/adv/v0/normquery/get-bids",
    "hosts": [
@@ -3596,7 +3760,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "c65feaf934574de8",
+   "fingerprint": "6e8cff965fccdfe9",
    "method": "POST",
    "path": "/adv/v0/normquery/get-minus",
    "hosts": [
@@ -3615,7 +3779,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b87cba9f08aafdfe",
+   "fingerprint": "1a11f8f9e9353dbd",
    "method": "POST",
    "path": "/adv/v0/normquery/list",
    "hosts": [
@@ -3634,7 +3798,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0fb5c674861a6588",
+   "fingerprint": "c8913e60f4496968",
    "method": "POST",
    "path": "/adv/v0/normquery/set-minus",
    "hosts": [
@@ -3653,7 +3817,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "06d60ded96a4c2b7",
+   "fingerprint": "9a5aa3dff275cfe0",
    "method": "POST",
    "path": "/adv/v0/normquery/stats",
    "hosts": [
@@ -3672,7 +3836,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f7c81011bcb85a3e",
+   "fingerprint": "8e15ae2ab8fa19ec",
    "method": "GET",
    "path": "/adv/v0/pause",
    "hosts": [
@@ -3692,7 +3856,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8c4711b87bebc056",
+   "fingerprint": "ddbb8c7b9f451328",
    "method": "POST",
    "path": "/adv/v0/rename",
    "hosts": [
@@ -3712,7 +3876,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "36a7a197381b0a17",
+   "fingerprint": "dd31e823466f6da5",
    "method": "GET",
    "path": "/adv/v0/start",
    "hosts": [
@@ -3732,7 +3896,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "401f03b66ae49f2e",
+   "fingerprint": "6ed958370f437cb2",
    "method": "GET",
    "path": "/adv/v0/stop",
    "hosts": [
@@ -3752,7 +3916,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ae0079e0328fe2e4",
+   "fingerprint": "31d13f5a3f27c858",
    "method": "GET",
    "path": "/adv/v1/advert",
    "hosts": [
@@ -3771,7 +3935,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b5194d74309923c2",
+   "fingerprint": "e166e6733f67dc47",
    "method": "GET",
    "path": "/adv/v1/adverts",
    "hosts": [
@@ -3790,7 +3954,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "53d2d91e7305fbb0",
+   "fingerprint": "8f234338453743b0",
    "method": "GET",
    "path": "/adv/v1/balance",
    "hosts": [
@@ -3810,7 +3974,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "959f84de580af2c6",
+   "fingerprint": "15c6e038a9c0ab4b",
    "method": "GET",
    "path": "/adv/v1/budget",
    "hosts": [
@@ -3827,10 +3991,10 @@
    "category": "advert",
    "tokens": [],
    "readonly": true,
-   "deprecated": false
+   "deprecated": true
   },
   {
-   "fingerprint": "ca484a676455b563",
+   "fingerprint": "5949fc9c2515c0c0",
    "method": "POST",
    "path": "/adv/v1/budget/deposit",
    "hosts": [
@@ -3850,7 +4014,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3428096b34589917",
+   "fingerprint": "1733306a4a516b95",
    "method": "GET",
    "path": "/adv/v1/count",
    "hosts": [
@@ -3869,7 +4033,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "6dc2d940b502beb9",
+   "fingerprint": "2aff2e80d532d56f",
    "method": "POST",
    "path": "/adv/v1/normquery/stats",
    "hosts": [
@@ -3888,7 +4052,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f30b33bdd2a6ca8a",
+   "fingerprint": "11e80a23c78cee5d",
    "method": "GET",
    "path": "/adv/v1/payments",
    "hosts": [
@@ -3908,7 +4072,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "cfc96920e365707f",
+   "fingerprint": "a4a8d84aa1a8759f",
    "method": "GET",
    "path": "/adv/v1/promotion/count",
    "hosts": [
@@ -3928,7 +4092,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "331ae86a623f81d0",
+   "fingerprint": "d1ea2265ee5b2c96",
    "method": "POST",
    "path": "/adv/v1/stats",
    "hosts": [
@@ -3947,7 +4111,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7574617a5f2185fb",
+   "fingerprint": "262e90e4cc6af24a",
    "method": "GET",
    "path": "/adv/v1/supplier/subjects",
    "hosts": [
@@ -3967,7 +4131,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "bf82669ebc573c6b",
+   "fingerprint": "ac5fead90c2d15a6",
    "method": "GET",
    "path": "/adv/v1/upd",
    "hosts": [
@@ -3987,7 +4151,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7325ea01c1fb5e10",
+   "fingerprint": "9c79e3456ec699f7",
    "method": "POST",
    "path": "/adv/v2/seacat/save-ad",
    "hosts": [
@@ -4007,7 +4171,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ddb23e3acc3a2374",
+   "fingerprint": "43ecbd0625a8c728",
    "method": "POST",
    "path": "/adv/v2/supplier/nms",
    "hosts": [
@@ -4027,7 +4191,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b118282f208c19cc",
+   "fingerprint": "90fbfa9357344d11",
    "method": "GET",
    "path": "/adv/v3/fullstats",
    "hosts": [
@@ -4046,7 +4210,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "331097a2ff0828f3",
+   "fingerprint": "e0d3d58f2bdd0bbb",
    "method": "GET",
    "path": "/api/advert/v0/bids/recommendations",
    "hosts": [
@@ -4065,7 +4229,51 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a85774e406034aac",
+   "fingerprint": "7a5198d2686cec08",
+   "method": "GET",
+   "path": "/api/advert/v0/daily-limits",
+   "hosts": [
+    "advert-api.wildberries.ru"
+   ],
+   "file": "08-promotion.yaml",
+   "section": "Маркетинг и продвижение",
+   "tags": [
+    "Управление кампаниями"
+   ],
+   "summary": "Получить настройки дневных лимитов кампаний",
+   "operationId": "getV0DailyLimits",
+   "category": "advert",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": true,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "c6bac8518c86dbfd",
+   "method": "PUT",
+   "path": "/api/advert/v0/daily-limits",
+   "hosts": [
+    "advert-api.wildberries.ru"
+   ],
+   "file": "08-promotion.yaml",
+   "section": "Маркетинг и продвижение",
+   "tags": [
+    "Управление кампаниями"
+   ],
+   "summary": "Настройка дневных лимитов кампаний",
+   "operationId": "putV0DailyLimits",
+   "category": "advert",
+   "tokens": [
+    "personal",
+    "service"
+   ],
+   "readonly": false,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "22312a8bfa2e6bc7",
    "method": "PATCH",
    "path": "/api/advert/v1/bids",
    "hosts": [
@@ -4084,7 +4292,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "50cec6ade45d2e52",
+   "fingerprint": "26b01b2950c04196",
    "method": "POST",
    "path": "/api/advert/v1/bids/min",
    "hosts": [
@@ -4103,7 +4311,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "fc4ad631b8f34cfc",
+   "fingerprint": "53225dc5e4d1ebea",
    "method": "GET",
    "path": "/api/advert/v1/config",
    "hosts": [
@@ -4125,7 +4333,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5c64a8cace92b5f0",
+   "fingerprint": "a4f7a033558e8c52",
    "method": "POST",
    "path": "/api/advert/v1/normquery/bids",
    "hosts": [
@@ -4147,7 +4355,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a1df9ab887418de6",
+   "fingerprint": "813383904fa9d0e5",
    "method": "GET",
    "path": "/api/advert/v2/adverts",
    "hosts": [
@@ -4166,7 +4374,26 @@
    "deprecated": false
   },
   {
-   "fingerprint": "28f16e9eb9b2d9dd",
+   "fingerprint": "5fb10ffbb05da388",
+   "method": "POST",
+   "path": "/api/advert/v2/budget",
+   "hosts": [
+    "advert-api.wildberries.ru"
+   ],
+   "file": "08-promotion.yaml",
+   "section": "Маркетинг и продвижение",
+   "tags": [
+    "Финансы"
+   ],
+   "summary": "Остатки бюджетов кампаний",
+   "operationId": "postV2Budget",
+   "category": "advert",
+   "tokens": [],
+   "readonly": true,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "69850c66878ece02",
    "method": "GET",
    "path": "/api/v1/calendar/promotions",
    "hosts": [
@@ -4185,7 +4412,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1b0966a05ee45dba",
+   "fingerprint": "3ea9b9452d3d15b8",
    "method": "GET",
    "path": "/api/v1/calendar/promotions/details",
    "hosts": [
@@ -4204,7 +4431,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3e1f247ec3c761c6",
+   "fingerprint": "5dae788990ac51a9",
    "method": "GET",
    "path": "/api/v1/calendar/promotions/nomenclatures",
    "hosts": [
@@ -4223,7 +4450,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "18c6482d95b833d9",
+   "fingerprint": "fd77e63d09bd1d89",
    "method": "POST",
    "path": "/api/v1/calendar/promotions/upload",
    "hosts": [
@@ -4242,7 +4469,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9874d18d7a4f7b37",
+   "fingerprint": "946ed89f3f179918",
    "method": "DELETE",
    "path": "/api/feedbacks/v1/pins",
    "hosts": [
@@ -4254,14 +4481,14 @@
     "Закреплённые отзывы"
    ],
    "summary": "Открепить отзывы",
-   "operationId": "deleteFeedbacksV1Pins",
+   "operationId": "deleteV1Pins",
    "category": "questionsandfeedback",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "65c7168829524a04",
+   "fingerprint": "81842527c2d04259",
    "method": "GET",
    "path": "/api/feedbacks/v1/pins",
    "hosts": [
@@ -4273,14 +4500,14 @@
     "Закреплённые отзывы"
    ],
    "summary": "Список закреплённых и откреплённых отзывов",
-   "operationId": "getFeedbacksV1Pins",
+   "operationId": "getV1Pins",
    "category": "questionsandfeedback",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "b0d1e9dad9496565",
+   "fingerprint": "410ff35cde6c3553",
    "method": "POST",
    "path": "/api/feedbacks/v1/pins",
    "hosts": [
@@ -4292,14 +4519,14 @@
     "Закреплённые отзывы"
    ],
    "summary": "Закрепить отзывы",
-   "operationId": "postFeedbacksV1Pins",
+   "operationId": "postV1Pins",
    "category": "questionsandfeedback",
    "tokens": [],
    "readonly": false,
    "deprecated": false
   },
   {
-   "fingerprint": "865391c165b08b35",
+   "fingerprint": "0d846b2e7dd901c5",
    "method": "GET",
    "path": "/api/feedbacks/v1/pins/count",
    "hosts": [
@@ -4311,14 +4538,14 @@
     "Закреплённые отзывы"
    ],
    "summary": "Количество закреплённых и откреплённых отзывов",
-   "operationId": "getFeedbacksV1PinsCount",
+   "operationId": "getV1PinsCount",
    "category": "questionsandfeedback",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "2573f1f2393efdd5",
+   "fingerprint": "5a61ae767fb67b70",
    "method": "GET",
    "path": "/api/feedbacks/v1/pins/limits",
    "hosts": [
@@ -4330,14 +4557,14 @@
     "Закреплённые отзывы"
    ],
    "summary": "Лимиты закреплённых отзывов",
-   "operationId": "getFeedbacksV1PinsLimits",
+   "operationId": "getV1PinsLimits",
    "category": "questionsandfeedback",
    "tokens": [],
    "readonly": true,
    "deprecated": false
   },
   {
-   "fingerprint": "11a1a6dcc1603c90",
+   "fingerprint": "ae7997b963b181d5",
    "method": "PATCH",
    "path": "/api/v1/claim",
    "hosts": [
@@ -4356,7 +4583,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "479cac5f4a0a768d",
+   "fingerprint": "cd922895a4916d3f",
    "method": "GET",
    "path": "/api/v1/claims",
    "hosts": [
@@ -4375,7 +4602,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5ff95896c0c38070",
+   "fingerprint": "3b5fdc3b61c379d4",
    "method": "GET",
    "path": "/api/v1/feedback",
    "hosts": [
@@ -4395,7 +4622,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "adf723aef84212ba",
+   "fingerprint": "50972dfdb256622d",
    "method": "GET",
    "path": "/api/v1/feedbacks",
    "hosts": [
@@ -4415,7 +4642,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "11cd921b410b6b26",
+   "fingerprint": "a871976d6c234720",
    "method": "PATCH",
    "path": "/api/v1/feedbacks/answer",
    "hosts": [
@@ -4435,7 +4662,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2249f6a2a749a35e",
+   "fingerprint": "45d882be0a9b7eac",
    "method": "POST",
    "path": "/api/v1/feedbacks/answer",
    "hosts": [
@@ -4455,7 +4682,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1492f796047d18e3",
+   "fingerprint": "8733f864d3f2ac50",
    "method": "GET",
    "path": "/api/v1/feedbacks/archive",
    "hosts": [
@@ -4475,7 +4702,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4e2c931ae3c96c03",
+   "fingerprint": "e28270108aa9b8d6",
    "method": "GET",
    "path": "/api/v1/feedbacks/count",
    "hosts": [
@@ -4495,7 +4722,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1ef96fe06c460f6a",
+   "fingerprint": "23c348cfaddb1862",
    "method": "GET",
    "path": "/api/v1/feedbacks/count-unanswered",
    "hosts": [
@@ -4515,7 +4742,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "5f60e75521373a52",
+   "fingerprint": "2f2794af56cdae78",
    "method": "POST",
    "path": "/api/v1/feedbacks/order/return",
    "hosts": [
@@ -4535,7 +4762,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "6444a23144e7f347",
+   "fingerprint": "9f25bcd8d763e0b4",
    "method": "GET",
    "path": "/api/v1/new-feedbacks-questions",
    "hosts": [
@@ -4555,7 +4782,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "65ab91f9ace2eaea",
+   "fingerprint": "adb5dd20c82fd9bd",
    "method": "GET",
    "path": "/api/v1/question",
    "hosts": [
@@ -4575,7 +4802,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "29a676eb4c97762f",
+   "fingerprint": "03aaeac9e8a0b8ce",
    "method": "GET",
    "path": "/api/v1/questions",
    "hosts": [
@@ -4595,7 +4822,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "086ff380525cb965",
+   "fingerprint": "b52f0fecf2946e1b",
    "method": "PATCH",
    "path": "/api/v1/questions",
    "hosts": [
@@ -4615,7 +4842,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "6a207d05473f9165",
+   "fingerprint": "dc1371e7d5eae460",
    "method": "GET",
    "path": "/api/v1/questions/count",
    "hosts": [
@@ -4635,7 +4862,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9ad79d71de46ab04",
+   "fingerprint": "5f5632f99a6e453d",
    "method": "GET",
    "path": "/api/v1/questions/count-unanswered",
    "hosts": [
@@ -4655,7 +4882,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "502e662647d06c6e",
+   "fingerprint": "7f4fb614fb2ec4d0",
    "method": "GET",
    "path": "/api/v1/seller/chats",
    "hosts": [
@@ -4674,7 +4901,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "49b12e3410e8117b",
+   "fingerprint": "e90becdcd1f3f2c7",
    "method": "GET",
    "path": "/api/v1/seller/download/{id}",
    "hosts": [
@@ -4693,7 +4920,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a58cd9f85ca48e51",
+   "fingerprint": "a2d4959c62aec3bb",
    "method": "GET",
    "path": "/api/v1/seller/events",
    "hosts": [
@@ -4712,7 +4939,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2a2cf26be7916f06",
+   "fingerprint": "e52e03cd1cc27710",
    "method": "POST",
    "path": "/api/v1/seller/message",
    "hosts": [
@@ -4731,7 +4958,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e2ab5f92608b2442",
+   "fingerprint": "6c6488ad80b96a3d",
    "method": "GET",
    "path": "/api/tariffs/v1/acceptance/coefficients",
    "hosts": [
@@ -4750,7 +4977,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b0794bb1da931d5c",
+   "fingerprint": "61a4f29db182d3d0",
    "method": "GET",
    "path": "/api/v1/tariffs/box",
    "hosts": [
@@ -4769,7 +4996,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ed55bc8cf8dc1baf",
+   "fingerprint": "6f470fb722f3f22f",
    "method": "GET",
    "path": "/api/v1/tariffs/commission",
    "hosts": [
@@ -4788,7 +5015,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "cbeecd17570053b4",
+   "fingerprint": "129648c696282ab6",
    "method": "GET",
    "path": "/api/v1/tariffs/pallet",
    "hosts": [
@@ -4807,7 +5034,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8dc0f5239e7390be",
+   "fingerprint": "0671684dd45e5f96",
    "method": "GET",
    "path": "/api/v1/tariffs/return",
    "hosts": [
@@ -4826,7 +5053,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3c8e39acb6cdfb71",
+   "fingerprint": "d5240cd1310a59ac",
    "method": "POST",
    "path": "/api/analytics/v1/order-feed",
    "hosts": [
@@ -4845,7 +5072,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "07ee112138a3eeb4",
+   "fingerprint": "2e95ab99bdba5330",
    "method": "POST",
    "path": "/api/analytics/v1/stocks-report/seller-warehouses",
    "hosts": [
@@ -4857,7 +5084,7 @@
     "История остатков"
    ],
    "summary": "Остатки на складах продавца",
-   "operationId": "postAnalyticsV1StocksReportSellerWarehouses",
+   "operationId": "postV1StocksReportSellerWarehouses",
    "category": "contentanalytics",
    "tokens": [
     "personal",
@@ -4867,7 +5094,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8afa64cc0ad852a8",
+   "fingerprint": "43b76c7754603e41",
    "method": "POST",
    "path": "/api/analytics/v1/stocks-report/wb-warehouses",
    "hosts": [
@@ -4890,7 +5117,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "79b4ffab53c0f338",
+   "fingerprint": "79fc579742cdef76",
    "method": "POST",
    "path": "/api/analytics/v2/item-rating",
    "hosts": [
@@ -4912,7 +5139,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "931d89546455fbc2",
+   "fingerprint": "379940536b133967",
    "method": "POST",
    "path": "/api/analytics/v3/sales-funnel/grouped/history",
    "hosts": [
@@ -4931,7 +5158,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2c1ddd85fcd87f63",
+   "fingerprint": "8ef3a9dcb223aeea",
    "method": "POST",
    "path": "/api/analytics/v3/sales-funnel/products",
    "hosts": [
@@ -4950,7 +5177,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "1736cdc4092a76fb",
+   "fingerprint": "04202e3981ba4257",
    "method": "POST",
    "path": "/api/analytics/v3/sales-funnel/products/history",
    "hosts": [
@@ -4969,7 +5196,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "baf56d28b43c7f42",
+   "fingerprint": "eaf29884d74881dc",
    "method": "GET",
    "path": "/api/v2/nm-report/downloads",
    "hosts": [
@@ -4988,7 +5215,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9f30d11ed07212a8",
+   "fingerprint": "4982533beba9ca42",
    "method": "POST",
    "path": "/api/v2/nm-report/downloads",
    "hosts": [
@@ -5007,7 +5234,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "bbebdf5989e9eb5c",
+   "fingerprint": "caecca9cad0f5b77",
    "method": "GET",
    "path": "/api/v2/nm-report/downloads/file/{downloadId}",
    "hosts": [
@@ -5026,7 +5253,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "991f002bf670a972",
+   "fingerprint": "a0535aeefc5dd40d",
    "method": "POST",
    "path": "/api/v2/nm-report/downloads/retry",
    "hosts": [
@@ -5045,7 +5272,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b0be62ab89470903",
+   "fingerprint": "33e95d084543a504",
    "method": "POST",
    "path": "/api/v2/search-report/product/orders",
    "hosts": [
@@ -5064,7 +5291,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "13845014387d1efb",
+   "fingerprint": "12e334683693ebb9",
    "method": "POST",
    "path": "/api/v2/search-report/product/search-texts",
    "hosts": [
@@ -5083,7 +5310,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "bcacc362c4710581",
+   "fingerprint": "4e18ffcf57a83312",
    "method": "POST",
    "path": "/api/v2/search-report/report",
    "hosts": [
@@ -5102,7 +5329,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b3c58b2c9eb3a6ed",
+   "fingerprint": "7168be9a64a8c742",
    "method": "POST",
    "path": "/api/v2/search-report/table/details",
    "hosts": [
@@ -5121,7 +5348,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "733b589e7649495e",
+   "fingerprint": "e33ccb9d3f899c87",
    "method": "POST",
    "path": "/api/v2/search-report/table/groups",
    "hosts": [
@@ -5140,7 +5367,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d11fc8f98ecfa120",
+   "fingerprint": "83dfa318cbf3e4d9",
    "method": "POST",
    "path": "/api/v2/stocks-report/offices",
    "hosts": [
@@ -5159,7 +5386,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "77f67d2b90f1483f",
+   "fingerprint": "f177cb62bec4c9ad",
    "method": "POST",
    "path": "/api/v2/stocks-report/products/groups",
    "hosts": [
@@ -5178,7 +5405,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "bca8c6b30c6d24f7",
+   "fingerprint": "5e140e04ced2bf28",
    "method": "POST",
    "path": "/api/v2/stocks-report/products/products",
    "hosts": [
@@ -5197,7 +5424,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7ce4fa0134ab5cea",
+   "fingerprint": "34de1c5f4b36fbab",
    "method": "POST",
    "path": "/api/v2/stocks-report/products/sizes",
    "hosts": [
@@ -5216,7 +5443,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3505c90e83f2783e",
+   "fingerprint": "e276e49d2a22cac8",
    "method": "GET",
    "path": "/api/analytics/v1/deductions",
    "hosts": [
@@ -5235,7 +5462,26 @@
    "deprecated": false
   },
   {
-   "fingerprint": "0a6cb3825a6cf23e",
+   "fingerprint": "051e07622dda7ca1",
+   "method": "GET",
+   "path": "/api/analytics/v1/item-returns",
+   "hosts": [
+    "seller-analytics-api.wildberries.ru"
+   ],
+   "file": "12-reports.yaml",
+   "section": "Отчёты",
+   "tags": [
+    "Отчёт о возвратах и перемещении товаров"
+   ],
+   "summary": "Получить отчёт",
+   "operationId": "getV1GoodsReturn",
+   "category": "contentanalytics",
+   "tokens": [],
+   "readonly": true,
+   "deprecated": false
+  },
+  {
+   "fingerprint": "260adda0f1d54d36",
    "method": "GET",
    "path": "/api/analytics/v1/measurement-penalties",
    "hosts": [
@@ -5254,7 +5500,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "aac595399b64af45",
+   "fingerprint": "922debebfca1d034",
    "method": "GET",
    "path": "/api/analytics/v1/warehouse-measurements",
    "hosts": [
@@ -5273,7 +5519,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d04dd35779fc7ebc",
+   "fingerprint": "40ddc594ec089246",
    "method": "GET",
    "path": "/api/v1/acceptance_report",
    "hosts": [
@@ -5292,7 +5538,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "24edcf77b3928a92",
+   "fingerprint": "3572853d8eefa50a",
    "method": "GET",
    "path": "/api/v1/acceptance_report/tasks/{task_id}/download",
    "hosts": [
@@ -5311,7 +5557,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e2917bb753dd8911",
+   "fingerprint": "268a292512770f46",
    "method": "GET",
    "path": "/api/v1/acceptance_report/tasks/{task_id}/status",
    "hosts": [
@@ -5330,7 +5576,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "28d6519e62963535",
+   "fingerprint": "f4bfab7d76655a55",
    "method": "GET",
    "path": "/api/v1/analytics/antifraud-details",
    "hosts": [
@@ -5349,7 +5595,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "4daf93ae769e0ccd",
+   "fingerprint": "31913a19b8e7a60b",
    "method": "GET",
    "path": "/api/v1/analytics/banned-products/blocked",
    "hosts": [
@@ -5368,7 +5614,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "39adf77e25e90981",
+   "fingerprint": "892ef69f881cd099",
    "method": "GET",
    "path": "/api/v1/analytics/brand-share",
    "hosts": [
@@ -5387,7 +5633,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "55ba961cae1d9d89",
+   "fingerprint": "3003bb9e82cd9ed5",
    "method": "GET",
    "path": "/api/v1/analytics/brand-share/brands",
    "hosts": [
@@ -5406,7 +5652,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ec9c95578177aabb",
+   "fingerprint": "a0f3470a614b6cc8",
    "method": "GET",
    "path": "/api/v1/analytics/brand-share/parent-subjects",
    "hosts": [
@@ -5425,7 +5671,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "f5559c19b8539567",
+   "fingerprint": "4ede30eba3479260",
    "method": "POST",
    "path": "/api/v1/analytics/excise-report",
    "hosts": [
@@ -5444,7 +5690,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "68ca10ebc5aaa48c",
+   "fingerprint": "a53af7945efdf9e3",
    "method": "GET",
    "path": "/api/v1/analytics/goods-labeling",
    "hosts": [
@@ -5463,7 +5709,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "a68f82b8747192e6",
+   "fingerprint": "4eb55622cbabdb82",
    "method": "GET",
    "path": "/api/v1/analytics/goods-return",
    "hosts": [
@@ -5479,10 +5725,10 @@
    "category": "contentanalytics",
    "tokens": [],
    "readonly": true,
-   "deprecated": false
+   "deprecated": true
   },
   {
-   "fingerprint": "ee507a7d7d50154d",
+   "fingerprint": "3cf5bdf9c633215a",
    "method": "GET",
    "path": "/api/v1/analytics/region-sale",
    "hosts": [
@@ -5501,7 +5747,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "30681daa73be4a05",
+   "fingerprint": "1f5fe8ea4f50144f",
    "method": "GET",
    "path": "/api/v1/paid_storage",
    "hosts": [
@@ -5520,7 +5766,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "773d975af15d9610",
+   "fingerprint": "9dc980f263f3ca9e",
    "method": "GET",
    "path": "/api/v1/paid_storage/tasks/{task_id}/download",
    "hosts": [
@@ -5539,7 +5785,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b52d2a3655e7b2ef",
+   "fingerprint": "d381d9493e6f9b60",
    "method": "GET",
    "path": "/api/v1/paid_storage/tasks/{task_id}/status",
    "hosts": [
@@ -5558,7 +5804,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8b001a083be24233",
+   "fingerprint": "2a49fc6f167f3ed0",
    "method": "GET",
    "path": "/api/v1/supplier/orders",
    "hosts": [
@@ -5578,7 +5824,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "e00d119914a73639",
+   "fingerprint": "f15edb7be7983e93",
    "method": "GET",
    "path": "/api/v1/supplier/sales",
    "hosts": [
@@ -5598,7 +5844,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "3f9e891dde4dd7a4",
+   "fingerprint": "85f7b1e7362435ba",
    "method": "GET",
    "path": "/api/v1/warehouse_remains",
    "hosts": [
@@ -5617,7 +5863,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "2ef802045e3bd770",
+   "fingerprint": "bcf8ea757e5f127c",
    "method": "GET",
    "path": "/api/v1/warehouse_remains/tasks/{task_id}/download",
    "hosts": [
@@ -5636,7 +5882,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ece5f9a5f870883a",
+   "fingerprint": "168a56fc0efa8887",
    "method": "GET",
    "path": "/api/v1/warehouse_remains/tasks/{task_id}/status",
    "hosts": [
@@ -5655,7 +5901,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "9f319197926fb40d",
+   "fingerprint": "5a9e4e460fd39175",
    "method": "POST",
    "path": "/api/finance/v1/acquiring/detailed",
    "hosts": [
@@ -5677,7 +5923,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "872899317eb9da16",
+   "fingerprint": "7cdeaa81272d25c5",
    "method": "POST",
    "path": "/api/finance/v1/acquiring/detailed/{reportId}",
    "hosts": [
@@ -5699,7 +5945,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "ba75406a106fba25",
+   "fingerprint": "b4c164f726e8bf0b",
    "method": "POST",
    "path": "/api/finance/v1/acquiring/list",
    "hosts": [
@@ -5721,7 +5967,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "adab7496efff839c",
+   "fingerprint": "67c5d550bbd0817c",
    "method": "POST",
    "path": "/api/finance/v1/sales-reports/detailed",
    "hosts": [
@@ -5740,7 +5986,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "7568096c6ccbe853",
+   "fingerprint": "e66391a039ec610f",
    "method": "POST",
    "path": "/api/finance/v1/sales-reports/detailed/{reportId}",
    "hosts": [
@@ -5762,7 +6008,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d001403ae02a4f84",
+   "fingerprint": "dd5190d0312cd531",
    "method": "POST",
    "path": "/api/finance/v1/sales-reports/list",
    "hosts": [
@@ -5784,7 +6030,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "d08bebd7c87a64d1",
+   "fingerprint": "4b3522cab7de725d",
    "method": "GET",
    "path": "/api/v1/account/balance",
    "hosts": [
@@ -5803,7 +6049,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b7761fb8b9a6a59b",
+   "fingerprint": "562a9c652dff52de",
    "method": "GET",
    "path": "/api/v1/documents/categories",
    "hosts": [
@@ -5822,7 +6068,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "114289b2c2828145",
+   "fingerprint": "cc2eb3ddd34332fe",
    "method": "GET",
    "path": "/api/v1/documents/download",
    "hosts": [
@@ -5841,7 +6087,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "8171198009501c34",
+   "fingerprint": "ac4d734a76caf375",
    "method": "POST",
    "path": "/api/v1/documents/download/all",
    "hosts": [
@@ -5860,7 +6106,7 @@
    "deprecated": false
   },
   {
-   "fingerprint": "b2d6636de8a88cf4",
+   "fingerprint": "53e6a27011f46e63",
    "method": "GET",
    "path": "/api/v1/documents/list",
    "hosts": [

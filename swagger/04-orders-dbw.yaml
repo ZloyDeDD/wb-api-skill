@@ -5,7 +5,7 @@ info:
   description: |+
     <div class="api-block">
 
-    С помощью методов Заказы DBW (Доставка курьером WB) вы можете:
+    С помощью методов Заказы DBW (Деливери WB) вы можете:
       - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/dbwAssemblyOrders), управлять статусами и отменять сборочные задания
       - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/dbwLabelIdentifiers) сборочных заданий
 
@@ -23,9 +23,11 @@ tags:
   - name: Сборочные задания DBW
     x-displayName: Сборочные задания DBW
     description: ''
+    x-tagKey: dbwAssemblyOrders
   - name: Идентификаторы маркировки DBW
     x-displayName: Идентификаторы маркировки DBW
     description: ''
+    x-tagKey: dbwLabelIdentifiers
 paths:
   /api/v3/dbw/orders/new:
     servers:
@@ -92,6 +94,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/v3/dbw/orders:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -185,6 +188,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/v3/dbw/orders/delivery-date:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -260,6 +264,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/marketplace/v3/dbw/orders/client:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -338,6 +343,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/v3/dbw/orders/status:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -476,6 +482,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/v3/dbw/orders/{orderId}/confirm:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -551,6 +558,7 @@ paths:
                   $ref: '#/components/examples/StatusMismatch'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/v3/dbw/orders/stickers:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -713,6 +721,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/marketplace/v3/dbw/orders/status/deliver:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -805,6 +814,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/v3/dbw/orders/courier:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -879,6 +889,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/v3/dbw/orders/{orderId}/cancel:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -958,6 +969,7 @@ paths:
                   $ref: '#/components/examples/StatusMismatch'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwAssemblyOrders
   /api/marketplace/v3/dbw/orders/meta/details:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1041,6 +1053,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwLabelIdentifiers
   /api/marketplace/v3/dbw/orders/meta/delete:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1134,6 +1147,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwLabelIdentifiers
   /api/marketplace/v3/dbw/orders/meta/sgtin:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1221,6 +1235,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwLabelIdentifiers
   /api/v3/dbw/orders/{orderId}/meta/uin:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1311,6 +1326,7 @@ paths:
                   $ref: '#/components/examples/FailedToUpdateMeta'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwLabelIdentifiers
   /api/v3/dbw/orders/{orderId}/meta/imei:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1402,6 +1418,7 @@ paths:
                   $ref: '#/components/examples/FailedToUpdateMeta'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwLabelIdentifiers
   /api/v3/dbw/orders/{orderId}/meta/gtin:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1493,6 +1510,7 @@ paths:
                   $ref: '#/components/examples/FailedToUpdateMeta'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: dbwLabelIdentifiers
 components:
   securitySchemes:
     HeaderApiKey:
@@ -2225,7 +2243,7 @@ components:
           nullable: true
           example: 504658
         requiredMeta:
-          description: Список идентификаторов маркировки, доступных для сборочного задания. [Указывать IMEI](./orders-dbw#tag/dbwLabelIdentifiers/operation/putV3DbwOrdersOrderIdMetaImei) обязательно для [предмета](./work-with-products#tag/categoriesSubcategoriesAndCharacteristics/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `"subjectId":515`
+          description: Список идентификаторов маркировки, доступных для сборочного задания. [Указывать IMEI](./orders-dbw#tag/dbwLabelIdentifiers/operation/putV3DbwOrdersOrderIdMetaImei) обязательно для [предмета](./item-management#tag/categoriesSubcategoriesAndCharacteristics/operation/getV2ObjectAll) `Смартфоны`, `"subjectId":515`
           type: array
           nullable: true
           items:
@@ -2273,15 +2291,15 @@ components:
           description: |
             Уникальный ID заказа. <br>
             Примечание: `rid` — это `srid` в ответах методов:
-              - [Заявки покупателей на возврат](./user-communication#tag/buyersReturns/operation/getV1Claims)
+              - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims)
               - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed)
               - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders)
               - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales)
               - [Отчёт о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport)
-              - [Детализации к отчётам реализации по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
-              - [Детализации к отчётам реализации за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
-              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
-              - [Детализации к отчётам об издержках на приём платежей за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+              - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
+              - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
+              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
+              - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
           example: f884001e44e511edb8780242ac120002
         createdAt:
           type: string
@@ -2314,6 +2332,7 @@ components:
           example: 123456789
         chrtId:
           type: integer
+          format: uint64
           nullable: false
           description: ID размера товара в системе WB
           example: 987654321
@@ -2417,15 +2436,15 @@ components:
           description: |
             Уникальный ID заказа. <br>
             Примечание: `rid` — это `srid` в ответах методов:
-              - [Заявки покупателей на возврат](./user-communication#tag/buyersReturns/operation/getV1Claims)
+              - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims)
               - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed)
               - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders)
               - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales)
               - [Отчёт о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport)
-              - [Детализации к отчётам реализации по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
-              - [Детализации к отчётам реализации за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
-              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
-              - [Детализации к отчётам об издержках на приём платежей за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+              - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
+              - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
+              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
+              - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
           example: f884001e44e511edb8780242ac120002
         createdAt:
           type: string
@@ -2458,6 +2477,7 @@ components:
           example: 123456789
         chrtId:
           type: integer
+          format: uint64
           nullable: false
           description: ID размера товара в системе WB
           example: 987654321

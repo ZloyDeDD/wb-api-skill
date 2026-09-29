@@ -28,33 +28,43 @@ tags:
   - name: Основные отчёты
     x-displayName: Основные отчёты
     description: ''
+    x-tagKey: mainReports
   - name: Отчёт об остатках на складах
     x-displayName: Отчёт об остатках на складах
     description: ''
+    x-tagKey: warehousesInventoryReport
   - name: Отчёт о товарах c обязательной маркировкой
     x-displayName: Отчёт о товарах c обязательной маркировкой
     description: ''
+    x-tagKey: reportOnItemsWithMandatoryLabeling
   - name: Отчёты об удержаниях
     x-displayName: Отчёты об удержаниях
     description: ''
+    x-tagKey: retentionReports
   - name: Операции при приёмке
     x-displayName: Операции при приёмке
     description: ''
+    x-tagKey: acceptanceExpenses
   - name: Платное хранение
     x-displayName: Платное хранение
     description: ''
+    x-tagKey: paidStorage
   - name: Продажи по регионам
     x-displayName: Продажи по регионам
     description: ''
+    x-tagKey: salesByRegions
   - name: Доля бренда в продажах
     x-displayName: Доля бренда в продажах
     description: ''
+    x-tagKey: shareOfBrandInSales
   - name: Заблокированные карточки
     x-displayName: Заблокированные карточки
     description: ''
+    x-tagKey: blockedItems
   - name: Отчёт о возвратах и перемещении товаров
     x-displayName: Отчёт о возвратах и перемещении товаров
     description: ''
+    x-tagKey: returnsAndItemMovementReport
 paths:
   /api/v1/supplier/orders:
     servers:
@@ -78,7 +88,7 @@ paths:
 
         Информация о заказе хранится 90 дней с момента оформления.<br><br>
 
-        В ответах могут отсутствовать заказы, по которым не подтверждена оплата. Например, заказы с отложенными платежами или оплатой в рассрочку. При этом, если по таким заказам есть продажи, вы можете получить их с помощью [детализаций к отчётам реализации](/openapi/financial-reports-and-accounting#tag/financialReports).<br>
+        В ответах могут отсутствовать заказы, по которым не подтверждена оплата. Например, заказы с отложенными платежами или оплатой в рассрочку. При этом, если по таким заказам есть продажи, вы можете получить их с помощью [детализаций к отчётам реализации](/openapi/documents-and-accounting#tag/financialReports).<br>
         Чтобы получить все оформленные заказы, используйте [Ленту заказов](/openapi/analytics#tag/orderFeed).
 
         <div class="description_important">
@@ -177,6 +187,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: mainReports
   /api/v1/supplier/sales:
     servers:
       - url: https://statistics-api.wildberries.ru
@@ -208,7 +219,7 @@ paths:
           - Поля `finishedPrice`, `priceWithDisc`, `forPay` могут временно иметь значение `0`: данные заполняются асинхронно, актуализируются в течение 24 часов
           - Для заказов, которые оплачены в валюте, отличной от валюты продавца, возможны округления цен из-за конвертации валют
 
-        Для точных финансовых расчётов, сверки и отчётности используйте [детализации к отчётам реализации](/openapi/financial-reports-and-accounting#tag/financialReports).<br><br>
+        Для точных финансовых расчётов, сверки и отчётности используйте [детализации к отчётам реализации](/openapi/documents-and-accounting#tag/financialReports).<br><br>
 
         Для одного ответа на запрос с `flag=0` или без `flag` в системе установлено условное ограничение 80000 строк. Поэтому, чтобы получить все продажи и возвраты, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom `используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все продажи и возвраты уже выгружены.<br><br>
 
@@ -303,6 +314,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: mainReports
   /api/v1/analytics/excise-report:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -350,7 +362,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'request body has an error: doesn''t match schema #/components/schemas/ExciseReportRequest: Error at "/countries/0": value is not one of the allowed values ["AM","BY","KG","KZ","RU","UZ"]'
                 origin: tariffs
@@ -364,6 +376,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: reportOnItemsWithMandatoryLabeling
   /api/v1/warehouse_remains:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -483,7 +496,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'parameter "groupByNm" in query has an error: empty value is not allowed'
                 origin: api-statistics
@@ -497,6 +510,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: warehousesInventoryReport
   /api/v1/warehouse_remains/tasks/{task_id}/status:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -547,7 +561,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'Invalid format for parameter task_id: error unmarshaling ''2f071556-ae39-492f-fd8cf1eb0d25'' text as *uuid.UUID: invalid UUID length: 31'
                 origin: api-statistics
@@ -562,7 +576,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: not found
                 origin: api-statistics
@@ -570,6 +584,7 @@ paths:
                 title: Not Found
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: warehousesInventoryReport
   /api/v1/warehouse_remains/tasks/{task_id}/download:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -686,7 +701,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'Invalid format for parameter task_id: error unmarshaling ''7b8875---9f03-46f1-af21-b9b4b22fe821'' text as *uuid.UUID: invalid UUID format'
                 origin: api-statistics
@@ -703,7 +718,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: not found
                 origin: api-statistics
@@ -711,6 +726,7 @@ paths:
                 title: Not Found
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: warehousesInventoryReport
   /api/analytics/v1/measurement-penalties:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -802,6 +818,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: retentionReports
   /api/analytics/v1/warehouse-measurements:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -893,6 +910,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: retentionReports
   /api/analytics/v1/deductions:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1005,6 +1023,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: retentionReports
   /api/v1/analytics/antifraud-details:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1045,7 +1064,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 IncorrectDate:
                   $ref: '#/components/examples/IncorrectDate'
@@ -1057,6 +1076,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: retentionReports
   /api/v1/analytics/goods-labeling:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1098,7 +1118,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 MissingDateTimeFrom:
                   $ref: '#/components/examples/MissingDateTimeFrom'
@@ -1120,6 +1140,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: retentionReports
   /api/v1/acceptance_report:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1166,7 +1187,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 MissingDateTimeFrom:
                   $ref: '#/components/examples/MissingDateTimeFrom'
@@ -1188,6 +1209,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: acceptanceExpenses
   /api/v1/acceptance_report/tasks/{task_id}/status:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1238,7 +1260,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'Invalid format for parameter task_id: error unmarshaling ''7b8875---9f03-46f1-af21-b9b4b22fe821'' text as *uuid.UUID: invalid UUID format'
                 origin: api-statistics
@@ -1253,7 +1275,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: not found
                 origin: api-statistics
@@ -1261,6 +1283,7 @@ paths:
                 title: Not Found
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: acceptanceExpenses
   /api/v1/acceptance_report/tasks/{task_id}/download:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1343,7 +1366,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'Invalid format for parameter task_id: error unmarshaling ''2f071556-ae39-492f-fd8cf1eb0d25'' text as *uuid.UUID: invalid UUID length: 31'
                 origin: api-statistics
@@ -1360,7 +1383,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: not found
                 origin: api-statistics
@@ -1368,6 +1391,7 @@ paths:
                 title: Not Found
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: acceptanceExpenses
   /api/v1/paid_storage:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1438,7 +1462,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 MissingDateTimeFrom:
                   $ref: '#/components/examples/MissingDateTimeFrom'
@@ -1460,6 +1484,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: paidStorage
   /api/v1/paid_storage/tasks/{task_id}/status:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1510,7 +1535,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'Invalid format for parameter task_id: error unmarshaling ''2f071556-ae39-492f-fd8cf1eb0d25'' text as *uuid.UUID: invalid UUID length: 31'
                 origin: api-statistics
@@ -1525,7 +1550,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: not found
                 origin: api-statistics
@@ -1533,6 +1558,7 @@ paths:
                 title: Not Found
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: paidStorage
   /api/v1/paid_storage/tasks/{task_id}/download:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1606,7 +1632,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: 'Invalid format for parameter task_id: error unmarshaling ''7b8875---9f03-46f1-af21-b9b4b22fe821'' text as *uuid.UUID: invalid UUID format'
                 origin: api-statistics
@@ -1623,7 +1649,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               example:
                 detail: not found
                 origin: api-statistics
@@ -1631,6 +1657,7 @@ paths:
                 title: Not Found
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: paidStorage
   /api/v1/analytics/region-sale:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1670,7 +1697,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 MissingDateTimeFrom:
                   $ref: '#/components/examples/MissingDateTimeFrom'
@@ -1692,6 +1719,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: salesByRegions
   /api/v1/analytics/brand-share/brands:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1733,6 +1761,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: shareOfBrandInSales
   /api/v1/analytics/brand-share/parent-subjects:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1790,7 +1819,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 IncorrectDateFrom:
                   $ref: '#/components/examples/IncorrectDateFromBS'
@@ -1818,6 +1847,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: shareOfBrandInSales
   /api/v1/analytics/brand-share:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -1871,7 +1901,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 IncorrectDateFrom:
                   $ref: '#/components/examples/IncorrectDateFromBS'
@@ -1899,6 +1929,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: shareOfBrandInSales
   /api/v1/analytics/banned-products/blocked:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -2028,6 +2059,7 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: blockedItems
   /api/v1/analytics/goods-return:
     servers:
       - url: https://seller-analytics-api.wildberries.ru
@@ -2035,27 +2067,14 @@ paths:
       operationId: getV1AnalyticsGoodsReturn
       x-readonly-method: true
       x-category: contentanalytics
+      deprecated: true
       security:
         - HeaderApiKey: []
       tags:
         - Отчёт о возвратах и перемещении товаров
       summary: Получить отчёт
       description: |
-        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>
-
-        Можно получить отчёт максимум за 31 день.
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/introduction/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
-
-
-        | Тип | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- | --- |
-        | Персональный | 1 мин | 1 запрос | 1 мин | 10 запросов |
-        | Сервисный | 1 мин | 1 запрос | 1 мин | 10 запросов |
-        | Базовый с секретом | 1 мин | 1 запрос | 1 мин | 10 запросов |
-        | Базовый | 1 ч | 2 запроса | 30 мин | 1 запрос |
-        </div>
+        Метод будет отключен [26 октября](/release-notes?id=577).
       parameters:
         - name: dateFrom
           in: query
@@ -2179,7 +2198,7 @@ paths:
           content:
             application/problem+json:
               schema:
-                $ref: '#/components/schemas/4xxResponse'
+                $ref: '#/components/schemas/4XXResponse'
               examples:
                 MissingDateTimeFrom:
                   $ref: '#/components/examples/MissingDateTimeFrom'
@@ -2201,8 +2220,222 @@ paths:
           $ref: '#/components/responses/403'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: returnsAndItemMovementReport
+  /api/analytics/v1/item-returns:
+    servers:
+      - url: https://seller-analytics-api.wildberries.ru
+    get:
+      operationId: getV1GoodsReturn
+      x-readonly-method: true
+      x-category: contentanalytics
+      security:
+        - HeaderApiKey: []
+      tags:
+        - Отчёт о возвратах и перемещении товаров
+      summary: Получить отчёт
+      description: |
+        Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/return-transfer-reports).
+      parameters:
+        - name: dateFrom
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+            example: '2024-08-13'
+          description: Дата начала отчётного периода
+        - name: dateTo
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date
+            example: '2024-08-27'
+          description: Дата окончания отчётного периода
+        - name: status
+          in: query
+          required: true
+          schema:
+            type: string
+            example: active
+            enum:
+              - active
+              - archive
+          description: |
+            Статус возврата:
+              - `archive` — архивный
+              - `active` — активный
+        - name: limit
+          in: query
+          required: true
+          schema:
+            type: integer
+            maximum: 1000
+            minimum: 0
+            format: date
+            example: 10
+          description: Количество возвратов в ответе
+        - name: offset
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: date
+            example: 3
+          description: Сколько элементов пропустить. Например, для значения 10 ответ начнется с 11 элемента
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GoodsReturn200Response'
+              examples:
+                ReportExample:
+                  $ref: '#/components/examples/ReportExample'
+        '204':
+          description: Нет данных
+        '400':
+          description: Неправильный запрос
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/4XXResponse'
+              examples:
+                MissingDateTimeFrom:
+                  $ref: '#/components/examples/MissingDateTimeFrom'
+                MissingDateTimeTo:
+                  $ref: '#/components/examples/MissingDateTimeTo'
+                IncorrectDateTimeFrom:
+                  $ref: '#/components/examples/IncorrectDateTimeFrom'
+                IncorrectDateTimeTo:
+                  $ref: '#/components/examples/IncorrectDateTimeTo'
+                DateRangeExceeded:
+                  $ref: '#/components/examples/DateRangeExceeded'
+                DateRanges:
+                  $ref: '#/components/examples/DateRanges'
+        '401':
+          $ref: '#/components/responses/401'
+        '429':
+          $ref: '#/components/responses/429'
+      x-tagKey: returnsAndItemMovementReport
 components:
   schemas:
+    GoodsReturn200Response:
+      type: object
+      required:
+        - count
+        - report
+      properties:
+        count:
+          type: integer
+          description: Общее количество возвратов за запрашиваемый период
+        report:
+          description: Отчёт
+          type: array
+          items:
+            required:
+              - sku
+              - brand
+              - completedDt
+              - dstOfficeAddress
+              - dstOfficeId
+              - expiredDt
+              - kiz
+              - nmId
+              - orderDt
+              - orderId
+              - readyToReturnDt
+              - returnType
+              - shkId
+              - srid
+              - returnStatus
+              - stickerId
+              - subjectName
+              - techSize
+            type: object
+            properties:
+              sku:
+                type: string
+                example: '1680063403480'
+                description: Баркод
+              brand:
+                type: string
+                example: dub
+                description: Бренд
+              completedDt:
+                type: string
+                nullable: true
+                example: '2025-03-31T11:33:53'
+                description: Дата и время выдачи возврата продавцу
+              dstOfficeAddress:
+                type: string
+                example: Жуковский Улица Маяковского 19
+                description: Адрес ПВЗ для выдачи возврата продавцу
+              kiz:
+                nullable: true
+                type: string
+                example: "0102900000376311210G2CIS?ehge)S\x1D91002A\x1D92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
+                description: Код маркировки [Честного знака](https://честныйзнак.рф/)
+              dstOfficeId:
+                type: integer
+                example: 310105
+                description: ID ПВЗ для выдачи возврата продавцу
+              expiredDt:
+                type: string
+                nullable: true
+                example: '2025-03-31T11:33:53'
+                description: Дата и время истечения срока хранения возврата
+              nmId:
+                type: integer
+                example: 12862181
+                description: Артикул WB
+              orderDt:
+                type: string
+                format: date
+                example: '2024-08-26'
+                description: Дата заказа на возврат
+              orderId:
+                type: integer
+                example: 2034240826
+                description: ID сборочного задания
+              readyToReturnDt:
+                type: string
+                nullable: true
+                example: '2025-01-31T08:33:50'
+                description: Дата и время готовности возврата к выдаче
+              returnReason:
+                type: string
+                example: Цвет
+                description: Причина возврата.<br> Поле возвращается только при `"returnType":"Возврат неопознанного товара"`
+              returnType:
+                type: string
+                example: Возврат заблокированного товара
+                description: Тип возврата
+              shkId:
+                type: integer
+                example: 23411783472
+                description: Штрихкод
+              srid:
+                type: string
+                example: mp.123130940efa4d67af77f901594c7d2c.r
+                description: ID заказа на возврат
+              returnStatus:
+                type: string
+                example: В пути в пвз
+                description: Статус возврата
+              stickerId:
+                type: string
+                example: '33811984302'
+                description: Стикер заказа на возврат
+              subjectName:
+                type: string
+                example: Багажные бирки
+                description: Предмет
+              techSize:
+                type: string
+                example: '0'
+                description: Размер
     OrdersItem:
       type: object
       properties:
@@ -2529,6 +2762,20 @@ components:
               description: Удержания
               items:
                 type: object
+                required:
+                  - nmId
+                  - subjectName
+                  - dimId
+                  - prcOver
+                  - volume
+                  - width
+                  - length
+                  - height
+                  - volumeSup
+                  - widthSup
+                  - lengthSup
+                  - heightSup
+                  - photoUrls
                 properties:
                   nmId:
                     type: integer
@@ -2612,6 +2859,16 @@ components:
                     type: number
                     description: Сумма штрафа
                     example: 449.83
+                  dateStart:
+                    type: string
+                    format: date-time
+                    example: '2025-05-09T13:35:57Z'
+                    description: Дата и время начала действия коэффициента
+                  dateEnd:
+                    type: string
+                    format: date-time
+                    example: '2025-05-29T13:35:57Z'
+                    description: Дата и время окончания действия коэффициента
             total:
               type: integer
               description: Количество удержаний в отчёте. Без учёта `limit` и `offset`
@@ -2750,6 +3007,7 @@ components:
             description: ID поставки
           chrtId:
             type: integer
+            format: uint64
             description: ID размера для этого артикула WB
           size:
             type: string
@@ -2854,7 +3112,7 @@ components:
         taskId:
           type: string
           description: ID задания на генерацию
-    4xxResponse:
+    4XXResponse:
       type: object
       properties:
         detail:
@@ -2964,6 +3222,29 @@ components:
         example: '2024-04-30'
       required: true
   examples:
+    ReportExample:
+      description: Успешно
+      value:
+        count: 87
+        report:
+          - sku: '1234567890'
+            brand: ''
+            completedDt: null
+            dstOfficeAddress: г. Клин (Московская область), улица Ленина, д. 8
+            dstOfficeId: 33
+            expiredDt: null
+            kiz: null
+            nmId: 987654321
+            orderDt: '2026-08-24'
+            orderId: 6789054321
+            readyToReturnDt: null
+            returnType: Возврат товара, который приехал по МП, продавцу
+            shkId: 987612345
+            srid: mp.1b4fc35bfe3f4b799cf01f8e11ffd2cb.r
+            returnStatus: В пути в пвз
+            stickerId: '918273645'
+            subjectName: Вода питьевая
+            techSize: '0'
     DateFromFieldRequired:
       description: Ошибка в запросе
       value:

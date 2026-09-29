@@ -7,7 +7,7 @@ info:
 
     Управление [сборочными заданиями](/openapi/in-store-pickup#tag/inStorePickupAssemblyOrders) и [идентификаторами маркировки](/openapi/in-store-pickup#tag/inStorePickupLabelIdentifiers) Самовывоза.<br><br>
 
-    Вы можете протестировать методы Самовывоза в [песочнице](/sandbox). Также в песочнице доступны [специальные методы](/docs/openapi-other/sandbox-environment#tag/Marketplejs-Samovyvoz) для эмуляции действий пользователя
+    Вы можете протестировать методы Самовывоза в [песочнице](/sandbox). Также в песочнице доступны [специальные методы](/docs/openapi-other/sandbox-environment#tag/marketplaceInStorePickup) для эмуляции действий пользователя
 
     </div>
   version: instorepickup
@@ -19,9 +19,11 @@ tags:
   - name: Сборочные задания Самовывоз
     x-displayName: Сборочные задания Самовывоз
     description: ''
+    x-tagKey: inStorePickupAssemblyOrders
   - name: Идентификаторы маркировки Самовывоз
     x-displayName: Идентификаторы маркировки Самовывоз
     description: ''
+    x-tagKey: inStorePickupLabelIdentifiers
 paths:
   /api/v3/click-collect/orders/new:
     servers:
@@ -86,6 +88,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/v3/click-collect/orders:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -186,6 +189,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/final-price:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -251,6 +255,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/status/confirm:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -318,6 +323,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/status/prepare:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -385,6 +391,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/v3/click-collect/orders/client:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -464,6 +471,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/v3/click-collect/orders/client/identity:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -559,6 +567,7 @@ paths:
                   $ref: '#/components/examples/InvalidPasscode'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/status/receive:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -626,6 +635,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/status/reject:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -693,6 +703,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/status/info:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -745,6 +756,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/status/cancel:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -812,6 +824,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupAssemblyOrders
   /api/marketplace/v3/click-collect/orders/meta/details:
     post:
       operationId: postV3ClickCollectOrdersMetaDetails
@@ -876,6 +889,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupLabelIdentifiers
   /api/marketplace/v3/click-collect/orders/meta/delete:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -951,6 +965,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupLabelIdentifiers
   /api/marketplace/v3/click-collect/orders/meta/sgtin:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1022,6 +1037,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupLabelIdentifiers
   /api/marketplace/v3/click-collect/orders/meta/uin:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1091,6 +1107,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupLabelIdentifiers
   /api/marketplace/v3/click-collect/orders/meta/imei:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1161,6 +1178,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupLabelIdentifiers
   /api/marketplace/v3/click-collect/orders/meta/gtin:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1230,6 +1248,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupLabelIdentifiers
   /api/marketplace/v3/click-collect/orders/meta/customs-declaration:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -1328,6 +1347,7 @@ paths:
                   $ref: '#/components/examples/Response403TokenCategory'
         '429':
           $ref: '#/components/responses/429'
+      x-tagKey: inStorePickupLabelIdentifiers
 components:
   securitySchemes:
     HeaderApiKey:
@@ -1580,15 +1600,15 @@ components:
           description: |
             Уникальный ID заказа. <br>
             Примечание: `rid` — это `srid` в ответах методов:
-              - [Заявки покупателей на возврат](./user-communication#tag/buyersReturns/operation/getV1Claims)
+              - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims)
               - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed)
               - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders)
               - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales)
               - [Отчет о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport)
-              - [Детализации к отчётам реализации по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
-              - [Детализации к отчётам реализации за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
-              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
-              - [Детализации к отчётам об издержках на приём платежей за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+              - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
+              - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
+              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
+              - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
         createdAt:
           type: string
           description: Дата и время создания сборочного задания
@@ -1628,6 +1648,7 @@ components:
           description: Артикул WB
         chrtId:
           type: integer
+          format: uint64
           description: ID размера товара в системе WB
         price:
           type: integer
@@ -1733,6 +1754,7 @@ components:
           example: 1
         chrtId:
           type: integer
+          format: uint64
           description: ID размера товара в системе WB
           example: 12345676
         createdAt:
@@ -1813,15 +1835,15 @@ components:
           description: |
             Уникальный ID заказа. <br>
             Примечание: `rid` — это `srid` в ответах методов:
-              - [Заявки покупателей на возврат](./user-communication#tag/buyersReturns/operation/getV1Claims)
+              - [Заявки покупателей на возврат](./customer-communication#tag/buyersReturns/operation/getV1Claims)
               - [Лента заказов](./analytics#tag/orderFeed/operation/postV1OrderFeed)
               - [Заказы](./reports#tag/mainReports/operation/getV1SupplierOrders)
               - [Продажи](./reports#tag/mainReports/operation/getV1SupplierSales)
               - [Отчет о возвратах и перемещении товаров](./reports#tag/returnsAndItemMovementReport)
-              - [Детализации к отчётам реализации по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
-              - [Детализации к отчётам реализации за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
-              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
-              - [Детализации к отчётам об издержках на приём платежей за период](./financial-reports-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
+              - [Детализации к отчётам реализации по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailedReportId)
+              - [Детализации к отчётам реализации за период](./documents-and-accounting#tag/financialReports/operation/postV1SalesReportsDetailed)
+              - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailedReportId)
+              - [Детализации к отчётам об издержках на приём платежей за период](./documents-and-accounting#tag/financialReports/operation/postV1AcquiringDetailed)
           example: 5044304527347733263.0.0
         skus:
           type: array

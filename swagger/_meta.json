@@ -1,70 +1,70 @@
 {
- "updated_at": "2026-09-10T07:19:30+00:00",
- "snapshot_date": "2026-09-10",
+ "updated_at": "2026-09-29T15:44:32+00:00",
+ "snapshot_date": "2026-09-29",
  "source": "dev.wildberries.ru",
- "endpoint_count": 294,
- "previous_endpoint_count": 287,
+ "endpoint_count": 305,
+ "previous_endpoint_count": 294,
  "file_count": 13,
  "changes": {
-  "added": 7,
+  "added": 11,
   "removed": 0,
-  "changed": 280,
+  "changed": 294,
   "new_sections": 0,
   "gone_sections": 0
  },
  "renamed_sections": [],
  "files": {
   "01-general.yaml": {
-   "sha256": "a0bf8de29907b03dc9cc67d561f14e3ca1f4d308959f53cdc00a93b4b733e91a",
-   "bytes": 81420
+   "sha256": "62824c52af6d8acd1f0674826d201e1e96ede0f2c37f883621d54125bc477972",
+   "bytes": 81975
   },
   "02-items.yaml": {
-   "sha256": "8db5786ba10e88f645cb42235966f5989a79a62e66c770c7bbbe90dfcbcb213e",
-   "bytes": 428622
+   "sha256": "05780de0f1272a4a51559f75f9358af6f78967309e83b212e6fdcb2fcebe5266",
+   "bytes": 432874
   },
   "03-orders-fbs.yaml": {
-   "sha256": "11a183d5a6d870bd068eb3e426e34a363b7207eb973fd7e3ba735e6ca8b2204a",
-   "bytes": 306885
+   "sha256": "568976681019e2c593bbcdb676feeaae95ff6d2edcacf1ad578460e313f1e6ab",
+   "bytes": 313560
   },
   "04-orders-dbw.yaml": {
-   "sha256": "ef86b5fdd45741a0f77fbc54b51bfa1e9128c3a5a8b84998745c0627c79f8928",
-   "bytes": 114875
+   "sha256": "86f06290d66f23f3bddc0b1ed8afdd46c38d15e80e9ce8592e9038c97056cddc",
+   "bytes": 115459
   },
   "05-dbs.yaml": {
-   "sha256": "53613ba139c4a981d04939b71be13eaa9da8adb15bc9c6d51475288d0d188078",
-   "bytes": 149761
+   "sha256": "a4cc68d4ef3c23327fad7f10aabdb04ed2bcfca8f909a09030bb92759aa9e430",
+   "bytes": 150057
   },
   "06-in-store-pickup.yaml": {
-   "sha256": "200a3db09630a33716e94ddf6ad4117c9ea23262d2f0951934dfdb5bdbbf7e5f",
-   "bytes": 128231
+   "sha256": "18646e8dd95406153564b08da224327062fe5ebcf67a02acb4684e149567895e",
+   "bytes": 129120
   },
   "07-orders-fbw.yaml": {
-   "sha256": "139e20913eeb4d23f6987cbcfd70d1f7fcf9173bbe0ed5746e1f833a98cf5c4a",
-   "bytes": 53212
+   "sha256": "486d5d77b4987ceaab96b9a378fd489504c8ae8eb9599b3067b02e7b8ef6bada",
+   "bytes": 92487
   },
   "08-promotion.yaml": {
-   "sha256": "0e5a0ca320a4b16dc4d198106e8dc893a1f119d29c49b1ff855743c5ba0fdef6",
-   "bytes": 277948
+   "sha256": "78a660f449ff8eef84aaf1e39c9db582d6360a8da5c664a223885f872559506c",
+   "bytes": 296081
   },
   "09-communications.yaml": {
-   "sha256": "33abeae20dbfa42e87f1fcf461834ecd2b09e0fdeae879fa1571e5b79462d4d0",
-   "bytes": 197742
+   "sha256": "bb3d27b12d89e954bd2281e45929026b942f5272f4de07f81b93d6a8919fe51f",
+   "bytes": 198604
   },
   "10-rates.yaml": {
-   "sha256": "fb1545d65f5e7d8f92079b2926400b2266efbaaa7e8449807cf9c7c7ff91560f",
-   "bytes": 44219
+   "sha256": "789bb55d329e33d44ad48b5a226d94c5f773b3754c132035c4e4a8e61ac549ec",
+   "bytes": 44427
   },
   "11-analytics.yaml": {
-   "sha256": "bfa80799ddb6289b21bb518986089f920ce9a7df82419421808892a5e37c7596",
-   "bytes": 293732
+   "sha256": "ea23ef2bad29683902fef3e5dd98847c453488db0f9dbd1aa9ab334d14c856c2",
+   "bytes": 294894
   },
   "12-reports.yaml": {
-   "sha256": "6bae69b5bd51b50d063121a694e4f00d68b94f65181ac8d38df7b90b790eb90c",
-   "bytes": 156346
+   "sha256": "ad7a73c545770a7ea4292a7c45dd050f0a2f545dc85b107699d6b20b553fe080",
+   "bytes": 166425
   },
   "13-finances.yaml": {
-   "sha256": "61048e6daec48ee7d35fa26edb9f773a2bb800a2eca9c01e566bffea10a578f2",
-   "bytes": 87080
+   "sha256": "3eae3c64f7147b079208aee14fb06efe2426a8bbdc7ef3d19a55d3b1bb313045",
+   "bytes": 91702
   }
  }
 }
